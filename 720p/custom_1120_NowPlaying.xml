@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1120">
+    <defaultcontrol always="true">20</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+    <include>Animation_DialogPopup</include>
+    <controls>
+        <control type="image">
+            <posx>356</posx>
+            <posy>180</posy>
+            <width>1210</width>
+            <height>460</height>
+            <texture>osd/osd_settings_back_glow.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+            <include>PanelGlowFade</include>
+            <include>Animation_VisibleChange400</include>
+        </control>
+        <control type="image">
+            <posx>356</posx>
+            <posy>180</posy>
+            <width>1210</width>
+            <height>460</height>
+            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            <texture>osd/osd_settings_back.png</texture>
+        </control>
+        <control type="image">
+            <posx>375</posx>
+            <posy>232</posy>
+            <width>1172</width>
+            <height>60</height>
+            <texture>osd/osd_settings_buttonnf.png</texture>
+        </control>
+        <control type="label">
+            <posx>630</posx>
+            <posy>215</posy>
+            <width>572</width>
+            <height>60</height>
+            <font>Font_Reg20</font>
+            <align>center</align>
+            <focusedcolor>white</focusedcolor>
+            <textoffsetx>45</textoffsetx>
+            <textoffsety>10</textoffsety>
+            <textcolor>$VAR[TitleColorVar]</textcolor>
+            <label>[B]$LOCALIZE[31176][/B]</label>
+        </control>
+        <control type="grouplist" id="20">
+            <posx>375</posx>
+            <posy>292</posy>
+            <width>1172</width>
+            <height>540</height>
+            <itemgap>0</itemgap>
+            <aligny>center</aligny>
+            <scrolltime>0</scrolltime>
+            <onleft>450</onleft>
+            <onright>450</onright>
+            <orientation>vertical</orientation>
+            <animation effect="fade" time="200">Visible</animation>
+            <animation effect="fade" time="200">Hidden</animation>
+            <animation effect="fade" time="200">WindowOpen</animation>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <control type="radiobutton" id="308">
+                <include>Objects_CommonSettingsButton</include>
+                <label>$LOCALIZE[31375]</label>
+                <onclick>Skin.ToggleSetting(animatedbghome)</onclick>
+                <selected>Skin.HasSetting(animatedbghome)</selected>
+            </control>
+            <control type="button" id="303">
+                <include>Objects_CommonSettingsButton</include>
+                <label>$LOCALIZE[31678]</label>
+                <onclick>Skin.Reset(WeatherFanartDir)</onclick>
+                <onclick>Skin.SetPath(WeatherFanartDir)</onclick>
+            </control>
+            <control type="radiobutton" id="271">
+                <include>Objects_CommonSettingsButton</include>
+                <label>31672</label>
+                <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(IncludeWatchedCVPL)][/COLOR]</label2>
+                <onclick>Skin.ToggleSetting(IncludeWatchedCVPLBool)</onclick>
+                <onclick condition="!Skin.HasSetting(IncludeWatchedCVPLBool)">Skin.SetString(IncludeWatchedCVPL,True)</onclick>
+                <onclick condition="Skin.HasSetting(IncludeWatchedCVPLBool)">Skin.SetString(IncludeWatchedCVPL,False)</onclick>
+                <selected>Skin.HasSetting(IncludeWatchedCVPLBool)</selected>
+            </control>
+            <control type="radiobutton" id="312">
+                <include>Objects_CommonSettingsButton</include>
+                <label>42203</label>
+                <onclick>Skin.ToggleSetting(randomizehome)</onclick>
+                <selected>Skin.HasSetting(randomizehome)</selected>
+            </control>
+            <control type="radiobutton" id="313">
+                <include>Objects_CommonSettingsButton</include>
+                <label>42282</label>
+                <onclick condition="!Skin.HasSetting(DisableWidgetToggle)">ClearProperty(DisableWidgets,home)</onclick>
+                <onclick>Skin.ToggleSetting(DisableWidgetToggle)</onclick>
+                <selected>Skin.HasSetting(DisableWidgetToggle)</selected>
+            </control>
+        </control>
+    </controls>
+</window>
