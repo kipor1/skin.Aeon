@@ -1,175 +1,126 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="4">
-    <defaultcontrol always="true">9000</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
-    <allowoverlay>no</allowoverlay>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <animation type="WindowOpen" reversible="false" condition="!Window.Previous(10012) + !Window.Previous(10013) + !Window.Previous(10014) + !Window.Previous(10015) + !Window.Previous(10016) + !Window.Previous(10017) + !Window.Previous(10018) + !Window.Previous(10019) + !Window.Previous(10020) + !Window.Previous(1111) + !Window.Previous(10007)">
-        <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="300" />
-    </animation>
-    <animation type="WindowClose" reversible="false" condition="!Window.Next(10012) + !Window.Next(10013) + !Window.Next(10014) + !Window.Next(10015) + !Window.Next(10016) + !Window.Next(10017) + !Window.Next(10018) + !Window.Next(10019) + !Window.Next(10020) + !Window.Next(1111) + !Window.Next(10007)">
-        <effect type="fade" start="100" end="0" time="300" />
-        <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
-    </animation>
-    <controls>
-        <include>CommonSettingsBackground</include>
-        <include>CommonMediaPlayingBackground</include>
-        <include>Furniture_SettingsFloor</include>
-        <control type="group">
-            <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
-            <include>Furniture_SettingsBackPanel2</include>
-            <include>Furniture_SettingsInternalBackPanel</include>
-            <control type="list" id="9000">
-                <posx>63</posx>
-                <posy>190</posy>
-                <width>570</width>
-                <height>819</height>
-                <onleft>ActivateWindow(1121)</onleft>
-                <onright>9001</onright>
-                <onup>9000</onup>
-                <ondown>9000</ondown>
-                <pagecontrol>-</pagecontrol>
-                <itemlayout height="74" width="570">
-                    <control type="label">
-                        <posx>30</posx>
-                        <width>389</width>
-                        <height>74</height>
-                        <font>Font_Bold20</font>
-                        <include>detailcolornofocus</include>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="74" width="570">
-                    <control type="image">
-                        <width>434</width>
-                        <height>74</height>
-                        <texture>views/tripanel/listselect_fo.png</texture>
-                        <animation effect="fade" start="100" end="50" time="50" condition="!Control.HasFocus(9000)">Conditional</animation>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                    </control>
-                    <control type="label">
-                        <posx>30</posx>
-                        <width>389</width>
-                        <height>74</height>
-                        <font>Font_Bold20</font>
-                        <include>listcolornofocus</include>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                </focusedlayout>
-                <content>
-                    <item id="1">
-                        <label>480</label>
-                        <onclick>ActivateWindow(AppearanceSettings)</onclick>
-                        <icon>special://skin/backgrounds/appearance.jpg</icon>
-                        <property name="description">$LOCALIZE[31400]</property>
-                    </item>
-                    <item id="2">
-                        <label>157</label>
-                        <onclick>ActivateWindow(VideosSettings)</onclick>
-                        <icon>special://skin/backgrounds/videos/videos.jpg</icon>
-                        <property name="description">$LOCALIZE[31401]</property>
-                    </item>
-                    <item id="3">
-                        <label>2</label>
-                        <onclick>ActivateWindow(MusicSettings)</onclick>
-                        <icon>special://skin/backgrounds/music/music.jpg</icon>
-                        <property name="description">$LOCALIZE[31402]</property>
-                    </item>
-                    <item id="4">
-                        <label>1</label>
-                        <onclick>ActivateWindow(PicturesSettings)</onclick>
-                        <icon>special://skin/backgrounds/pictures/pictures.jpg</icon>
-                        <property name="description">$LOCALIZE[31403]</property>
-                    </item>
-                    <item id="5">
-                        <label>8</label>
-                        <onclick>ActivateWindow(WeatherSettings)</onclick>
-                        <icon>special://skin/backgrounds/weather/weather.jpg</icon>
-                        <property name="description">$LOCALIZE[31404]</property>
-                    </item>
-                    <item id="6">
-                        <label>24001</label>
-                        <label2>31411</label2>
-                        <onclick>ActivateWindow(AddonBrowser)</onclick>
-                        <icon>special://skin/backgrounds/programs/programs.jpg</icon>
-                        <property name="description">$LOCALIZE[31408]</property>
-                    </item>
-                    <item id="7">
-                        <label>14036</label>
-                        <onclick>ActivateWindow(ServiceSettings)</onclick>
-                        <icon>special://skin/backgrounds/network.jpg</icon>
-                        <property name="description">$LOCALIZE[31405]</property>
-                    </item>
-                    <item id="8">
-                        <label>13000</label>
-                        <onclick>ActivateWindow(SystemSettings)</onclick>
-                        <icon>special://skin/backgrounds/system/system.jpg</icon>
-                        <property name="description">$LOCALIZE[31406]</property>
-                    </item>
-                    <include condition="System.GetBool(pvrmanager.enabled)">PVR_Settings</include>
-                    <item id="10">
-                        <label>13281</label>
-                        <label2>31413</label2>
-                        <onclick>ActivateWindow(systeminfo)</onclick>
-                        <icon>special://skin/backgrounds/systeminfo.jpg</icon>
-                        <property name="description">$LOCALIZE[31409]</property>
-                    </item>
-                    <item id="9">
-                        <label>166</label>
-                        <onclick>ActivateWindow(1111)</onclick>
-                        <icon>special://skin/backgrounds/skinsetting.jpg</icon>
-                        <property name="description">$LOCALIZE[31407]</property>
-                    </item>
-                </content>
-            </control>
-            <control type="image">
-                <posx>498</posx>
-                <posy>87</posy>
-                <width>1260</width>
-                <height>708</height>
-                <fadetime>600</fadetime>
-                <texture background="true">$INFO[Container(9000).ListItem.Icon]</texture>
-            </control>
-            <control type="textbox">
-                <posx>555</posx>
-                <posy>810</posy>
-                <width>1200</width>
-                <height>160</height>
-                <font>Font_Reg20</font>
-                <label>$INFO[Container(9000).ListItem.Property(description)]</label>
-                <shadowcolor>-</shadowcolor>
-            </control>
-            <include>Furniture_SettingsInternalFrontPanel</include>
-        </control>
-        <control type="group">
-            <include>Animation_HideBreadCrumbs</include>
-            <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>34</height>
-                        <texture>common/settings_logo.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,2" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[5]</label>
-                    </control>
-                </control>
-            </control>
-            <include>Breadcrumbs_Furniture</include>
-        </control>
-        <include>Furniture_NowPlayingWidget</include>
-    </controls>
+	<defaultcontrol always="true">6</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsSettings</include>
+			<info>Skin.String(CustomSettings)</info>
+			<animation effect="fade" time="200">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<animation effect="fade" start="0" end="100" time="200" condition="[Skin.HasSetting(settingsfade) + Window.Previous(Home)] | Skin.HasSetting(bmtransit)">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="[[Skin.HasSetting(settingsfade) | Skin.HasSetting(nosettings)] + Window.Next(Home)] | [Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)]">WindowClose</animation>
+		</control>
+
+		<control type="group">
+			<include>FullscreenDimensions</include>
+			<animation type="WindowOpen" reversible="false" condition="!Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(18) + !Window.Previous(19) + !Window.Previous(17) + !Window.Previous(604) + !Window.Previous(56) + !Window.Previous(34)">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
+			</animation>
+			<animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>			
+			<include>Furniture_SettingsBackPanel</include>
+
+			<control type="image">
+				<include>Furniture_SettingsInternalBackPanel</include>
+				<include>Animation_SettingsInternalPanel</include>
+			</control>
+		
+			<include>Settings_XBMCSettingsButtons</include>
+
+			<control type="group">
+				<posx>332</posx>
+				<posy>58</posy>
+				<width>840</width>
+				<height>580</height>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_pictures</imagepath>
+					<visible>Control.HasFocus(9)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_movies</imagepath>
+					<visible>Control.HasFocus(6)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_apps</imagepath>
+					<visible>Control.HasFocus(8)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_music</imagepath>
+					<visible>Control.HasFocus(7)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_system</imagepath>
+					<visible>Control.HasFocus(4)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_aeon</imagepath>
+					<visible>Control.HasFocus(11)</visible>
+				</control>
+
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_profiles</imagepath>
+					<visible>Control.HasFocus(12)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_network</imagepath>
+					<visible>Control.HasFocus(2)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_appearance</imagepath>
+					<visible>Control.HasFocus(3)</visible>
+				</control>
+				
+				<control type="multiimage">
+					<include>Furniture_SettingsTutorialSlide</include>
+					<imagepath>tutorials/tut_weather</imagepath>
+					<visible>Control.HasFocus(10)</visible>
+				</control>
+			
+			</control>
+
+			<include>Labels_AeonMainLabels</include>
+			
+			<control type="image">
+				<description>background image</description>
+				<posx>42</posx>
+				<posy>28</posy>
+				<width>1196</width>
+				<height>651</height>
+				<texture>settings/settings_panelfront.png</texture>
+			</control>
+
+			<control type="image">
+				<posx>331</posx>
+				<posy>43</posy>
+				<width>842</width>
+				<height>634</height>
+				<texture>settings/settings_intframe_top.png</texture>
+				<include>Animation_SettingsInternalPanel</include>
+			</control>
+		</control>
+		
+	<!--<include>Background_ContextBlack</include>-->		
+		
+	</controls>
 </window>

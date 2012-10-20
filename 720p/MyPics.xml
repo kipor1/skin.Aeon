@@ -1,86 +1,190 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="2">
-    <defaultcontrol always="true">50</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
-    <backgroundcolor>black</backgroundcolor>
-    <views>50,509,500,501,504,505,511,512,517,560</views>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <controls>
-        <include condition="Skin.HasSetting(pictures)">CommonPictureBackground</include>
-        <include condition="Skin.HasSetting(comics)">CommonComicsBackground</include>
-        <control type="image">
-            <texture background="true">$INFO[ListItem.FilenameAndPath]</texture>
-            <include>CommonFanartVarsSingle</include>
-            <visible>!Listitem.Isfolder</visible>
-        </control>
-        <control type="multiimage">
-            <imagepath background="true">$INFO[ListItem.FolderPath]</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>Listitem.Isfolder + !IsEmpty(Container.FolderPath) + !Stringcompare(ListItem.Label,..) + !substring(Container.FolderPath,plugin://)</visible>
-        </control>
-        <include>VideoBackground</include>
-        <include>Furniture_Glow</include>
-        <control type="group">
-            <visible>!Control.IsVisible(517)</visible>
-            <include>Furniture_Showcase</include>
-        </control>
-        <include>WallPanel</include>
-        <control type="group">
-            <animation effect="slide" start="0,0" end="0,650" time="700" easing="out" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
-            <control type="group">
-                <include>CommonRootView</include>
-                <!-- view id = 50 -->
-                <include condition="Skin.HasSetting(pictures)">ShowcaseQuadrate</include>
-                <!-- view id = 51 -->
-                <include condition="Skin.HasSetting(pictures)">AddonWall</include>
-                <include condition="Skin.HasSetting(pictures) | Skin.HasSetting(comics)">Viewtype_Wall</include>
-                <!-- view id = 500 -->
-                <include condition="Skin.HasSetting(pictures)">Stripshow</include>
-                <include condition="Skin.HasSetting(comics)">Showcase</include>
-                <include condition="Skin.HasSetting(comics)">ShowcaseDVD</include>
-            </control>
-            <control type="button" id="7000">
-                <include>HiddenObject</include>
-                <onfocus>SetFocus(9000)</onfocus>
-                <visible>Control.IsVisible(509) | Control.IsVisible(517) | Control.IsVisible(501) | Control.IsVisible(504)</visible>
-            </control>
-            <include>FloorLabels</include>
-            <control type="group">
-                <visible>!Control.IsVisible(517)</visible>
-                <include>Furniture_DarkGradient</include>
-            </control>
-        </control>
-        <control type="group">
-            <include>Animation_HideBreadCrumbs</include>
-            <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>565</width>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>38</height>
-                        <texture>common/logo_pics.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,0" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[1213]</label>
-                    </control>
-                    <control type="label">
-                        <label>$INFO[Container.FolderName, / ]</label>
-                        <include>BreadcrumbsLabel</include>
-                    </control>
-                </control>
-            </control>
-            <include>Breadcrumbs_Furniture</include>
-        </control>
-        <include>Furniture_NowPlayingWidget</include>
-        <include>Media_Menu</include>
-    </controls>
+	<defaultcontrol>50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+
+    <control type="image" id="101">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>0</width>
+		<height>0</height>
+		<texture>-</texture>
+		<visible>!Skin.HasSetting(nopicturefanart) + [Control.HasFocus(57) | Control.HasFocus(60) | Control.HasFocus(94)] + [!Container(57).OnNext + !Container(57).OnPrevious]</visible>
+		<animation effect="fade" start="0" end="100" time="150" delay="3000">Visible</animation>
+	</control>
+	
+    <control type="image" id="105">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>0</width>
+		<height>0</height>
+		<texture>-</texture>
+		<visible>Control.HasFocus(51) + !Skin.HasSetting(nostripshowhide) + !Control.IsVisible(66) + Control.IsVisible(668) + [!Container(51).OnNext + !Container(51).OnPrevious]</visible>
+		<animation effect="fade" start="0" end="100" time="150" delay="3000">Visible</animation>
+	</control>
+
+	<control type="image">
+		<include>FullscreenDimensions</include>
+		<texture>stripshow/stripshow_bg.png</texture>
+		<visible>Control.IsVisible(51)</visible>
+		<include>Animation_CommonFade</include>
+	</control>
+	
+	<control type="multiimage">
+		<include>BackgroundVarsGlobal</include>
+		<include>BackgroundVarsPictures</include>
+		<visible>!Control.IsVisible(668)</visible>
+	</control>
+
+	<control type="image">
+		<include>FullscreenDimensions</include>
+		<texture>windows/fanart_back.png</texture>
+        <visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(listitem.filenameandpath)</visible>
+		<visible>substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif)</visible>		
+		<animation effect="fade" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>		
+	</control>
+
+	<control type="largeimage" id="71">
+		<include>FullscreenDimensions</include>
+        <visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(listitem.filenameandpath)</visible>
+		<visible>substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif)</visible>		
+		<animation effect="fade" end="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+		<texture>$INFO[listitem.filenameandpath]</texture>
+		<fadetime>400</fadetime>
+		<aspectratio align="top">keep</aspectratio>
+	</control>
+
+	<control type="largeimage" id="668">
+		<include>FullscreenDimensions</include>
+		<texture>$INFO[listitem.filenameandpath]</texture>
+		<fadetime>400</fadetime>
+		<aspectratio align="top">keep</aspectratio>
+		<visible>Control.IsVisible(51) + [substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif) | substring(listitem.filenameandpath,ico) | substring(listitem.filenameandpath,pcx) | substring(listitem.filenameandpath,tga)]</visible>
+		<include>Animation_CommonFade</include>
+	</control>
+	
+	<include>Furniture_WallBackground</include>
+	
+	<control type="group">
+		<include>FullscreenDimensions</include>
+		<include>Animation_OpenCloseZoom</include>
+		<include>Furniture_Time</include>
+		<include>Furniture_MediaPanel</include>
+
+		<include>Viewtype_Wall</include>		
+		<include>Viewtype_StripShow</include>
+		<include>Viewtype_Showcase</include>
+		<include>Viewtype_List</include>		
+
+		<include>Objects_ShowcaseMenuPanel</include>
+		<include>Furniture_WallTime</include>
+		<include>Furniture_WallRSS</include>		
+		
+		<control type="group" id="7000">
+
+			<control type="label">
+				<label>31031</label>
+				<include>Objects_MediaLabel</include>
+			</control>
+
+			<control type="image">
+				<include>Objects_MediaLogo</include>
+				<texture>windows/logo_pics.png</texture>
+			</control>	
+
+			<control type="grouplist" id="77">
+				<include>Animation_MediaMenuSlide</include>
+				<include>Objects_MediaMenuGroup</include>
+
+				<control type="button" id="900">
+					<label>$LOCALIZE[31050] $INFO[Container.ViewMode]</label>
+					<include>Objects_MediaMenuButton</include>
+					<onclick>SetFocus(69)</onclick>
+				</control>
+
+				<include>Objects_FlattenFlowButton</include>	
+				
+				<control type="button" id="3">
+					<label>103</label>
+					<include>Objects_MediaMenuButton</include>
+				</control>
+
+				<control type="togglebutton" id="940">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_ListLayoutStrings</include>
+					<usealttexture>Skin.HasSetting(pictureslistfull)</usealttexture>
+					<onclick>Skin.SetBool(pictureslistfull)</onclick>
+					<altclick>Skin.Reset(pictureslistfull)</altclick>
+					<visible>Control.IsVisible(50)</visible>
+				</control>
+				
+				<control type="togglebutton" id="941">
+					<include>Objects_MediaMenuButton</include>				
+					<label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
+					<altlabel>$LOCALIZE[31076]: $LOCALIZE[31073]</altlabel>
+					<usealttexture>!Skin.HasSetting(stripshowmax)</usealttexture>
+					<onclick>Skin.ToggleSetting(stripshowmax)</onclick>
+					<onclick>XBMC.ReloadSkin</onclick>
+					<visible>Control.IsVisible(51)</visible>
+				</control>
+
+				<control type="togglebutton" id="942">
+					<include>Objects_MediaMenuButton</include>				
+					<label>$LOCALIZE[31079]: $LOCALIZE[31078]</label>
+					<altlabel>$LOCALIZE[31079]: $LOCALIZE[31077]</altlabel>
+					<usealttexture>!Skin.HasSetting(nostripshowhide)</usealttexture>
+					<onclick>Skin.ToggleSetting(nostripshowhide)</onclick>
+					<visible>Control.IsVisible(51)</visible>
+				</control>				
+				
+				<control type="togglebutton" id="901">
+					<include>Objects_MediaMenuButton</include>				
+					<include>Objects_FanartToggleStrings</include>
+					<usealttexture>Skin.HasSetting(nopicturefanart)</usealttexture>
+					<onclick>Skin.SetBool(nopicturefanart)</onclick>
+					<altclick>Skin.Reset(nopicturefanart)</altclick>
+					<visible>Window.IsActive(2) + Control.IsVisible(57)</visible>
+				</control>
+
+				<include>Objects_WallGridButton</include>
+				
+				<include>Objects_WallBackdropButton</include>				
+				
+				<control type="button" id="6">
+					<label>108</label>
+					<include>Objects_MediaMenuButton</include>
+				</control>
+
+				<control type="togglebutton" id="9">
+					<label>$LOCALIZE[31051]: $LOCALIZE[31078]</label>
+					<altlabel>$LOCALIZE[31051]: $LOCALIZE[31077]</altlabel>
+					<include>Objects_MediaMenuButton</include>
+				</control>
+
+				<control type="togglebutton" id="996">
+					<include>Objects_MediaMenuButton</include>				
+					<label>$LOCALIZE[31042]</label>
+					<altlabel>$LOCALIZE[31043]</altlabel>
+					<usealttexture>Skin.HasSetting(darkstripshow)</usealttexture>
+					<onclick>Skin.ToggleSetting(darkstripshow)</onclick>
+					<onclick>XBMC.ReloadSkin</onclick>
+					<visible>Control.IsVisible(51)</visible>
+				</control>				
+				
+				<include>Objects_PicturesSetupButton</include>
+				
+				<include>Objects_MediaDebugButtons</include>
+			</control>
+		</control>
+
+	</control>
+
+	<include>Furniture_DarkGradient</include>	
+	<include>ViewChange</include>	
+	<!--<include>Background_ContextBlack</include>-->
+	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
+	
+	</controls>
 </window>

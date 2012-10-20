@@ -1,102 +1,388 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="20">
-    <defaultcontrol>50</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
-    <views>50,57,500,505,509,511,512,53</views>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <controls>
-        <control type="multiimage">
-            <imagepath background="true">special://skin/backgrounds/search/</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>![Substring(Skin.String(SearchHomeItem.MultiFanart),/) | Substring(Skin.String(SearchHomeItem.MultiFanart),\)]</visible>
-        </control>
-        <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/search/" background="true">$INFO[Skin.String(SearchHomeItem.MultiFanart)]</imagepath>
-            <visible>[SubString(Skin.String(SearchHomeItem.MultiFanart),\) | SubString(Skin.String(SearchHomeItem.MultiFanart),/)]</visible>
-        </control>
-        <control type="image">
-            <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
-            <include>CommonFanartVarsSingle</include>
-        </control>
-        <include>VideoBackground</include>
-        <control type="image">
-            <posy>-207</posy>
-            <width>1920</width>
-            <height>1080</height>
-            <texture>common/white.png</texture>
-            <colordiffuse>black</colordiffuse>
-            <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-            <animation effect="fade" time="250">WindowOpen</animation>
-            <animation effect="fade" time="250">WindowClose</animation>
-            <animation effect="fade" start="0" end="100" time="400" delay="100">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
-            <visible>!Control.IsVisible(514) + !Control.IsVisible(516) + !Control.IsVisible(511) + !Control.IsVisible(518)</visible>
-            <visible>[[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]]</visible>
-        </control>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <texture>common/white.png</texture>
-            <colordiffuse>black</colordiffuse>
-            <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-            <animation effect="fade" time="250">WindowOpen</animation>
-            <animation effect="fade" time="250">WindowClose</animation>
-            <animation effect="fade" start="0" end="100" time="550" delay="200">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="100">Hidden</animation>
-            <visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)]</visible>
-        </control>
-        <include>Furniture_Showcase</include>
-        <include>Furniture_Glow</include>
-        <include>WallPanel</include>
-        <control type="group">
-            <include>CommonRootView</include>
-            <include>Viewtype_Wall</include>
-            <include>ShowcaseQuadrate</include>
-            <include>AddonWall</include>
-            <include>ShiftView</include>
-            <include>TriPanelSquare</include>
-            <include>LowList</include>
-            <!-- view id=57 -->
-        </control>
-        <include>FloorLabels</include>
-        <include>Furniture_DarkGradient</include>
-        <control type="button" id="7000">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(9000)</onfocus>
-            <visible>Control.IsVisible(509)</visible>
-        </control>
-        <control type="group">
-            <include>Animation_HideBreadCrumbs</include>
-            <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>38</height>
-                        <texture>common/puzzle_icon.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0" end="-9" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[24001]</label>
-                    </control>
-                    <control type="label">
-                        <label>$INFO[Container.FolderName, / ]</label>
-                        <include>BreadcrumbsLabel</include>
-                    </control>
-                </control>
-            </control>
-            <include>Breadcrumbs_Furniture</include>
-        </control>
-        <include>Furniture_NowPlayingWidget</include>
-        <include>Media_Menu</include>
-    </controls>
+﻿<window id="10040">
+	<defaultcontrol always="true">6070</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<control type="multiimage">
+			<include>BackgroundVarsGlobal</include>
+			<include>BackgroundVarsAdd-ons</include>
+			<info>Skin.String(Customadd-ons)</info>
+		  </control>
+		 	<control type="image">
+			  <posx>0</posx>
+			  <posy>0</posy>
+			  <width>1280</width>
+			  <height>720</height>
+			  <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+        <include>Animation_CommonFade2</include>
+        <fadetime>200</fadetime>
+        <visible>!Skin.HasSetting(noAddonfanart)</visible>
+	  	</control>
+      <control type="group">
+			<include>FullscreenDimensions</include>
+			<animation type="WindowOpen" reversible="false" condition="!Window.Previous(4) + !Window.Previous(12) + !Window.Previous(13) + !Window.Previous(14) + !Window.Previous(15) + !Window.Previous(16) + !Window.Previous(18) + !Window.Previous(19) + !Window.Previous(17) + !Window.Previous(34) + !Window.Previous(56) + !Window.Previous(604) + !Window.Previous(676)">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="200" />
+				<effect type="fade" start="0" end="100" time="300" />
+			</animation>
+			<animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="200" />
+				<effect type="fade" start="100" end="0" time="300" />
+			</animation>
+			<include>Animation_CommonFade</include>
+			<include>Furniture_SettingsBackPanel</include>
+			<control type="label">
+				<description>sectiontitle</description>
+				<label>33063</label>
+				<include>Objects_SettingsSectionTitle</include>
+				<visible>!Window.IsVisible(146)</visible>
+			</control>
+			<control type="label">
+				<description>sectiontitle</description>
+				<posx>308</posx>
+				<posy>70</posy>
+				<width>936</width>
+				<height>49</height>
+				<label>24001</label>
+				<textcolor>FFbec0c2</textcolor>
+				<include>Animation_CommonFadeOpenClose</include>
+				<font>Font_SettingsSectionTitle</font>
+				<visible>!Window.IsVisible(146)</visible>
+			</control>
+			<control type="group">
+				<include>Settings_ButtonGroupDimensionsXBMC</include>
+				<include>Animation_CommonFade</include>
+				<control type="button" id="8">
+					<description>Addons List Unfocused</description>
+					<posy>0</posy>
+					<label>24001</label>
+					<include>Objects_SettingsSectionMenuButton</include>
+					<onclick>SetFocus(55)</onclick>
+					<onleft>8</onleft>
+					<onright>55</onright>
+					<onup>9</onup>
+					<ondown>9</ondown>
+					<visible allowhiddenfocus="true">![Control.HasFocus(8) | Control.HasFocus(55)] + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="button" id="8">
+					<description>Addons List Focused</description>
+					<posy>0</posy>
+					<label>24001</label>
+					<include>Objects_SettingsSectionMenuButtonFocused</include>
+					<onclick>SetFocus(55)</onclick>
+					<onleft>8</onleft>
+					<onright>55</onright>
+					<onup>9</onup>
+					<ondown>9</ondown>
+				  <visible allowhiddenfocus="true">[Control.HasFocus(8) | Control.HasFocus(55)] + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="label">
+					<description>Addons List Subtitle Unfocused</description>
+					<posy>32</posy>
+					<label>32027</label>
+					<textcolor>95FFFFFF</textcolor>
+					<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+					<visible>![Control.HasFocus(8) | Control.HasFocus(55)] + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="label">
+					<description>Addons List Subtitle Focused</description>
+					<posy>32</posy>
+					<label>32027</label>
+					<textcolor>95FFFFFF</textcolor>
+					<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+					<visible>[Control.HasFocus(8) | Control.HasFocus(55)] + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="button" id="9">
+					<description>Configure Unfocused</description>
+					<posy>58</posy>
+					<label>31054</label>
+					<include>Objects_SettingsSectionMenuButton</include>
+					<onclick>SetFocus(5)</onclick>
+					<onup>8</onup>
+					<ondown>8</ondown>
+					<onleft>5</onleft>
+					<onright>5</onright>
+					<visible allowhiddenfocus="true">![Control.HasFocus(9) | ControlGroup(9000).HasFocus()] + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="button" id="9">
+					<description>Configure Focused</description>
+					<posy>58</posy>
+					<label>31054</label>
+					<include>Objects_SettingsSectionMenuButtonFocused</include>
+					<onclick>SetFocus(5)</onclick>
+					<onup>8</onup>
+					<ondown>8</ondown>
+					<onleft>5</onleft>
+					<onright>5</onright>
+					<visible allowhiddenfocus="true">[Control.HasFocus(9) | ControlGroup(9000).HasFocus()] + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="label">
+					<description>Configure Subtitle Unfocused</description>
+					<posy>90</posy>
+					<label>32030</label>
+					<textcolor>95FFFFFF</textcolor>
+					<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+					<visible>![Control.HasFocus(9) | ControlGroup(9000).HasFocus()] + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="label">
+					<description>Configure Subtitle Focused</description>
+					<posy>90</posy>
+					<label>32030</label>
+					<textcolor>95FFFFFF</textcolor>
+					<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+					<visible>Control.HasFocus(9) | ControlGroup(9000).HasFocus()</visible>
+				</control>
+			  </control>
+			  <control type="image">
+          <posx>42</posx>
+          <posy>28</posy>
+          <width>1196</width>
+          <height>651</height>
+          <texture>settings/settings_panelfront.png</texture>
+			  </control>
+			  <control type="grouplist" id="9000">
+			    <include>Objects_SettingsControlAreaVars</include>
+		      <visible>Control.HasFocus(9) | ControlGroup(9000).HasFocus()</visible>
+		      <posx>0</posx>
+					<posy>0</posy>
+					<label>-</label>
+					<onleft>9</onleft>
+					<onright>9</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<control type="radiobutton" id ="5">
+					  <description>Enable add-ons auto-updates</description>
+					  <include>Objects_SettingsDefaultRadioButton</include>
+					  <label>31945</label>
+				</control>
+				<control type="radiobutton" id ="6">
+					<description>No notifications</description>
+					<include>Objects_SettingsDefaultRadioButton</include>
+					<label>31944</label>
+				</control>
+				<control type="radiobutton" id ="500">
+					<description>Enable add-on fanart</description>
+					<include>Objects_SettingsDefaultRadioButton</include>
+					<label>31943</label>
+				  <onclick>Skin.ToggleSetting(noaddonfanart)</onclick>
+				  <selected>!Skin.HasSetting(noaddonfanart)</selected>
+				</control>
+				
+			  </control>
+			  <!--<control type="label">
+          <description>Updater info</description>
+			    <posx>50</posx>
+			    <posy>196</posy>
+			    <height>49</height>
+			    <label>32040</label>
+			    <font>Font_SettingsOptions</font>
+			    <textcolor>FF939597</textcolor>
+          <aligny>center</aligny>
+			  </control>
+			  </control>
+			  <control type="label" id="491">
+			    <description>Updater progress</description>
+			    <posx>830</posx>
+					<posy>147</posy>
+					<width>536</width>
+					<height>49</height>
+					<label>-</label>
+					<font>Font_SettingsOptions</font>
+					<textcolor>FF939597</textcolor>
+					<aligny>center</aligny>
+					<align>right</align>
+				</control>-->
+
+		<!-- Browser -->
+		   <control type="image">
+			    <include>Animation_CommonFade</include>
+          <posx>259</posx>
+			    <posy>403</posy>
+			    <width>1021</width>
+			    <height>317</height>
+			    <texture>settings/settings_panelback_overlay.png</texture>
+			    <visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+      </control>
+		  <control type="list" id="55">
+		      <include>Animation_CommonFade</include>
+				  <posx>258</posx>
+			    <posy>120</posy>
+          <width>936</width>
+          <height>255</height>
+          <onup>55</onup>
+			    <ondown>55</ondown>
+          <onleft>8</onleft>
+			    <onright>60</onright>
+			    <orientation>vertical</orientation>
+			    <pagecontrol>60</pagecontrol>
+        <itemlayout height="49">
+				<control type="image">
+					<width>936</width>
+					<height>49</height>
+					<texture>settings/settings_radiobuttonoff.png</texture>
+					<visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+				</control>
+		       <control type="label">
+			     <posx>50</posx>
+					<posy>0</posy>
+					<width>536</width>
+					<height>49</height>
+					<aligny>center</aligny>
+					<font>Font_SettingsOptions</font>
+					<textcolor>FF939597</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>false</scroll>
+				  <visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="label">
+					<posx>910</posx>
+					<posy>0</posy>
+					<width>536</width>
+					<height>49</height>
+					<font>Font_SettingsOptions</font>
+					<textcolor>FF939597</textcolor>	
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label2]</label>
+          <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+				</control>
+        </itemlayout>
+          <focusedlayout width="0" height="49">
+          <control type="image">
+					<width>936</width>
+					<height>49</height>
+					<texture>settings/settings_radiobuttonoff.png</texture>
+					<visible>Control.HasFocus(8) + !Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>936</width>
+					<height>49</height>
+					<texture>settings/settings_radiobuttonofffocus.png</texture>
+					<include>skin_allcolors</include>
+          <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+				</control>
+				<control type="label">
+					<posx>50</posx>
+					<posy>0</posy>
+					<width>536</width>
+					<height>49</height>
+					<font>Font_SettingsOptions</font>
+					<aligny>center</aligny>
+					<textcolor>FFFFFFFF</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				  <visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+      </control>
+      <control type="label">
+					<posx>910</posx>
+					<posy>0</posy>
+					<width>536</width>
+					<height>49</height>
+					<font>Font_SettingsOptions</font>
+					<aligny>center</aligny>
+					<textcolor>FFFFFFFF</textcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label2]</label>
+          <visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+					</control>
+			</focusedlayout>
+			</control>
+			<control type="image">
+			  <include>Animation_CommonFade</include>
+				<posx>566</posx>
+				<posy>438</posy>
+				<width>320</width>
+				<height>160</height>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<texture>home/nowplaying_info.png</texture>
+				<visible>!IsEmpty(ListItem.property(Addon.Description)) + [Control.HasFocus(8) | Control.HasFocus(55)] + !Window.IsVisible(146)</visible>
+			</control>
+			<control type="image">
+			  <include>Animation_CommonFade</include>
+				<posx>305</posx>
+				<posy>389</posy>
+				<width>270</width>
+				<height>270</height>
+				<aspectratio align="left" aligny="top" stretchdiffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="thumbs/cdcover_mask.png" />
+				<texture fallback="DefaultAddSource.png">$INFO[ListItem.Icon]</texture>
+				  <bordertexture border="-13">thumbs/cd_shadow.png</bordertexture>
+				<bordersize>8</bordersize>
+				<visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+			</control>
+			<control type="image">
+			  <include>Animation_CommonFade</include>
+				<posx>305</posx>
+				<posy>392</posy>
+				<width>265</width>
+				<height>265</height>
+				<aspectratio align="left" aligny="top" stretchdiffuse="false">keep</aspectratio>
+				<texture>thumbs/cd_glass_noedge.png</texture>
+				<visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+			</control>
+			<control type="textbox">
+				<include>Animation_CommonFade</include>
+				<description>Description</description>
+				<posx>600</posx>
+				<posy>446</posy>
+				<width>570</width>
+				<height>200</height>
+				<font>Plot</font>
+				<align>justify</align>
+				<textcolor>FFFFFFFF</textcolor>
+				<label>$INFO[ListItem.Property(Addon.Description)]</label>
+				<autoscroll delay="15000" time="2000" repeat="15000">Skin.HasSetting(allowscroll)</autoscroll>
+				<visible>Control.HasFocus(8) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+				</control>
+		  </control>
+		  <control type="group">
+		    <visible>Skin.HasSetting(skinupdateon)</visible>
+			  <animation effect="zoom" start="100" end="60" time="0" easing="inout" tween="circle" condition="Window.IsActive(AddonBrowser) + [Control.HasFocus(8) | Control.HasFocus(55) | Control.HasFocus(60)]">Conditional</animation>
+			  <animation effect="slide" end="795,-880" time="0" easing="inout" tween="circle" condition="Window.IsActive(AddonBrowser) + [Control.HasFocus(8) | Control.HasFocus(55) | Control.HasFocus(60)]">Conditional</animation>
+		    <include>Animation_DialogPopup</include>
+			  <include>Dialogs_Group</include>
+			  <include>Dialogs_Tablet</include>
+			<control type="progress" id="404">
+			  <include>Dialogs_Progress</include>
+			</control>
+			  <include>Dialogs_SkinIcon</include>
+			<control type="label" id="401">
+			  <include>Dialogs_Label2</include>
+		  </control>
+		  <control type="label" id="402">
+			  <include>Dialogs_Label3</include>
+		  </control>
+		  </control>
+		  <control type="scrollbar" id="60"><!-- Scroll Bar -->
+			  <description>Scroll bar</description>
+			  <posx>1205</posx>
+			  <posy>108</posy>
+			  <width>65</width>
+			  <height>300</height>
+			  <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+			  <texturesliderbackground>windows/scrollbarbacklist.png</texturesliderbackground>
+			  <texturesliderbar>-</texturesliderbar>
+			  <texturesliderbarfocus>-</texturesliderbarfocus>
+			  <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+			  <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+			  <pulseonselect/>
+			  <orientation>vertical</orientation>
+			  <showonepage>false</showonepage>
+			  <onup>60</onup>
+			  <ondown>60</ondown>
+			  <onleft>55</onleft>
+			  <onright>55</onright>
+			  <include>Animation_CommonFade</include>
+			</control>
+			<control type="button" id="6070">
+			  <description>Updater control</description>
+        <include>invisiblebutton</include>
+			  <onfocus>SetFocus(55)</onfocus>
+			  <onfocus>Skin.Reset(skinupdateon)</onfocus>
+			</control>
+		<include condition="Skin.HasSetting(nowplayingwidget)">Furniture_NowPlayingWidget</include>
+		<include>Background_ContextBlack</include>
+	</controls>
 </window>

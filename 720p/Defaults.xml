@@ -1,234 +1,263 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <default type="image">
-        <posx>0</posx>
-        <posy>0</posy>
-        <texture>-</texture>
-        <colorkey>0</colorkey>
-        <aspectratio>stretch</aspectratio>
-    </default>
-    <default type="multiimage">
-        <include>FullscreenDimensions</include>
-        <timeperimage>7000</timeperimage>
-        <randomize>true</randomize>
-        <fadetime>900</fadetime>
-        <aspectratio align="center">scale</aspectratio>
-        <include condition="![Window.IsActive(1115) | Window.IsActive(weather)]">Animation_WindowFade250</include>
-    </default>
-    <default type="label">
-        <posx>0</posx>
-        <posy>0</posy>
-        <label>-</label>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-        <scrollspeed>20</scrollspeed>
-    </default>
-    <default type="fadelabel">
-        <posx>0</posx>
-        <posy>0</posy>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <pauseatend>3000</pauseatend>
-        <scrollout>false</scrollout>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-    </default>
-    <default type="button">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>450</width>
-        <height>63</height>
-        <texturefocus border="5">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus border="5">button-nofocus.png</texturenofocus>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-        <font>Font_Reg18</font>
-        <pulseonselect>yes</pulseonselect>
-        <textcolor>white</textcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <focusedcolor>white</focusedcolor>
-        <textoffsetx>10</textoffsetx>
-        <aligny>center</aligny>
-    </default>
-    <default type="togglebutton">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>450</width>
-        <height>63</height>
-        <pulseonselect>yes</pulseonselect>
-        <texturefocus border="5">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus border="5">button-nofocus.png</texturenofocus>
-        <alttexturefocus border="5">views/tripanel/listselect_fo.png</alttexturefocus>
-        <alttexturenofocus border="5">dialogs/context_nofocus.png</alttexturenofocus>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <focusedcolor>white</focusedcolor>
-        <textoffsetx>10</textoffsetx>
-        <aligny>center</aligny>
-    </default>
-    <default type="textbox">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>1920</width>
-        <height>1080</height>
-        <colordiffuse>FFFFFFFF</colordiffuse>
-        <textcolor>white2</textcolor>
-        <font>Font_Reg18</font>
-    </default>
-    <default type="progress">
-        <posx>0</posx>
-        <posy>0</posy>
-        <texturebg border="6,0,6,0">OSDProgressBack.png</texturebg>
-        <lefttexture>-</lefttexture>
-        <midtexture border="9,0,9,0">OSDProgressMid.png</midtexture>
-        <righttexture>-</righttexture>
-        <overlaytexture>-</overlaytexture>
-    </default>
-    <default type="spincontrol">
-        <posx>0</posx>
-        <posy>0</posy>
-        <textureup>settings/spin-up.png</textureup>
-        <texturedown>settings/spin-down.png</texturedown>
-        <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-        <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-        <align>right</align>
-        <width>60</width>
-        <height>98</height>
-        <font>Font_Reg18</font>
-        <reverse>yes</reverse>
-        <textcolor>white</textcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <subtype>text</subtype>
-        <textoffsetx>-8</textoffsetx>
-        <textoffsety>0</textoffsety>
-        <aligny>-</aligny>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-    </default>
-    <default type="spincontrolex">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>450</width>
-        <height>63</height>
-        <spinwidth>60</spinwidth>
-        <spinheight>92</spinheight>
-        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>-</texturenofocus>
-        <textureup>scroll-up-2.png</textureup>
-        <texturedown>scroll-down-2.png</texturedown>
-        <textureupfocus>scroll-up-focus-2.png</textureupfocus>
-        <texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <textoffsetx>10</textoffsetx>
-        <aligny>center</aligny>
-        <reverse>yes</reverse>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-    </default>
-    <default type="radiobutton">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>450</width>
-        <height>63</height>
-        <radiowidth>141</radiowidth>
-        <radioheight>98</radioheight>
-        <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
-        <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
-        <texturefocus border="5">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus border="5">button-nofocus.png</texturenofocus>
-        <label>215</label>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <textoffsetx>10</textoffsetx>
-        <aligny>center</aligny>
-        <pulseonselect>yes</pulseonselect>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-    </default>
-    <default type="selectbutton">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>450</width>
-        <height>75</height>
-        <label>-</label>
-        <font>Font_Reg18</font>
-        <texturefocus>-</texturefocus>
-        <texturenofocus>-</texturenofocus>
-        <texturebg>button-focus.png</texturebg>
-        <textureleft>scroll-left.png</textureleft>
-        <textureleftfocus>scroll-left-focus.png</textureleftfocus>
-        <textureright>scroll-right.png</textureright>
-        <texturerightfocus>scroll-right-focus.png</texturerightfocus>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <aligny>center</aligny>
-        <pulseonselect>yes</pulseonselect>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-    </default>
-    <default type="slider">
-        <controloffsetx>75</controloffsetx>
-        <controloffsety>0</controloffsety>
-    </default>
-    <default type="sliderex">
-        <height>52</height>
-        <textoffsetx>10</textoffsetx>
-        <aligny>center</aligny>
-        <texturefocus border="5">button-focus.png</texturefocus>
-        <texturenofocus border="5">button-nofocus.png</texturenofocus>
-        <sliderwidth>150</sliderwidth>
-        <sliderheight>20</sliderheight>
-        <texturesliderbar>osd_slider_bg.png</texturesliderbar>
-        <textureslidernib>osd_slider_nibNF.png</textureslidernib>
-        <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-    </default>
-    <default type="mover">
-        <posx>0</posx>
-        <posy>0</posy>
-        <texturefocus>button-focus.png</texturefocus>
-        <texturenofocus>button-nofocus.png</texturenofocus>
-    </default>
-    <default type="resize">
-        <posx>0</posx>
-        <posy>0</posy>
-        <texturefocus>button-focus.png</texturefocus>
-        <texturenofocus>button-nofocus.png</texturenofocus>
-    </default>
-    <default type="edit">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>450</width>
-        <height>63</height>
-        <texturefocus>button-focus.png</texturefocus>
-        <texturenofocus>button-nofocus.png</texturenofocus>
-        <font>Font_Reg18</font>
-        <textcolor>white</textcolor>
-        <disabledcolor>grey3</disabledcolor>
-        <selectedcolor>$VAR[SpotColorVar]</selectedcolor>
-        <textoffsetx>10</textoffsetx>
-        <aligny>center</aligny>
-    </default>
-    <default type="scrollbar">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>1005</width>
-        <height>9</height>
-        <texturesliderbackground border="21,0,21,0">-</texturesliderbackground>
-        <texturesliderbar border="6,0,6,0">views/texturesliderbar_hor.png</texturesliderbar>
-        <texturesliderbarfocus border="6,0,6,0">views/texturesliderbarfocus_hor.png</texturesliderbarfocus>
-        <textureslidernib>views/scrollBarNib.png</textureslidernib>
-        <textureslidernibfocus>views/scrollBarNib2.png</textureslidernibfocus>
-        <showonepage>false</showonepage>
-        <orientation>horizontal</orientation>
-        <animation effect="fade" time="200">WindowOpen</animation>
-        <animation effect="fade" time="200">WindowClose</animation>
-        <animation effect="fade" time="200">Visible</animation>
-        <animation effect="fade" time="200">Hidden</animation>
-    </default>
+	<default type="image">
+		<description>default image</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<texture></texture>
+	</default>
+
+	<default type="label">
+		<description>default label</description>
+		<posx>80</posx>
+		<posy>60</posy>
+		<label></label>
+		<font>font13</font>
+		<textcolor>d0FFFFFF</textcolor>
+	</default>
+
+	<default type="button">
+		<description>default button</description>
+		<posx>300</posx>
+		<posy>200</posy>
+		<width>140</width>
+		<height>33</height>
+		<texturenofocus>-</texturenofocus>
+		<font>font13</font>
+		<textcolor>d0ffffff</textcolor>
+		<colordiffuse>FFffffff</colordiffuse>
+		<pulseonselect>false</pulseonselect>
+		<disabledcolor>60ffffff</disabledcolor>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+	</default>
+
+	<default type="buttonM">
+		<description>default buttonm</description>
+		<posx>430</posx>
+		<posy>460</posy>
+		<width>120</width>
+		<height>35</height>
+		<texturefocus>button-powerdown.png</texturefocus>
+		<texturenofocus>button-powerdownNF.png</texturenofocus>
+		<label>-</label>
+		<bitmaps>2</bitmaps>
+		<font>font14</font>
+		<textcolor>d0ffffff</textcolor>
+		<colordiffuse>FFffffff</colordiffuse>
+		<disabledcolor>60ffffff</disabledcolor>
+	</default>
+
+	<default type="togglebutton">
+		<description>default togglebutton</description>
+		<posx>185</posx>
+		<posy>167</posy>
+		<width>10</width>
+		<height>12</height>
+		<label>-</label>
+		<font>font13</font>
+		<textcolor>d0ffffff</textcolor>
+		<colordiffuse>FFffffff</colordiffuse>
+		<disabledcolor>60ffffff</disabledcolor>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+	</default>
+
+	<default type="radiobutton">
+		<description>default radio button</description>
+		<posx>50</posx>
+		<posy>268</posy>
+		<width>140</width>
+		<height>35</height>
+		<textureradiofocus>check-box.png</textureradiofocus>
+		<textureradionofocus>check-boxNF.png</textureradionofocus>
+		<texturefocus>Button-Home.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<label>215</label>
+		<font>font13</font>
+		<textcolor>d0ffffff</textcolor>
+		<colordiffuse>ffffffff</colordiffuse>
+		<disabledcolor>60ffffff</disabledcolor>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+	</default>
+
+	<default type="selectbutton">
+		<description>default select button</description>
+		<posx>60</posx>
+		<posy>192</posy>
+		<width>140</width>
+		<height>35</height>
+		<label>132</label>
+		<font>font13</font>
+		<texturefocus>Button-Home.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<texturebg>button-focus.png</texturebg>
+		<textureleft>scroll-left.gif</textureleft>
+		<textureleftfocus>scroll-left-focus.png</textureleftfocus>
+		<textureright>scroll-right.gif</textureright>
+		<texturerightfocus>scroll-right-focus.png</texturerightfocus>
+		<font>font13</font>
+		<textcolor>d0ffffff</textcolor>
+		<colordiffuse>ffffffff</colordiffuse>
+		<disabledcolor>60ffffff</disabledcolor>
+		<onleft>50</onleft>
+		<onright>50</onright>
+		<onup>3</onup>
+		<ondown>7</ondown>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+	</default>
+
+	<default type="listcontrolex">
+		<description>default listcontrolex</description>
+		<posx>274</posx>
+		<posy>220</posy>
+		<width>440</width>
+		<height>260</height>
+		<spinwidth>12</spinwidth>
+		<spinheight>16</spinheight>
+		<spinposx>718</spinposx>
+		<spinposy>237</spinposy>
+		<spinfont>font13</spinfont>
+		<spincolor>FFB2D4F5</spincolor>
+		<textureup>scroll-up.png</textureup>
+		<texturedown>scroll-down.png</texturedown>
+		<textureupfocus>scroll-up-focus.gif</textureupfocus>
+		<texturedownfocus>scroll-down-focus.gif</texturedownfocus>
+		<texturefocus>Button-List.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textureheight>26</textureheight>
+		<image>defaultFolder.png</image>
+		<font>font12</font>
+		<include>selectedcolor</include>
+		<textcolor>d0ffffff</textcolor>
+		<colordiffuse>FFffffff</colordiffuse>
+		<suffix> |</suffix>
+		<aligny>center</aligny>
+	</default>
+
+	<default type="fadelabel">
+		<description>default fadelabel</description>
+		<posx>55</posx>
+		<posY>530</posY>
+		<width>180</width>
+		<align>left</align>
+		<font>font13</font>
+		<textcolor>d0ffffff</textcolor>
+	</default>
+
+	<default type="textbox">
+		<description>default textarea</description>
+		<posx>220</posx>
+		<posy>220</posy>
+		<width>410</width>
+		<height>270</height>
+		<spinwidth>16</spinwidth>
+		<spinheight>16</spinheight>
+		<spinposx>640</spinposx>
+		<spinposy>520</spinposy>
+		<spinfont></spinfont>
+		<spincolor>d0ffffff</spincolor>
+		<textureup>scroll-up.png</textureup>
+		<texturedown>scroll-down.png</texturedown>
+		<textureupfocus>scroll-up-focus.gif</textureupfocus>
+		<texturedownfocus>scroll-down-focus.gif</texturedownfocus>
+		<image>icon-folder.png</image>
+		<font>font13</font>
+		<textcolor>d0ffffff</textcolor>
+		<colordiffuse>ffffffff</colordiffuse>
+	</default>
+
+	<default type="progress">
+		<description>default progress control </description>
+		<posx>100</posx>
+		<posy>325</posy>
+		<texturebg>Progress-Back.png</texturebg>
+		<lefttexture>Progress-Left.png</lefttexture>
+		<midtexture>Progress-Mid.png</midtexture>
+		<righttexture>Progress-Right.png</righttexture>
+		<overlaytexture>-</overlaytexture>
+	</default>
+
+	<default type="spincontrol">
+		<description>default spin control</description>
+		<posx>330</posx>
+		<posy>126</posy>
+		<textureup>scroll-up.png</textureup>
+		<texturedown>scroll-down.png</texturedown>
+		<textureupfocus>scroll-up-focus.gif</textureupfocus>
+		<texturedownfocus>scroll-down-focus.gif</texturedownfocus>
+		<align>right</align>
+		<width>15</width>
+		<height>20</height>
+		<font>font14</font>
+		<reverse>yes</reverse>
+		<textcolor>d0ffffff</textcolor>
+		<disabledcolor>60ffffff</disabledcolor>
+		<subtype>text</subtype>
+		<textoffsetx>-5</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<aligny>-</aligny>
+	</default>
+
+	<default type="spincontrolex">
+		<description>default spincontrolex</description>
+		<posx>530</posx>
+		<posy>150</posy>
+		<width>300</width>
+		<height>33</height>
+		<spinwidth>15</spinwidth>
+		<spinheight>20</spinheight>
+		<texturefocus>list-focus.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textureup>scroll-up.png</textureup>
+		<texturedown>scroll-down.png</texturedown>
+		<textureupfocus>scroll-up-focus.gif</textureupfocus>
+		<texturedownfocus>scroll-down-focus.gif</texturedownfocus>
+		<font>font13</font>
+		<textcolor>ddffffff</textcolor>
+		<colordiffuse>ffffffff</colordiffuse>
+		<disabledcolor>60d0d0d0</disabledcolor>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+		<reverse>yes</reverse>
+	</default>
+
+	<default type="checkmark">
+		<description>default checkmark</description>
+		<posx>208</posx>
+		<posy>166</posy>
+		<textcolor>d0FFFFFF</textcolor>
+		<disabledcolor>60ffffff</disabledcolor>
+		<font>font13</font>
+		<label>167</label>
+		<texturecheckmark>check-box.png</texturecheckmark>
+		<texturecheckmarknofocus>check-boxNF.png</texturecheckmarknofocus>
+		<markwidth>15</markwidth>
+		<markheight>20</markheight>
+		<align>left</align>
+		<shadow>no</shadow>
+	</default>
+
+	<default type="slider">
+		<description>default slider control</description>
+		<controloffsetx>75</controloffsetx>
+		<controloffsety>0</controloffsety>
+	</default>
+
+	<default type="mover">
+		<description>default mover control</description>
+		<posx>60</posx>
+		<posy>192</posy>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+	</default>
+
+	<default type="resize">
+		<description>default resize control</description>
+		<posx>60</posx>
+		<posy>192</posy>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+	</default>
 </includes>

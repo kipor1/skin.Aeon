@@ -1,69 +1,83 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="11">
-    <defaultcontrol>8</defaultcontrol>
-    <controls>
-        <control type="videowindow" id="20">
-            <include>FullscreenDimensions</include>
-            <visible>Player.HasVideo</visible>
-        </control>
-        <control type="group">
-            <visible>!Player.HasVideo</visible>
-            <include>CommonSettingsBackground</include>
-        </control>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <colordiffuse>black</colordiffuse>
-            <texture>common/white.png</texture>
-            <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-            <animation effect="fade" start="0" end="100" time="3000">WindowOpen</animation>
-            <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-        </control>
-        <control type="mover" id="8">
-            <width>192</width>
-            <height>192</height>
-            <texturefocus>calibration/calibrate-topleft-focus.png</texturefocus>
-            <texturenofocus>calibration/calibrate-topleft.png</texturenofocus>
-        </control>
-        <control type="mover" id="9">
-            <posx>1050</posx>
-            <posy>750</posy>
-            <width>192</width>
-            <height>192</height>
-            <texturefocus>calibration/calibrate-bottomright-focus.png</texturefocus>
-            <texturenofocus>calibration/calibrate-bottomright.png</texturenofocus>
-        </control>
-        <control type="mover" id="10">
-            <posx>300</posx>
-            <posy>750</posy>
-            <width>768</width>
-            <height>192</height>
-            <texturefocus>calibration/calibrate-subtitles-focus.png</texturefocus>
-            <texturenofocus>calibration/calibrate-subtitles.png</texturenofocus>
-        </control>
-        <control type="resize" id="11">
-            <posy>348</posy>
-            <width>384</width>
-            <height>384</height>
-            <texturefocus>calibration/calibrate-pixelratio-focus.png</texturefocus>
-            <texturenofocus>calibration/calibrate-pixelratio.png</texturenofocus>
-        </control>
-        <control type="group">
-            <posx>30</posx>
-            <posy>120</posy>
-            <control type="fadelabel" id="2">
-                <posy>15</posy>
-                <width>1860</width>
-                <label>-</label>
-                <align>center</align>
-                <font>Font_Bold20</font>
-            </control>
-            <control type="fadelabel" id="3">
-                <posy>60</posy>
-                <width>1860</width>
-                <label>-</label>
-                <align>center</align>
-                <font>Font_Bold20</font>
-            </control>
-        </control>
-    </controls>
+	<defaultcontrol>8</defaultcontrol>
+	<controls>
+		<control type="videowindow" id="20">
+			<description>videowindow</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+		</control>
+		<control type="mover" id="8">
+			<description>top left mover</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<texturefocus>calibration/calibrate-topleft-focus.png</texturefocus>
+			<texturenofocus>calibration/calibrate-topleft.png</texturenofocus>
+		</control>
+		<control type="mover" id="9">
+			<description>right bottom mover</description>
+			<posx>700</posx>
+			<posy>500</posy>
+			<texturefocus>calibration/calibrate-bottomright-focus.png</texturefocus>
+			<texturenofocus>calibration/calibrate-bottomright.png</texturenofocus>
+		</control>
+		<control type="mover" id="10">
+			<description>subtitle position mover</description>
+			<posx>200</posx>
+			<posy>500</posy>
+			<texturefocus>calibration/calibrate-subtitles-focus.png</texturefocus>
+			<texturenofocus>calibration/calibrate-subtitles.png</texturenofocus>
+		</control>
+		<control type="resize" id="11">
+			<description>pixel aspect ratio box</description>
+			<posx>0</posx>
+			<posy>270</posy>
+			<width>288</width>
+			<height>288</height>
+			<texturefocus>calibration/calibrate-pixelratio-focus.png</texturefocus>
+			<texturenofocus>calibration/calibrate-pixelratio.png</texturenofocus>
+		</control>
+		<control type="group">
+			<posx>240</posx>
+			<posy>60</posy>
+			<control type="image" id="1">
+				<description>rectangle image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>800</width>
+				<height>80</height>
+				<colordiffuse>AAFFFFFF</colordiffuse>
+				<texture border="6">dialog_background.png</texture>
+			</control>
+			<control type="image" id="1">
+				<description>rectangle image</description>
+				<posx>5</posx>
+				<posy>5</posy>
+				<width>790</width>
+				<height>70</height>
+				<colordiffuse>BBFFFFFF</colordiffuse>
+				<texture>menu_back.png</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="label" id="2">
+				<description>coordinates label</description>
+				<posx>20</posx>
+				<posy>10</posy>
+				<width>750</width>
+				<label>-</label>
+				<align>center</align>
+				<font>font13</font>
+			</control>
+			<control type="label" id="3">
+				<description>help information</description>
+				<posx>20</posx>
+				<posy>40</posy>
+				<width>750</width>
+				<label>-</label>
+				<align>center</align>
+				<font>font13</font>
+			</control>
+		</control>
+	</controls>
 </window>
