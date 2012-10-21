@@ -1,91 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="1">
-	<defaultcontrol>50</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
-	<controls>
-
-	<control type="multiimage">
-		<include>BackgroundVarsGlobal</include>
-		<include>BackgroundVarsGames</include>
-	</control>
-
-	<include>Furniture_WallBackground</include>
-	
-	<control type="group">
-		<include>FullscreenDimensions</include>
-		<include>Animation_OpenCloseZoom</include>
-		
-		<include>Furniture_Time</include>
-		<include>Furniture_MediaPanel</include>
-		<include>Objects_ShowcaseMenuPanel</include>
-
-		<include>Viewtype_Wall</include>
-		<include>Furniture_WallTime</include>
-		<include>Furniture_WallRSS</include>		
-		
-		<control type="group" id="7000">
-	
-			<control type="image">
-				<posx>44</posx> 
-				<posy>12</posy>
-				<width>57</width>
-				<height>32</height>
-				<include>Animation_MediaMenuSlide</include>
-				<texture>windows/logo_games.png</texture>
-			</control>	
-	
-			<control type="label">
-				<label>31030</label>			
-				<include>Objects_MediaLabel</include>
-			</control>
-
-			<control type="grouplist" id="7000">
-				<include>Animation_MediaMenuSlide</include>
-				<include>Objects_MediaMenuGroup</include>
-
-				<control type="button" id="900">
-					<label>$LOCALIZE[31050] $INFO[Container.ViewMode]</label>
-					<include>Objects_MediaMenuButton</include>
-					<onclick>SetFocus(69)</onclick>
-				</control>
-
-				<include>Objects_FlattenFlowButton</include>
-
-				<control type="button" id="3">
-					<label>103</label>
-					<include>Objects_MediaMenuButton</include>
-				</control>
-				
-				<control type="togglebutton" id="941">
-					<include>Objects_MediaMenuButton</include>				
-					<label>$LOCALIZE[31059]</label>
-					<altlabel>$LOCALIZE[31056]</altlabel>
-					<usealttexture>Skin.HasSetting(listgamessquare)</usealttexture>
-					<onclick>Skin.SetBool(listgamessquare)</onclick>
-					<altclick>Skin.Reset(listgamessquare)</altclick>
-					<visible>Control.IsVisible(50)</visible>
-				</control>				
-
-				<include>Objects_ThumbsButton</include>					
-
-				<include>Objects_WallGridButton</include>
-				
-				<include>Objects_WallBackdropButton</include>
-
-				<include>Objects_ProgramsSetupButton</include>
-				
-				<include>Objects_MediaDebugButtons</include>
-			</control>
-		</control>
-
-		<include>Viewtype_Showcase</include>
-		<include>Viewtype_List</include>
-		
-	</control>
-
-	<include>Furniture_DarkGradient</include>	
-	<include>ViewChange</include>	
-	<!--<include>Background_ContextBlack</include>-->
-	<include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
-	
-	</controls>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
+    <views>50,52,53,57,500,509,501,504,505,511,512,560,518</views>
+    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    <onload condition="!Skin.HasSetting(ExplainMediaMenu)">ActivateWindow(1123)</onload>
+    <controls>
+        <control type="multiimage">
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <imagepath fallback="special://skin/backgrounds/programs/" background="true">$INFO[Skin.String(ProgramsHomeItem.MultiFanart)]</imagepath>
+            <visible>IsEmpty(ListItem.Art(fanart))</visible>
+            <animation effect="fade" start="0" end="100" time="1000">Visible</animation>
+        </control>
+        <!--<control type="image">
+            <include>FullscreenDimensions</include>
+            <texture>common/black.png</texture>
+            <visible>IsEmpty(ListItem.Art(fanart))</visible>
+            <animation effect="fade" start="100" end="0" time="600">VisibleChange</animation>
+        </control>-->
+        <control type="image">
+            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+            <include>CommonFanartVarsSingle</include>
+        </control>
+        <include>VideoBackground</include>
+        <control type="group">
+            <visible>Control.IsVisible(501) | Control.IsVisible(509) | Control.IsVisible(504)</visible>
+            <include>ShowcaseInfoPaneMusic</include>
+        </control>
+        <include>Furniture_Glow</include>
+        <include>Furniture_Showcase</include>
+        <include>WallPanel</include>
+        <control type="image" id="199">
+            <width>0</width>
+            <height>0</height>
+            <visible>[!Container.OnNext + !Container.OnPrevious + [Window.IsActive(programs) + !Container.Content(addons)] + Skin.HasSetting(infopaneautolauncher)] | [!Skin.HasSetting(infopaneautolauncher) + [Window.IsActive(programs) + !Container.Content(addons)]]</visible>
+            <include>DelayAnimations</include>
+        </control>
+        <control type="group">
+            <animation effect="slide" start="0,0" end="0,650" time="700" easing="out" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
+            <control type="group">
+                <include>CommonRootView</include>
+                <include>ShowcaseQuadrate</include>
+                <include>Showcase</include>
+                <include>AddonWall</include>
+                <include>ShowcaseDVD</include>
+                <include>Viewtype_Wall</include>
+                <include>ShiftView</include>
+                <include>Viewtype_FullscreenPanel</include>
+                <include>TriPanel</include>
+                <include>TriPanelSquare</include>
+                <include>LowList</include>
+            </control>
+            <control type="button" id="7000">
+                <include>HiddenObject</include>
+                <onfocus condition="Skin.HasSetting(infopaneautolauncher)">SetFocus(9000)</onfocus>
+                <onup>9000</onup>
+                <onleft condition="Control.IsVisible(509)">Control.Move(509,-1)</onleft>
+                <onleft condition="Control.IsVisible(501)">Control.Move(501,-1)</onleft>
+                <onleft condition="Control.IsVisible(504)">Control.Move(504,-1)</onleft>
+                <onright condition="Control.IsVisible(509)">Control.Move(509,1)</onright>
+                <onright condition="Control.IsVisible(501)">Control.Move(501,1)</onright>
+                <onright condition="Control.IsVisible(504)">Control.Move(504,1)</onright>
+                <onleft>50</onleft>
+                <onright>50</onright>
+                <ondown>50</ondown>
+                <onback>50</onback>
+            </control>
+            <include>FloorLabels</include>
+            <include>Furniture_DarkGradient</include>
+        </control>
+        <control type="group">
+            <include>Animation_HideBreadCrumbs</include>
+            <include>Breadcrumbs_BackBar</include>
+            <control type="group">
+                <control type="grouplist">
+                    <posx>22</posx>
+                    <width>750</width>
+                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
+                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
+                    <orientation>horizontal</orientation>
+                    <control type="image">
+                        <width>54</width>
+                        <height>38</height>
+                        <texture>common/logo_games.png</texture>
+                        <include>BreadcrumbsIcon</include>
+                        <animation effect="slide" start="0,0" end="-9,0" time="0" condition="true">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <include>BreadcrumbsLabel</include>
+                        <label>$LOCALIZE[10001]</label>
+                    </control>
+                    <control type="label">
+                        <include>BreadcrumbsLabel</include>
+                        <label>$INFO[Container.FolderName, / ]</label>
+                        <include>BreadcrumbsLabel</include>
+                    </control>
+                </control>
+            </control>
+            <include>Breadcrumbs_Furniture</include>
+        </control>
+        <include>Furniture_NowPlayingWidget</include>
+        <include>Media_Menu</include>
+        <include>ContextMenuOverlay</include>
+    </controls>
 </window>
