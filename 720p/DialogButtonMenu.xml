@@ -1,140 +1,212 @@
-<window id="111" type="dialog">
-	<defaultcontrol>4112</defaultcontrol>
-	<zorder>3</zorder>
-	<coordinates>
-	<system>1</system>
-	<posx>0</posx>
-	<posy>0</posy>
-	</coordinates>
-	<animation type="WindowOpen" reversible="false">
-		<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-		<effect type="fade" start="0" end="100" time="300" />
-	</animation>
-	<animation type="WindowClose" reversible="false">
-		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-		<effect type="fade" start="100" end="0" time="200" />
-	</animation>	
-	<controls>
-
-	<control type="group">
-	<posx>486</posx>
-	<posy>184</posy>
-	<width>308</width>
-	<height>404</height>
-	<animation effect="slide" start="0,-19" end="0,-19" time="0" condition="![system.hasloginscreen | System.HasMediaDVD]">Conditional</animation>
-	<animation effect="slide" start="0,-38" end="0,-38" time="0" condition="system.hasloginscreen + System.HasMediaDVD">Conditional</animation>	
-		<control type="image">
-			<description>background top image</description>
-			<posx>0</posx>
-			<posy>-26</posy>
-			<width>308</width>
-			<height>26</height>
-			<texture>dialogs/context_top.png</texture>
-		</control>
-		<control type="image">
-			<description>background image</description>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>308</width>
-			<include condition="![system.hasloginscreen | System.HasMediaDVD]">Objects_ButtonMenu8Group</include> 
-			<include condition="[system.hasloginscreen + !System.HasMediaDVD] | [!system.hasloginscreen + System.HasMediaDVD]">Objects_ButtonMenu9Group</include>			
-			<include condition="system.hasloginscreen + System.HasMediaDVD">Objects_ButtonMenu10Group</include>		
-			<texture>dialogs/context_middle.png</texture>
-		</control>
-		<control type="image">
-			<description>background bottom image</description>
-			<posx>0</posx>
-			<posy>351</posy>
-			<width>308</width>
-			<height>27</height>
-			<animation effect="slide" start="0,-39" end="0,-39" time="0" condition="![system.hasloginscreen | System.HasMediaDVD]">Conditional</animation>
-			<animation effect="slide" start="0,39" end="0,39" time="0" condition="system.hasloginscreen + System.HasMediaDVD">Conditional</animation>			
-			<texture>dialogs/context_bottom.png</texture>
-		</control>
-		
-		<control type="grouplist" id="4112">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>308</width>
-			<include condition="![system.hasloginscreen | System.HasMediaDVD]">Objects_ButtonMenu8Group</include> 
-			<include condition="[system.hasloginscreen + !System.HasMediaDVD] | [!system.hasloginscreen + System.HasMediaDVD]">Objects_ButtonMenu9Group</include>			
-			<include condition="system.hasloginscreen + System.HasMediaDVD">Objects_ButtonMenu10Group</include>			
-			<itemgap>0</itemgap>
-			<orientation>vertical</orientation>
-			<onup>4112</onup>
-			<ondown>4112</ondown>
-		
-			<control type="button" id="801">
-				<description>Settings</description>
-				<label>31200</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>
-				<onclick>XBMC.ActivateWindow(4)</onclick>
-			</control>
-			<control type="button" id="802">
-				<description>Customise</description>
-				<label>31201</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>				
-				<onclick>XBMC.ActivateWindow(604)</onclick>
-			</control>
-			<control type="button" id="803">
-				<description>Assistant</description>
-				<label>31202</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>				
-				<onclick>XBMC.ActivateWindow(605)</onclick>
-			</control>
-			<control type="togglebutton" id="804">
-				<description>Home Visualiser</description>
-				<label>31203</label>
-				<altlabel>31204</altlabel>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.Togglesetting(homevis)</onclick>
-				<usealttexture>Skin.HasSetting(homevis)</usealttexture>
-			</control>
-			<control type="button" id="805">
-				<description>Now Playing</description>
-				<label>31205</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>Skin.SetBool(bmtransit)</onclick>
-				<onclick>XBMC.ActivateWindow(500)</onclick>
-			</control>
-			<control type="button" id="806">
-				<description>Shutdown Timer</description>
-				<label>31206</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>AlarmClock(,Shutdown,)</onclick>
-			</control>
-			<control type="button" id="807">
-				<description>Log Out</description>
-				<label>31209</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>System.LogOff</onclick>
-				<visible>system.hasloginscreen</visible>
-			</control>
-			<control type="button" id="810">
-				<description>Eject Tray</description>
-				<label>31210</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>EjectTray()</onclick>
-				<visible>System.HasMediaDVD</visible>
-			</control>				
-			<control type="button" id="808">
-				<description>Restart</description>
-				<label>31207</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>RestartApp</onclick>
-			</control>
-			<control type="button" id="809">
-				<description>Shutdown</description>
-				<label>31208</label>
-				<include>Objects_ContextMenuButton</include>
-				<onclick>Shutdown</onclick>
-			</control>				
-
-		</control>
-	</control>
-
-	</controls>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window type="buttonMenu" id="111">
+    <onload condition="Window.IsActive(1126)">Dialog.Close(1126)</onload>
+    <onload condition="Window.IsActive(1121)">Dialog.Close(1121)</onload>
+    <defaultcontrol always="true">800</defaultcontrol>
+    <zorder>7</zorder>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+    <include>Animation_DialogZoom</include>
+    <controls>
+        <include>DialogBackFade</include>
+        <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
+        <include condition="Skin.HasSetting(quicklistmenu)">QuickList</include>
+        <control type="group">
+            <posx>40</posx>
+            <visible>!Skin.HasSetting(quicklistmenu)</visible>
+            <control type="grouplist" id="800">
+                <posx>670</posx>
+                <width>550</width>
+                <height>1080</height>
+                <onleft>800</onleft>
+                <onright>800</onright>
+                <onup>800</onup>
+                <ondown>800</ondown>
+                <orientation>vertical</orientation>
+                <align>center</align>
+                <control type="image" id="18">
+                    <posy>-39</posy>
+                    <width>488</width>
+                    <height>39</height>
+                    <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+                    <texture>$VAR[ShutdownTopVar]</texture>
+                </control>
+                <control type="button" id="1">
+                    <label>$LOCALIZE[13012]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.Quit()</onclick>
+                    <visible>System.ShowExitButton</visible>
+                </control>
+                <control type="button" id="2">
+                    <label>$LOCALIZE[13016]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.Powerdown()</onclick>
+                    <visible>System.CanPowerDown</visible>
+                </control>
+                <control type="button" id="3">
+                    <label>$LOCALIZE[42299]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
+                    <visible>!System.HasAlarm(shutdowntimer)</visible>
+                </control>
+                <control type="button" id="15">
+                    <label>$LOCALIZE[31428] [B]$INFO[System.Alarmpos][/B]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+                    <visible>System.HasAlarm(shutdowntimer)</visible>
+                </control>
+                <control type="button" id="5">
+                    <label>$LOCALIZE[13011]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.Suspend()</onclick>
+                    <visible>System.CanSuspend</visible>
+                </control>
+                <control type="button" id="10">
+                    <label>$LOCALIZE[13010]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.Hibernate()</onclick>
+                    <visible>System.CanHibernate + !System.CanSuspend</visible>
+                </control>
+                <control type="button" id="6">
+                    <label>$LOCALIZE[13013]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.Reset()</onclick>
+                    <visible>System.CanReboot</visible>
+                </control>
+                <control type="button" id="4">
+                    <label>$LOCALIZE[13391]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>XBMC.EjectTray()</onclick>
+                    <visible>System.HasMediadvd + System.Platform.ATV2</visible>
+                </control>
+                <control type="button" id="7">
+                    <label>$INFO[system.profilename,$LOCALIZE[20126] ]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>dialog.close(all,true)</onclick>
+                    <onclick>System.LogOff</onclick>
+                    <visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
+                    <visible>System.Loggedon</visible>
+                </control>
+                <control type="togglebutton" id="8">
+                    <label>$LOCALIZE[20046]</label>
+                    <altlabel>$LOCALIZE[20045]</altlabel>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>xbmc.mastermode</onclick>
+                    <usealttexture>!System.IsMaster</usealttexture>
+                    <visible>System.HasLocks</visible>
+                </control>
+                <control type="button" id="9">
+                    <label>$LOCALIZE[5]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>ActivateWindow(Settings,return)</onclick>
+                </control>
+                <control type="button" id="12">
+                    <label>$LOCALIZE[10003]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>ActivateWindow(FileManager)</onclick>
+                </control>
+                <control type="button" id="14">
+                    <label>$LOCALIZE[1036]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <onclick>ActivateWindow(Favourites)</onclick>
+                </control>
+                <control type="button" id="21">
+                    <label>$LOCALIZE[13016]</label>
+                    <include>Objects_ShutdownMenuButton</include>
+                    <visible>!System.CanPowerDown</visible>
+                </control>
+                <control type="image" id="19">
+                    <posy>699</posy>
+                    <width>494</width>
+                    <height>41</height>
+                    <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
+                    <texture>$VAR[ContextBottomVar]</texture>
+                    <animation effect="slide" start="0" end="-3" reversible="true" condition="true">Conditional</animation>
+                </control>
+            </control>
+            <control type="grouplist">
+                <posx>714</posx>
+                <posy>0</posy>
+                <width>550</width>
+                <height>1080</height>
+                <itemgap>12</itemgap>
+                <orientation>vertical</orientation>
+                <align>center</align>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/exit.png</texture>
+                    <height>63</height>
+                    <width>63</width>
+                    <aspectratio aligny="top">scale</aspectratio>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1)">Conditional</animation>
+                    <visible>System.ShowExitButton</visible>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Power.png</texture>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(2)">Conditional</animation>
+                    <include>Objects_ShutdownMenuIcon</include>
+                    <visible>System.CanPowerDown</visible>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/AlarmClock.png</texture>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(3) + !Control.HasFocus(15)">Conditional</animation>
+                    <include>Objects_ShutdownMenuIcon</include>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Battery.png</texture>
+                    <include>Objects_ShutdownMenuIcon</include>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10) + !Control.HasFocus(5)">Conditional</animation>
+                    <visible>System.CanHibernate | System.CanSuspend</visible>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/pre.png</texture>
+                    <include>Objects_ShutdownMenuIcon</include>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(6)">Conditional</animation>
+                    <visible>System.CanReboot</visible>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/CD-DVD.png</texture>
+                    <include>Objects_ShutdownMenuIcon</include>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(4)">Conditional</animation>
+                    <visible>System.HasMediadvd + System.Platform.ATV2</visible>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Search.png</texture>
+                    <include>Objects_ShutdownMenuIcon</include>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(7)">Conditional</animation>
+                    <visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
+                    <visible>System.Loggedon</visible>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Magicwand.png</texture>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(8)">Conditional</animation>
+                    <include>Objects_ShutdownMenuIcon</include>
+                    <visible>System.HasLocks</visible>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Controlpanel.png</texture>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(9)">Conditional</animation>
+                    <include>Objects_ShutdownMenuIcon</include>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Cabinet.png</texture>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(12)">Conditional</animation>
+                    <include>Objects_ShutdownMenuIcon</include>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Star.png</texture>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(14)">Conditional</animation>
+                    <include>Objects_ShutdownMenuIcon</include>
+                </control>
+                <control type="image">
+                    <texture>special://skin/extras/BigIcons/Power.png</texture>
+                    <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(21)">Conditional</animation>
+                    <include>Objects_ShutdownMenuIcon</include>
+                    <visible>!System.CanPowerDown</visible>
+                </control>
+            </control>
+        </control>
+    </controls>
 </window>
