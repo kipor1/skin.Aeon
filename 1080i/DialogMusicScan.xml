@@ -1,25 +1,38 @@
 ﻿<window id="112">
-    <zorder>1</zorder>
-    <coordinates>
-        <system>1</system>
-        <posx>0</posx>
-        <posy>0</posy>
-    </coordinates>
-    <include>Animation_DialogPopup</include>
-    <controls>
-        <control type="group">
-            <include>Dialogs_Group</include>
-            <include>Dialogs_Tablet</include>
-            <control type="progress" id="403">
-                <include>Dialogs_Progress</include>
-            </control>
-            <include>Dialogs_HardDrive</include>
-            <control type="label" id="401">
-                <include>Dialogs_Label2</include>
-            </control>
-            <control type="label" id="405">
-                <include>Dialogs_Label3</include>
-            </control>
-        </control>
-    </controls>
+  <defaultcontrol>1111</defaultcontrol>
+  <zorder>1</zorder>
+  <coordinates>
+    <system>1</system>
+    <posx>0</posx>
+    <posy>0</posy>
+  </coordinates>
+  <include>Animation_DialogPopup</include>
+  <controls>
+    <control type="button" id="1111">
+      <posx>-15</posx>
+      <posy>-15</posy>
+      <height>1</height>
+      <width>1</width>
+      <texturefocus />
+      <texturenofocus />
+      <onfocus>Skin.SetBool(LibraryUpdated)</onfocus>
+    </control>
+    <control type="group">
+      <animation effect="slide" end="0,-338" time="400" easing="inout" tween="cubic" condition="Window.IsActive(Home) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+      <animation effect="slide" end="0,-600" time="200" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
+      <animation effect="slide" end="0,900" time="400" easing="inout" tween="circle" condition="Window.IsVisible(2005) | Window.IsVisible(2006) | Window.IsVisible(2007)">Conditional</animation>
+      <include>Dialogs_Group</include>
+      <include>Dialogs_Tablet</include>
+      <control type="progress" id="403">
+        <include>Dialogs_Progress</include>
+      </control>
+      <include>Dialogs_HardDrive</include>
+      <control type="label" id="401">
+        <include>Dialogs_Label2</include>
+      </control>
+      <control type="label" id="405">
+        <include>Dialogs_Label3</include>
+      </control>
+    </control>
+  </controls>
 </window>

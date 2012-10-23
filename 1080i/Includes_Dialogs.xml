@@ -1,93 +1,100 @@
 ﻿<includes>
-    <include name="Dialogs_Group">
-        <posx>579</posx>
-        <posy>900</posy>
-        <width>764</width>
-        <height>136</height>
-    </include>
-    <include name="Dialogs_Tablet">
-        <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>764</width>
-            <height>136</height>
-            <texture>dialogs/scan_backg.png</texture>
-        </control>
-    </include>
-    <include name="Dialogs_Exclam">
-        <control type="image">
-            <posx>14</posx>
-            <posy>14</posy>
-            <width>110</width>
-            <height>110</height>
-            <texture>dialogs/exclam_icon.png</texture>
-        </control>
-    </include>
-    <include name="Dialogs_HardDrive">
-        <control type="image">
-            <posx>18</posx>
-            <posy>6</posy>
-            <width>100</width>
-            <height>124</height>
-            <texture>dialogs/scan_icon.png</texture>
-        </control>
-    </include>
-    <include name="Dialogs_VolumeIcon">
-        <control type="image">
-            <posx>9</posx>
-            <posy>6</posy>
-            <width>122</width>
-            <height>123</height>
-            <texture>dialogs/volume_icon.png</texture>
-        </control>
-    </include>
-    <include name="Dialogs_Progress">
-        <description>Progressbar</description>
-        <posx>4</posx>
-        <posy>4</posy>
-        <width>128</width>
-        <height>128</height>
-        <reveal>true</reveal>
-        <texturebg>dialogs/scan_blank.png</texturebg>
-        <lefttexture>common/blank.png</lefttexture>
-        <midtexture>dialogs/scan_fill.png</midtexture>
-        <righttexture>common/blank.png</righttexture>
-        <overlaytexture>-</overlaytexture>
-    </include>
-    <include name="Dialogs_LabelVars">
-        <posx>158</posx>
-        <width>585</width>
-        <height>32</height>
-        <textcolor>FF323232</textcolor>
-        <align>left</align>
-        <font>Font_ProgressLabel</font>
-    </include>
-    <include name="Dialogs_Pos1">
-        <posy>12</posy>
-    </include>
-    <include name="Dialogs_Pos2">
-        <posy>39</posy>
-    </include>
-    <include name="Dialogs_Pos3">
-        <posy>66</posy>
-    </include>
-    <include name="Dialogs_Pos4">
-        <posy>93</posy>
-    </include>
-    <include name="Dialogs_Label1">
-        <include>Dialogs_Pos1</include>
-        <include>Dialogs_LabelVars</include>
-    </include>
-    <include name="Dialogs_Label2">
-        <include>Dialogs_Pos2</include>
-        <include>Dialogs_LabelVars</include>
-    </include>
-    <include name="Dialogs_Label3">
-        <include>Dialogs_Pos3</include>
-        <include>Dialogs_LabelVars</include>
-    </include>
-    <include name="Dialogs_Label4">
-        <include>Dialogs_Pos4</include>
-        <include>Dialogs_LabelVars</include>
-    </include>
+  <include name="Dialogs_Group">
+    <posx>579</posx>
+    <posy>900</posy>
+    <width>764</width>
+    <height>136</height>
+  </include>
+  <include name="Dialogs_Slider">
+    <posx>759</posx>
+    <posy>930</posy>
+    <width>447</width>
+    <height>93</height>
+  </include>
+  <include name="Dialogs_Tablet">
+    <control type="image">
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>764</width>
+      <height>136</height>
+      <texture>dialogs/scan_backg.png</texture>
+    </control>
+  </include>
+  <include name="Dialogs_Exclam">
+    <control type="image">
+      <posx>14</posx>
+      <posy>14</posy>
+      <width>110</width>
+      <height>110</height>
+      <texture>dialogs/exclam_icon.png</texture>
+    </control>
+  </include>
+  <include name="Dialogs_HardDrive">
+    <control type="image">
+      <posx>18</posx>
+      <posy>6</posy>
+      <width>100</width>
+      <height>124</height>
+      <texture>dialogs/scan_icon.png</texture>
+    </control>
+  </include>
+  <include name="Dialogs_VolumeIcon">
+    <control type="image">
+      <posx>9</posx>
+      <posy>6</posy>
+      <width>122</width>
+      <height>123</height>
+      <texture>dialogs/volume_icon.png</texture>
+    </control>
+  </include>
+  <include name="Dialogs_Progress">
+    <description>Progressbar</description>
+    <posx>128</posx>
+    <posy>4</posy>
+    <width>616</width>
+    <height>128</height>
+    <reveal>true</reveal>
+    <texturebg>dialogs/scan_blank.png</texturebg>
+    <lefttexture>common/blank.png</lefttexture>
+    <midtexture>dialogs/scan_fill.png</midtexture>
+    <righttexture>common/blank.png</righttexture>
+    <overlaytexture>-</overlaytexture>
+  </include>
+  <include name="Dialogs_LabelVars">
+    <posx>158</posx>
+    <width>564</width>
+    <height>32</height>
+    <textcolor>menutext</textcolor>
+    <align>left</align>
+    <font>Font_ProgressLabel</font>
+    <scroll>true</scroll>
+  </include>
+  <include name="Dialogs_Pos1">
+    <posy>12</posy>
+  </include>
+  <include name="Dialogs_Pos2">
+    <posy>39</posy>
+  </include>
+  <include name="Dialogs_Pos3">
+    <posy>66</posy>
+  </include>
+  <include name="Dialogs_Pos4">
+    <posy>93</posy>
+  </include>
+  <include name="Dialogs_Label1">
+    <include>Dialogs_Pos1</include>
+    <include>Dialogs_LabelVars</include>
+  </include>
+  <include name="Dialogs_Label2">
+    <include>Dialogs_Pos2</include>
+    <include>Dialogs_LabelVars</include>
+  </include>
+  <include name="Dialogs_Label3">
+    <include>Dialogs_Pos3</include>
+    <include>Dialogs_LabelVars</include>
+  </include>
+  <include name="Dialogs_Label4">
+    <include>Dialogs_Pos4</include>
+    <include>Dialogs_LabelVars</include>
+  </include>
 </includes>

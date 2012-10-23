@@ -1,221 +1,221 @@
 ﻿<window id="10140">
-    <defaultcontrol always="true">2</defaultcontrol>
-    <coordinates>
-        <system>1</system>
-        <posx>240</posx>
-        <posy>82</posy>
-    </coordinates>
-    <include>Animation_DialogPopup</include>
-    <controls>
-        <control type="image">
-            <description>background image</description>
-            <posx>-240</posx>
-            <posy>-82</posy>
-            <width>1920</width>
-            <height>1080</height>
-            <texture>wall/wall_vignette.png</texture>
-            <include>Animation_CommonFade2</include>
-        </control>
-        <control type="image">
-            <description>background image</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1440</width>
-            <height>915</height>
-            <texture>settings/settings_panelback.png</texture>
-        </control>
-        <control type="label" id="20">
-            <description>header label</description>
-            <posx>300</posx>
-            <posy>38</posy>
-            <width>1050</width>
-            <include>Objects_SettingsSectionTitle</include>
-            <label>-</label>
-            <align>center</align>
-        </control>
-        <control type="grouplist" id="2">
-            <description>control settings area</description>
-            <posx>274</posx>
-            <posy>120</posy>
-            <width>1095</width>
-            <height>630</height>
-            <itemgap>-2</itemgap>
-            <pagecontrol>61</pagecontrol>
-            <onup>10</onup>
-            <ondown>10</ondown>
-            <onleft>9</onleft>
-            <onright>61</onright>
-        </control>
-        <control type="grouplist" id="9">
-            <description>button section area</description>
-            <posx>22</posx>
-            <posy>120</posy>
-            <width>252</width>
-            <height>300</height>
-            <itemgap>-2</itemgap>
-            <onup>9</onup>
-            <ondown>9</ondown>
-            <onleft>10</onleft>
-            <onright>2</onright>
-        </control>
-        <control type="scrollbar" id="61">
-            <posx>1425</posx>
-            <posy>120</posy>
-            <width>98</width>
-            <height>660</height>
-            <texturesliderbackground>windows/scrollbarbacklist.png</texturesliderbackground>
-            <texturesliderbar>-</texturesliderbar>
-            <texturesliderbarfocus>-</texturesliderbarfocus>
-            <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
-            <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
-            <onleft>2</onleft>
-            <onright>10</onright>
-            <showonepage>false</showonepage>
-            <orientation>vertical</orientation>
-            <include>Animation_CommonFade</include>
-        </control>
-        <control type="button" id="13">
-            <description>Default Section Button</description>
-            <include>Objects_SettingsSectionMenuButton2</include>
-        </control>
-        <control type="button" id="3">
-            <description>Default Settings Button</description>
-            <font>Font_ContextMenuButton</font>
-            <textcolor>FF939597</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <disabledcolor>60ffffff</disabledcolor>
-            <textoffsetx>15</textoffsetx>
-            <aligny>center</aligny>
-            <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
-            <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
-        </control>
-        <control type="radiobutton" id="4">
-            <description>Default RadioButton</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>450</width>
-            <height>60</height>
-            <font>Font_ContextMenuButton</font>
-            <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
-            <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
-            <textcolor>FF939597</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <pulseonselect>false</pulseonselect>
-            <radiowidth>141</radiowidth>
-            <radioposx>968</radioposx>
-            <radioheight>98</radioheight>
-            <textoffsetx>30</textoffsetx>
-            <aligny>center</aligny>
-            <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
-            <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
-        </control>
-        <control type="spincontrolex" id="5">
-            <description>Default spincontrolex</description>
-            <height>60</height>
-            <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
-            <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
-            <textureup>settings/spin-up.png</textureup>
-            <texturedown>settings/spin-down.png</texturedown>
-            <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-            <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-            <font>Font_ContextMenuButton</font>
-            <textcolor>FF939597</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <pulseonselect>false</pulseonselect>
-            <spinposx>-4</spinposx>
-            <spinwidth>63</spinwidth>
-            <spinheight>98</spinheight>
-            <textoffsetx>30</textoffsetx>
-            <aligny>center</aligny>
-            <reverse>yes</reverse>
-            <subtype>text</subtype>
-        </control>
-        <control type="image" id="6">
-            <description>Default Seperator</description>
-            <height>3</height>
-            <texture>windows/scrollbarbackshowcase.png</texture>
-        </control>
-        <control type="label" id="7">
-            <textoffsetx>15</textoffsetx>
-            <height>60</height>
-            <font>Font_ContextMenuButton</font>
-            <label>-</label>
-            <textcolor>white</textcolor>
-            <align>left</align>
-            <aligny>center</aligny>
-        </control>
-        <control type="sliderex" id="8">
-            <description>Default Slider</description>
-            <width>480</width>
-            <height>60</height>
-            <align>center</align>
-            <textcolor>FF939597</textcolor>
-            <focusedcolor>FFFFFFFF</focusedcolor>
-            <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
-            <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
-            <texturesliderbar>osd/osd_sliderback.png</texturesliderbar>
-            <textureslidernib>osd/osd_slidernub.png</textureslidernib>
-            <textureslidernibfocus>osd/osd_slidernubf.png</textureslidernibfocus>
-        </control>
-        <control type="image">
-            <posx>321</posx>
-            <posy>772</posy>
-            <width>1050</width>
-            <height>3</height>
-            <texture>windows/scrollbarbackshowcase.png</texture>
-        </control>
-        <control type="group" id="9001">
-            <control type="button" id="10">
-                <description>OK Button</description>
-                <posx>352</posx>
-                <posy>802</posy>
-                <width>300</width>
-                <height>60</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texturenofocus>-</texturenofocus>
-                <texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
-                <label>186</label>
-                <include>Objects_SettingsSectionMenuButton</include>
-                <onleft>12</onleft>
-                <onright>11</onright>
-                <onup>2</onup>
-                <ondown>2</ondown>
-            </control>
-            <control type="button" id="11">
-                <description>Cancel Button</description>
-                <posx>693</posx>
-                <posy>802</posy>
-                <width>300</width>
-                <height>60</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texturenofocus>-</texturenofocus>
-                <texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
-                <label>222</label>
-                <include>Objects_SettingsSectionMenuButton</include>
-                <onleft>10</onleft>
-                <onright>12</onright>
-                <onup>2</onup>
-                <ondown>2</ondown>
-            </control>
-            <control type="button" id="12">
-                <description>Defaults Button</description>
-                <posx>1034</posx>
-                <posy>802</posy>
-                <width>300</width>
-                <height>60</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texturenofocus>-</texturenofocus>
-                <texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
-                <label>409</label>
-                <include>Objects_SettingsSectionMenuButton</include>
-                <onleft>11</onleft>
-                <onright>10</onright>
-                <onup>2</onup>
-                <ondown>2</ondown>
-            </control>
-        </control>
-    </controls>
+  <defaultcontrol always="true">2</defaultcontrol>
+  <coordinates>
+    <system>1</system>
+    <posx>240</posx>
+    <posy>82</posy>
+  </coordinates>
+  <include>Animation_DialogPopup</include>
+  <controls>
+    <control type="image">
+      <description>background image</description>
+      <posx>-240</posx>
+      <posy>-82</posy>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>wall/wall_vignette.png</texture>
+      <include>Animation_CommonFade2</include>
+    </control>
+    <control type="image">
+      <description>background image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1440</width>
+      <height>915</height>
+      <texture>settings/settings_panelback.png</texture>
+    </control>
+    <control type="label" id="20">
+      <description>header label</description>
+      <posx>300</posx>
+      <posy>38</posy>
+      <width>1050</width>
+      <include>Objects_SettingsSectionTitle</include>
+      <label>-</label>
+      <align>center</align>
+    </control>
+    <control type="grouplist" id="2">
+      <description>control settings area</description>
+      <posx>274</posx>
+      <posy>120</posy>
+      <width>1095</width>
+      <height>630</height>
+      <itemgap>-2</itemgap>
+      <pagecontrol>61</pagecontrol>
+      <onup>10</onup>
+      <ondown>10</ondown>
+      <onleft>9</onleft>
+      <onright>61</onright>
+    </control>
+    <control type="grouplist" id="9">
+      <description>button section area</description>
+      <posx>22</posx>
+      <posy>120</posy>
+      <width>252</width>
+      <height>300</height>
+      <itemgap>-2</itemgap>
+      <onup>9</onup>
+      <ondown>9</ondown>
+      <onleft>10</onleft>
+      <onright>2</onright>
+    </control>
+    <control type="scrollbar" id="61">
+      <posx>1425</posx>
+      <posy>120</posy>
+      <width>98</width>
+      <height>660</height>
+      <texturesliderbackground>windows/scrollbarbacklist.png</texturesliderbackground>
+      <texturesliderbar>-</texturesliderbar>
+      <texturesliderbarfocus>-</texturesliderbarfocus>
+      <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+      <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+      <onleft>2</onleft>
+      <onright>10</onright>
+      <showonepage>false</showonepage>
+      <orientation>vertical</orientation>
+      <include>Animation_CommonFade</include>
+    </control>
+    <control type="button" id="13">
+      <description>Default Section Button</description>
+      <include>Objects_SettingsSectionMenuButton2</include>
+    </control>
+    <control type="button" id="3">
+      <description>Default Settings Button</description>
+      <font>Font_ContextMenuButton</font>
+      <textcolor>FF939597</textcolor>
+      <focusedcolor>FFFFFFFF</focusedcolor>
+      <disabledcolor>60ffffff</disabledcolor>
+      <textoffsetx>15</textoffsetx>
+      <aligny>center</aligny>
+      <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
+      <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
+    </control>
+    <control type="radiobutton" id="4">
+      <description>Default RadioButton</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>450</width>
+      <height>60</height>
+      <font>Font_ContextMenuButton</font>
+      <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
+      <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
+      <textcolor>FF939597</textcolor>
+      <focusedcolor>FFFFFFFF</focusedcolor>
+      <pulseonselect>false</pulseonselect>
+      <radiowidth>141</radiowidth>
+      <radioposx>968</radioposx>
+      <radioheight>98</radioheight>
+      <textoffsetx>30</textoffsetx>
+      <aligny>center</aligny>
+      <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+      <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
+    </control>
+    <control type="spincontrolex" id="5">
+      <description>Default spincontrolex</description>
+      <height>60</height>
+      <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
+      <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
+      <textureup>settings/spin-up.png</textureup>
+      <texturedown>settings/spin-down.png</texturedown>
+      <textureupfocus>settings/spin-up-focus.png</textureupfocus>
+      <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
+      <font>Font_ContextMenuButton</font>
+      <textcolor>FF939597</textcolor>
+      <focusedcolor>FFFFFFFF</focusedcolor>
+      <pulseonselect>false</pulseonselect>
+      <spinposx>-4</spinposx>
+      <spinwidth>63</spinwidth>
+      <spinheight>98</spinheight>
+      <textoffsetx>30</textoffsetx>
+      <aligny>center</aligny>
+      <reverse>yes</reverse>
+      <subtype>text</subtype>
+    </control>
+    <control type="image" id="6">
+      <description>Default Seperator</description>
+      <height>3</height>
+      <texture>windows/scrollbarbackshowcase.png</texture>
+    </control>
+    <control type="label" id="7">
+      <textoffsetx>15</textoffsetx>
+      <height>60</height>
+      <font>Font_ContextMenuButton</font>
+      <label>-</label>
+      <textcolor>white</textcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+    </control>
+    <control type="sliderex" id="8">
+      <description>Default Slider</description>
+      <width>480</width>
+      <height>60</height>
+      <align>center</align>
+      <textcolor>FF939597</textcolor>
+      <focusedcolor>FFFFFFFF</focusedcolor>
+      <texturefocus>dialogs/setcontent_button_focus.png</texturefocus>
+      <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
+      <texturesliderbar>osd/osd_sliderback.png</texturesliderbar>
+      <textureslidernib>osd/osd_slidernub.png</textureslidernib>
+      <textureslidernibfocus>osd/osd_slidernubf.png</textureslidernibfocus>
+    </control>
+    <control type="image">
+      <posx>321</posx>
+      <posy>772</posy>
+      <width>1050</width>
+      <height>3</height>
+      <texture>windows/scrollbarbackshowcase.png</texture>
+    </control>
+    <control type="group" id="9001">
+      <control type="button" id="10">
+        <description>OK Button</description>
+        <posx>352</posx>
+        <posy>802</posy>
+        <width>300</width>
+        <height>60</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturenofocus>-</texturenofocus>
+        <texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
+        <label>186</label>
+        <include>Objects_SettingsSectionMenuButton</include>
+        <onleft>12</onleft>
+        <onright>11</onright>
+        <onup>2</onup>
+        <ondown>2</ondown>
+      </control>
+      <control type="button" id="11">
+        <description>Cancel Button</description>
+        <posx>693</posx>
+        <posy>802</posy>
+        <width>300</width>
+        <height>60</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturenofocus>-</texturenofocus>
+        <texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
+        <label>222</label>
+        <include>Objects_SettingsSectionMenuButton</include>
+        <onleft>10</onleft>
+        <onright>12</onright>
+        <onup>2</onup>
+        <ondown>2</ondown>
+      </control>
+      <control type="button" id="12">
+        <description>Defaults Button</description>
+        <posx>1034</posx>
+        <posy>802</posy>
+        <width>300</width>
+        <height>60</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texturenofocus>-</texturenofocus>
+        <texturefocus>dialogs/setcontent_rightmenu_highlight.png</texturefocus>
+        <label>409</label>
+        <include>Objects_SettingsSectionMenuButton</include>
+        <onleft>11</onleft>
+        <onright>10</onright>
+        <onup>2</onup>
+        <ondown>2</ondown>
+      </control>
+    </control>
+  </controls>
 </window>

@@ -1,0 +1,3 @@
+Music Fanart images in go here.
+
+<genrename>.jpg
