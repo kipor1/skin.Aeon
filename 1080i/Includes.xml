@@ -14,6 +14,7 @@
   <include file="Includes_Settings_Presets.xml" />
   <include file="Includes_Settings_Welcome.xml" />
   <include file="Includes_MediaFlags.xml" />
+  <include file="Includes_ViewSelect.xml" />
   <include file="Includes_Submenu.xml" />
   <include file="Viewtype_Showcase.xml" />
   <include file="Viewtype_StripShow.xml" />
@@ -21,29 +22,14 @@
   <include file="Viewtype_MultiplexOld.xml" />
   <include file="Viewtype_List.xml" />
   <include file="Viewtype_Wall.xml" />
-  <include file="Viewtype_List_Slim.xml" />
-  <include file="Includes_Filemanager.xml" />
-  <include file="Viewtype_List_Low.xml" />
-  <include file="Includes_LowList.xml" />
-  <include file="Includes_CDDVDMod.xml" />
-  <include file="Includes_NightMod.xml" />
-  <include file="Includes_WallMod.xml" />
-  <include file="Includes_Latest_Added.xml" />
-  <include file="Includes_MultiplexFlow.xml" />
-  <include file="mod_moviegenre_list1.xml" />
-  <include file="Viewtype_ClearList.xml" />
-  <include file="Widget_Weather.xml" />
-  <include file="Viewtype_Music_Multiplex.xml" />
-  <include file="Includes_genre.xml" />
-  <include file="Includes_MediaMenu.xml" />
   <!-- Text colours ================================== -->
   <include name="subcolornofocus">
     <textcolor>ff969696</textcolor>
-    <selectedcolor>9b3cd2fd</selectedcolor>
+    <selectedcolor>ff969696</selectedcolor>
   </include>
   <include name="listcolornofocus">
     <textcolor>dcffffff</textcolor>
-    <selectedcolor>9b3cd2fd</selectedcolor>
+    <selectedcolor>dcffffff</selectedcolor>
   </include>
   <include name="subcolorfocus">
     <textcolor>ff2e2e2e</textcolor>
@@ -105,7 +91,7 @@
       <font>objects</font>
       <textcolor>59FFFFFF</textcolor>
       <include>common-fade-quick</include>
-      <visible>!Control.IsVisible(51) + !Control.IsVisible(57) + !Control.IsVisible(58) + !Control.IsVisible(53) + !Control.IsVisible(551) + !Control.IsVisible(552)</visible>
+      <visible>!Control.IsVisible(51) + !Control.IsVisible(57) + !Control.IsVisible(58) + !Control.IsVisible(53)</visible>
     </control>
   </include>
   <!-- Menu styles ================================== -->

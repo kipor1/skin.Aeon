@@ -46,31 +46,6 @@
         <animation effect="fade" start="0" end="100" delay="1500" time="400">Visible</animation>
         <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
         <include>Conditions_Weather</include>
-        <control type="multiimage">
-          <description>Weather image</description>
-          <posx>0</posx>
-          <posy>0</posy>
-          <width>424</width>
-          <height>430</height>
-          <imagepath diffuse="home/home_weather_big_mask.png">icon/$INFO[Weather.FanartCode]/</imagepath>
-          <timeperimage>175</timeperimage>
-          <randomize>false</randomize>
-          <fadetime>0</fadetime>
-          <colordiffuse>88FFFFFF</colordiffuse>
-          <aspectratio scalediffuse="false">scale</aspectratio>
-          <visible>Skin.HasSetting(weathericons)</visible>
-        </control>
-        <control type="image">
-          <description>Weather image</description>
-          <posx>0</posx>
-          <posy>0</posy>
-          <width>424</width>
-          <height>430</height>
-          <texture diffuse="home/home_weather_big_mask.png">$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
-          <colordiffuse>88FFFFFF</colordiffuse>
-          <aspectratio scalediffuse="false">scale</aspectratio>
-          <visible>!Skin.HasSetting(weathericons)</visible>
-        </control>
         <control type="image">
           <posy>0</posy>
           <width>424</width>
@@ -112,151 +87,112 @@
           <label>$INFO[Window(Weather).Property(Current.Temperature)][CR]$INFO[System.TemperatureUnits][CR]$INFO[Window(Weather).Property(Current.Humidity)][CR]$INFO[Window(Weather).Property(Current.UVIndex)][CR]$INFO[Window(Weather).Property(Current.DewPoint)]</label>
         </control>
       </control>
-      <!-- 4 day -->
       <control type="group">
-        <control type="group">
-          <posx>555</posx>
-          <include>Conditions_Weather</include>
-          <animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>
-          <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-          <control type="image">
-            <include>Objects_WeatherBack</include>
-          </control>
-          <control type="label">
-            <include>Objects_WeatherDay</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day0.Title)]</label>
-          </control>
-          <control type="label">
-            <posx>0</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day0.HighTemp)]</label>
-          </control>
-          <control type="label">
-            <posx>148</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day0.LowTemp)]</label>
-          </control>
-          <control type="image">
-            <include>Objects_WeatherIcon</include>
-            <texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
-            <visible>!Skin.HasSetting(weathericons)</visible>
-          </control>
-          <control type="multiimage">
-            <include>Objects_WeatherIcon</include>
-            <imagepath>\icon\$INFO[Window(Weather).Property(Day0.FanartCode)]</imagepath>
-            <timeperimage>75</timeperimage>
-            <randomize>false</randomize>
-            <fadetime>0</fadetime>
-            <visible>Skin.HasSetting(weathericons)</visible>
-          </control>
+        <posx>555</posx>
+        <include>Conditions_Weather</include>
+        <animation effect="fade" start="0" end="100" delay="1600" time="400">Visible</animation>
+        <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+        <control type="image">
+          <include>Objects_WeatherBack</include>
         </control>
-        <control type="group">
-          <posx>879</posx>
-          <include>Conditions_Weather</include>
-          <animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>
-          <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-          <control type="image">
-            <include>Objects_WeatherBack</include>
-          </control>
-          <control type="label">
-            <include>Objects_WeatherDay</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day1.Title)]</label>
-          </control>
-          <control type="label">
-            <posx>0</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day1.HighTemp)]</label>
-          </control>
-          <control type="label">
-            <posx>148</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day1.LowTemp)]</label>
-          </control>
-          <control type="image">
-            <include>Objects_WeatherIcon</include>
-            <texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
-            <visible>!Skin.HasSetting(weathericons)</visible>
-          </control>
-          <control type="multiimage">
-            <include>Objects_WeatherIcon</include>
-            <imagepath>\icon\$INFO[Window(Weather).Property(Day1.FanartCode)]</imagepath>
-            <timeperimage>75</timeperimage>
-            <randomize>false</randomize>
-            <fadetime>0</fadetime>
-            <visible>Skin.HasSetting(weathericons)</visible>
-          </control>
+        <control type="label">
+          <include>Objects_WeatherDay</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day0.Title)]</label>
         </control>
-        <control type="group">
-          <posx>1203</posx>
-          <include>Conditions_Weather</include>
-          <animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>
-          <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-          <control type="image">
-            <include>Objects_WeatherBack</include>
-          </control>
-          <control type="label">
-            <include>Objects_WeatherDay</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day2.Title)]</label>
-          </control>
-          <control type="label">
-            <posx>0</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day2.HighTemp)]</label>
-          </control>
-          <control type="label">
-            <posx>148</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day2.LowTemp)]</label>
-          </control>
-          <control type="image">
-            <include>Objects_WeatherIcon</include>
-            <texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
-            <visible>!Skin.HasSetting(weathericons)</visible>
-          </control>
-          <control type="multiimage">
-            <include>Objects_WeatherIcon</include>
-            <imagepath>\icon\$INFO[Window(Weather).Property(Day2.FanartCode)]</imagepath>
-            <timeperimage>75</timeperimage>
-            <randomize>false</randomize>
-            <fadetime>0</fadetime>
-            <visible>Skin.HasSetting(weathericons)</visible>
-          </control>
+        <control type="label">
+          <posx>0</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day0.HighTemp)]</label>
         </control>
-        <control type="group">
-          <posx>1527</posx>
-          <include>Conditions_Weather</include>
-          <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>
-          <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-          <control type="image">
-            <include>Objects_WeatherBack</include>
-          </control>
-          <control type="label">
-            <include>Objects_WeatherDay</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day3.Title)]</label>
-          </control>
-          <control type="label">
-            <posx>0</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day3.HighTemp)]</label>
-          </control>
-          <control type="label">
-            <posx>148</posx>
-            <include>Objects_WeatherTemp</include>
-            <label fallback="-">$INFO[Window(Weather).Property(Day3.LowTemp)]</label>
-          </control>
-          <control type="image">
-            <include>Objects_WeatherIcon</include>
-            <texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
-            <visible>!Skin.HasSetting(weathericons)</visible>
-          </control>
-          <control type="multiimage">
-            <include>Objects_WeatherIcon</include>
-            <imagepath>\icon\$INFO[Window(Weather).Property(Day3.FanartCode)]</imagepath>
-            <timeperimage>75</timeperimage>
-            <randomize>false</randomize>
-            <fadetime>0</fadetime>
-            <visible>Skin.HasSetting(weathericons)</visible>
-          </control>
+        <control type="label">
+          <posx>148</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day0.LowTemp)]</label>
+        </control>
+        <control type="image">
+          <include>Objects_WeatherIcon</include>
+          <texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
+        </control>
+      </control>
+      <control type="group">
+        <posx>879</posx>
+        <include>Conditions_Weather</include>
+        <animation effect="fade" start="0" end="100" delay="1700" time="400">Visible</animation>
+        <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+        <control type="image">
+          <include>Objects_WeatherBack</include>
+        </control>
+        <control type="label">
+          <include>Objects_WeatherDay</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day1.Title)]</label>
+        </control>
+        <control type="label">
+          <posx>0</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day1.HighTemp)]</label>
+        </control>
+        <control type="label">
+          <posx>148</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day1.LowTemp)]</label>
+        </control>
+        <control type="image">
+          <include>Objects_WeatherIcon</include>
+          <texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1203</posx>
+        <include>Conditions_Weather</include>
+        <animation effect="fade" start="0" end="100" delay="1800" time="400">Visible</animation>
+        <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+        <control type="image">
+          <include>Objects_WeatherBack</include>
+        </control>
+        <control type="label">
+          <include>Objects_WeatherDay</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day2.Title)]</label>
+        </control>
+        <control type="label">
+          <posx>0</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day2.HighTemp)]</label>
+        </control>
+        <control type="label">
+          <posx>148</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day2.LowTemp)]</label>
+        </control>
+        <control type="image">
+          <include>Objects_WeatherIcon</include>
+          <texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1527</posx>
+        <include>Conditions_Weather</include>
+        <animation effect="fade" start="0" end="100" delay="1900" time="400">Visible</animation>
+        <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+        <control type="image">
+          <include>Objects_WeatherBack</include>
+        </control>
+        <control type="label">
+          <include>Objects_WeatherDay</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day3.Title)]</label>
+        </control>
+        <control type="label">
+          <posx>0</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day3.HighTemp)]</label>
+        </control>
+        <control type="label">
+          <posx>148</posx>
+          <include>Objects_WeatherTemp</include>
+          <label fallback="-">$INFO[Window(Weather).Property(Day3.LowTemp)]</label>
+        </control>
+        <control type="image">
+          <include>Objects_WeatherIcon</include>
+          <texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
         </control>
       </control>
     </control>
@@ -329,11 +265,10 @@
       <usealttexture>Skin.HasSetting(nomediaflags)</usealttexture>
       <include>Objects_MediaMenuButton</include>
       <onclick>Skin.ToggleSetting(nomediaflags)</onclick>
-      <visible>[Control.IsVisible(57) | Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(50) | Control.IsVisible(550)] + [Container.Content(movies) | Container.Content(episodes)]</visible>
+      <visible>Control.IsVisible(57) | Control.IsVisible(52) + Container.Content(movies)</visible>
     </control>
   </include>
   <include name="Objects_PanelDensityButton">
-    <!--##############################################-->
     <control type="togglebutton" id="942">
       <include>Objects_MediaMenuButton</include>
       <label>$LOCALIZE[31065]: $LOCALIZE[31052]</label>
@@ -341,7 +276,7 @@
       <usealttexture>Skin.HasSetting(listpanelthin)</usealttexture>
       <onclick>Skin.SetBool(listpanelthin)</onclick>
       <altclick>Skin.Reset(listpanelthin)</altclick>
-      <visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551)</visible>
+      <visible>Control.IsVisible(50)</visible>
     </control>
     <control type="togglebutton" id="944">
       <include>Objects_MediaMenuButton</include>
@@ -349,16 +284,12 @@
       <altlabel>$LOCALIZE[31065]: $LOCALIZE[31053]</altlabel>
       <usealttexture>Skin.HasSetting(multiplexthin)</usealttexture>
       <onclick>Skin.ToggleSetting(multiplexthin)</onclick>
-      <visible>[Control.IsVisible(52) | Control.IsVisible(552)]</visible>
+      <visible>Control.IsVisible(52) + !Skin.HasSetting(oldmultiplex)</visible>
     </control>
   </include>
-  <include name="Objects_WallLayoutStrings">
-    <label>$LOCALIZE[310791]</label>
-    <altlabel>$LOCALIZE[310792]</altlabel>
-  </include>
   <include name="Objects_ListLayoutStrings">
-    <label>$LOCALIZE[31074] $LOCALIZE[31050] $LOCALIZE[31078]</label>
-    <altlabel>$LOCALIZE[31074] $LOCALIZE[31050] $LOCALIZE[31077]</altlabel>
+    <label>$LOCALIZE[31075]: $LOCALIZE[31071]</label>
+    <altlabel>$LOCALIZE[31075]: $LOCALIZE[31072]</altlabel>
   </include>
   <include name="Objects_FanartToggleStrings">
     <label>$LOCALIZE[31064]: $LOCALIZE[31077]</label>
@@ -433,11 +364,10 @@
       <include>Objects_MediaMenuButton</include>
       <label>$LOCALIZE[31042]</label>
       <altlabel>$LOCALIZE[31043]</altlabel>
-      <usealttexture>Skin.HasSetting(darkfloor)</usealttexture>
-      <onclick>Skin.ToggleSetting(darkfloor)</onclick>
+      <usealttexture>Skin.HasSetting(darkshowcase)</usealttexture>
+      <onclick>Skin.ToggleSetting(darkshowcase)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(57)] | [Control.IsVisible(53) + Skin.HasSetting(newwall)]</visible>
-      <!--REENABLED FOR WALL FLOOR ONLY-->
+      <visible>!Control.IsVisible(53)</visible>
     </control>
   </include>
   <include name="Objects_CurtainsButton">
@@ -447,11 +377,9 @@
       <altlabel>$LOCALIZE[31067]S: $LOCALIZE[31077]</altlabel>
       <usealttexture>Skin.HasSetting(nocurtains)</usealttexture>
       <onclick>Skin.ToggleSetting(nocurtains)</onclick>
-      <visible>Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(57)</visible>
+      <visible>Control.IsVisible(52)</visible>
     </control>
   </include>
-  <!-- Multiplex Flat/Flow Layout Button -->
-  <!--<include name="Objects_MultiplexCoverStyleButtons"><control type="togglebutton" id="998"><include>Objects_MediaMenuButton</include><label>COVER $LOCALIZE[31060]</label><altlabel>COVER $LOCALIZE[31061]</altlabel><usealttexture>Skin.HasSetting(multiplexflow)</usealttexture><onclick>Skin.ToggleSetting(multiplexflow)</onclick><visible>Skin.HasSetting(videomovies) + Control.IsVisible(52)</visible></control></include>-->
   <include name="Objects_MultiplexInfoButtons">
     <control type="button" id="980">
       <include>Objects_MediaMenuButton</include>
@@ -459,7 +387,7 @@
       <onclick>Skin.SetBool(multiplexinfoauto)</onclick>
       <onclick>Skin.Reset(multiplexinfooff)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplexinfooff)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfooff)</visible>
     </control>
     <control type="button" id="981">
       <include>Objects_MediaMenuButton</include>
@@ -467,7 +395,7 @@
       <onclick>Skin.SetBool(multiplexinfotrigger)</onclick>
       <onclick>Skin.Reset(multiplexinfoauto)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexinfotrigger) | Skin.HasSetting(multiplexinfooff) | Skin.HasSetting(multiplexinfoon)]</visible>
     </control>
     <control type="button" id="982">
       <include>Objects_MediaMenuButton</include>
@@ -475,7 +403,7 @@
       <onclick>Skin.SetBool(multiplexinfoon)</onclick>
       <onclick>Skin.Reset(multiplexinfotrigger)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplexinfotrigger)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfotrigger)</visible>
     </control>
     <control type="button" id="983">
       <include>Objects_MediaMenuButton</include>
@@ -483,7 +411,7 @@
       <onclick>Skin.SetBool(multiplexinfooff)</onclick>
       <onclick>Skin.Reset(multiplexinfoon)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplexinfoon)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexinfoon)</visible>
     </control>
     <control type="button" id="984">
       <include>Objects_MediaMenuButton</include>
@@ -491,7 +419,7 @@
       <onclick>Skin.SetBool(multiplextvinfoauto)</onclick>
       <onclick>Skin.Reset(multiplextvinfooff)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplextvinfooff)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + Skin.HasSetting(multiplextvinfooff)</visible>
     </control>
     <control type="button" id="985">
       <include>Objects_MediaMenuButton</include>
@@ -499,7 +427,7 @@
       <onclick>Skin.SetBool(multiplextvinfotrigger)</onclick>
       <onclick>Skin.Reset(multiplextvinfoauto)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(552)] + ![Skin.HasSetting(multiplextvinfotrigger) | Skin.HasSetting(multiplextvinfooff) | Skin.HasSetting(multiplextvinfoon)]</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + ![Skin.HasSetting(multiplextvinfotrigger) | Skin.HasSetting(multiplextvinfooff) | Skin.HasSetting(multiplextvinfoon)]</visible>
     </control>
     <control type="button" id="986">
       <include>Objects_MediaMenuButton</include>
@@ -507,7 +435,7 @@
       <onclick>Skin.SetBool(multiplextvinfoon)</onclick>
       <onclick>Skin.Reset(multiplextvinfotrigger)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplextvinfotrigger)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + Skin.HasSetting(multiplextvinfotrigger)</visible>
     </control>
     <control type="button" id="987">
       <include>Objects_MediaMenuButton</include>
@@ -515,130 +443,47 @@
       <onclick>Skin.SetBool(multiplextvinfooff)</onclick>
       <onclick>Skin.Reset(multiplextvinfoon)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplextvinfoon)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52) + Skin.HasSetting(multiplextvinfoon)</visible>
     </control>
   </include>
   <include name="Objects_MultiplexStyleButtons">
-    <control type="button" id="3000">
+    <control type="button" id="988">
       <include>Objects_MediaMenuButton</include>
       <label>$LOCALIZE[31047]: $LOCALIZE[31046]</label>
       <onclick>Skin.SetBool(multiplexbigthumb)</onclick>
       <onclick>Skin.Reset(multiplexplot)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + ![Skin.HasSetting(multiplexbigthumb) | Skin.HasSetting(multiplexfanart) | Skin.HasSetting(multiplextrailer) | Skin.HasSetting(multiplexbigtrailer) | Skin.HasSetting(multiplexposter)]</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + ![Skin.HasSetting(multiplexbigthumb) | Skin.HasSetting(multiplexfanart)]</visible>
     </control>
-    <control type="button" id="3001">
+    <control type="button" id="989">
       <include>Objects_MediaMenuButton</include>
       <label>$LOCALIZE[31047]: $LOCALIZE[31045]</label>
       <onclick>Skin.SetBool(multiplexfanart)</onclick>
       <onclick>Skin.Reset(multiplexbigthumb)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplexbigthumb)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexbigthumb)</visible>
     </control>
-    <control type="button" id="3002">
+    <control type="button" id="990">
       <include>Objects_MediaMenuButton</include>
       <label>$LOCALIZE[31047]: $LOCALIZE[31044]</label>
-      <onclick>Skin.SetBool(multiplextrailer)</onclick>
+      <onclick>Skin.SetBool(multiplexplot)</onclick>
       <onclick>Skin.Reset(multiplexfanart)</onclick>
       <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplexfanart)</visible>
+      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(52) + Skin.HasSetting(multiplexfanart)</visible>
     </control>
-    <control type="button" id="3003">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[31047]: $LOCALIZE[32000]</label>
-      <onclick>Skin.SetBool(multiplexbigtrailer)</onclick>
-      <onclick>Skin.Reset(multiplextrailer)</onclick>
-      <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplextrailer)</visible>
-    </control>
-    <control type="button" id="3004">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[31047]: $LOCALIZE[32001]</label>
-      <onclick>Skin.SetBool(multiplexposter)</onclick>
-      <onclick>Skin.Reset(multiplexbigtrailer)</onclick>
-      <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplexbigtrailer)</visible>
-    </control>
-    <control type="button" id="3005">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[31047]: POSTER</label>
-      <onclick>Skin.SetBool(multiplexplot)</onclick>
-      <onclick>Skin.Reset(multiplexposter)</onclick>
-      <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + [Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(multiplexposter)</visible>
-    </control>
-    <control type="togglebutton" id="3006">
+    <control type="togglebutton" id="995">
       <include>Objects_MediaMenuButton</include>
       <label>$LOCALIZE[31045]: $LOCALIZE[31063]</label>
       <altlabel>$LOCALIZE[31045]: $LOCALIZE[31064]</altlabel>
       <usealttexture>!Skin.HasSetting(multiplextvbigthumb)</usealttexture>
       <onclick>Skin.ToggleSetting(multiplextvbigthumb)</onclick>
-      <visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(552)</visible>
-    </control>
-  </include>
-  <include name="Objects_WallInfoButtons">
-    <!--###############################################-->
-    <control type="button" id="1080">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[31070]: $LOCALIZE[31049]</label>
-      <onclick>Skin.SetBool(wallinfoon)</onclick>
-      <onclick>Skin.Reset(walleinfoauto)</onclick>
-      <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(53) + ![Skin.HasSetting(wallinfoon) | Skin.HasSetting(wallinfooff)]</visible>
-    </control>
-    <control type="button" id="1081">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[31070]: $LOCALIZE[31077]</label>
-      <onclick>Skin.SetBool(wallinfooff)</onclick>
-      <onclick>Skin.Reset(wallinfoon)</onclick>
-      <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(53) + Skin.HasSetting(wallinfoon)</visible>
-    </control>
-    <control type="button" id="1082">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[31070]: $LOCALIZE[31078]</label>
-      <onclick>Skin.SetBool(wallinfoauto)</onclick>
-      <onclick>Skin.Reset(wallinfooff)</onclick>
-      <onclick>XBMC.ReloadSkin</onclick>
-      <visible>Window.IsActive(25) + Skin.HasSetting(videomovies) + Control.IsVisible(53) + Skin.HasSetting(wallinfooff)</visible>
-    </control>
-  </include>
-  <include name="Objects_ClearListButtons">
-    <control type="togglebutton" id="1090">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[310793]</label>
-      <altlabel>$LOCALIZE[310794]</altlabel>
-      <usealttexture>Skin.HasSetting(clearlistthin)</usealttexture>
-      <onclick>Skin.SetBool(clearlistthin)</onclick>
-      <altclick>Skin.Reset(clearlistthin)</altclick>
-      <visible>Control.IsVisible(54)</visible>
-    </control>
-    <control type="togglebutton" id="1091">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[310795]</label>
-      <altlabel>$LOCALIZE[310796]</altlabel>
-      <usealttexture>Skin.HasSetting(clearlistinfothin)</usealttexture>
-      <onclick>Skin.SetBool(clearlistinfothin)</onclick>
-      <altclick>Skin.Reset(clearlistinfothin)</altclick>
-      <visible>Control.IsVisible(54)</visible>
-    </control>
-    <control type="togglebutton" id="1092">
-      <include>Objects_MediaMenuButton</include>
-      <label>$LOCALIZE[310797]</label>
-      <altlabel>$LOCALIZE[310798]</altlabel>
-      <usealttexture>Skin.HasSetting(darkclearlist)</usealttexture>
-      <onclick>Skin.SetBool(darkclearlist)</onclick>
-      <altclick>Skin.Reset(darkclearlist)</altclick>
-      <onclick>XBMC.ReloadSkin</onclick>
-      <altclick>XBMC.ReloadSkin</altclick>
-      <visible>Control.IsVisible(54)</visible>
+      <visible>Container.Content(episodes) + Window.IsActive(25) + Skin.HasSetting(videotv) + Control.IsVisible(52)</visible>
     </control>
   </include>
   <include name="Objects_ViewtypeClick">
     <onclick>SetFocus(69)</onclick>
   </include>
   <include name="Objects_WallGridButton">
-    <!--###############################################-->
     <control type="togglebutton" id="922">
       <include>Objects_MediaMenuButton</include>
       <label>$LOCALIZE[31076]: $LOCALIZE[31074]</label>
@@ -803,7 +648,7 @@
       <height>86</height>
       <texture>showcase/showcase_menupanel.png</texture>
       <include>Animation_MediaMenuSlide</include>
-      <visible>Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(551) | Control.IsVisible(52) | Control.IsVisible(552) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53) | Control.IsVisible(54)</visible>
+      <visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(51) | Control.IsVisible(57) | Control.IsVisible(53)</visible>
     </control>
   </include>
   <!-- Context menus -->
@@ -813,13 +658,10 @@
     <posy>0</posy>
     <height>58</height>
     <width>462</width>
-    <textcolor>menutext</textcolor>
+    <textcolor>FF383838</textcolor>
     <focusedcolor>FFdfdfdf</focusedcolor>
     <texturenofocus>dialogs/context_nofocus.png</texturenofocus>
     <texturefocus>dialogs/context_highlight.png</texturefocus>
-    <alttexturefocus>dialogs/context_highlight.png</alttexturefocus>
-    <alttexturenofocus>dialogs/context_nofocus.png</alttexturenofocus>
-    <pulseonselect>true</pulseonselect>
     <align>center</align>
     <aligny>top</aligny>
     <font>Font_ContextMenuButton</font>
@@ -915,21 +757,13 @@
     <animation effect="fade" start="100" end="0" time="125">WindowClose</animation>
   </include>
   <!-- OSD -->
-  <include name="Objects_OSDButtonGroup12">
-    <width>1452</width>
-    <posx>309</posx>
-  </include>
-  <include name="Objects_OSDButtonGroup11">
-    <width>1317</width>
-    <posx>309</posx>
-  </include>
   <include name="Objects_OSDButtonGroup10">
     <width>1185</width>
-    <posx>362</posx>
+    <posx>374</posx>
   </include>
   <include name="Objects_OSDButtonGroup9">
     <width>1068</width>
-    <posx>414</posx>
+    <posx>426</posx>
   </include>
   <include name="Objects_OSDButton">
     <width>132</width>
@@ -1146,11 +980,11 @@
   <include name="Objects_ButtonMenu10Group">
     <height>585</height>
   </include>
-  <include name="Objects_ButtonMenu11Group">
-    <height>644</height>
+  <include name="Objects_ButtonMenu9Group">
+    <height>526</height>
   </include>
-  <include name="Objects_ButtonMenu12Group">
-    <height>690</height>
+  <include name="Objects_ButtonMenu8Group">
+    <height>468</height>
   </include>
   <!-- Login Screen -->
   <include name="LoginThumbDimensions">
@@ -1193,47 +1027,5 @@
   </include>
   <include name="EmptyLibraryLabelMusic">
     <label>$LOCALIZE[31609][CR]$LOCALIZE[31611]</label>
-  </include>
-  <include name="ScrollOffsetLabel">
-    <control type="group">
-      <posx>0</posx>
-      <posy>0</posy>
-      <width>495</width>
-      <height>348</height>
-      <animation effect="slide" end="908,840" time="0" condition="Control.IsVisible(553)">Conditional</animation>
-      <animation effect="slide" end="908,810" time="0" condition="Control.IsVisible(52) + Skin.HasSetting(videomovies)">Conditional</animation>
-      <animation effect="slide" end="908,510" time="0" condition="Control.IsVisible(53)">Conditional</animation>
-      <animation effect="slide" end="908,810" time="0" condition="[Control.IsVisible(52) | Control.IsVisible(552)] + Skin.HasSetting(videotv)">Conditional</animation>
-      <animation effect="slide" end="510,510" time="0" condition="Control.IsVisible(54)">Conditional</animation>
-      <animation effect="slide" end="908,660" time="0" condition="Control.IsVisible(57)">Conditional</animation>
-      <animation effect="slide" end="630,495" time="0" condition="Control.IsVisible(50) | Control.IsVisible(550)">Conditional</animation>
-      <animation effect="slide" end="840,810" time="0" condition="Control.IsVisible(551)">Conditional</animation>
-      <control type="group">
-        <animation effect="fade" start="100" end="100" time="0" condition="Container.Scrolling">Conditional</animation>
-        <animation effect="fade" start="100" end="0" time="800" condition="!Container.Scrolling">Conditional</animation>
-        <control type="image">
-          <posx>0</posx>
-          <posy>0</posy>
-          <width>105</width>
-          <height>105</height>
-          <align>center</align>
-          <aligny>center</aligny>
-          <texture>common/scroll_letter_background.png</texture>
-          <visible>Skin.HasSetting(scrollletters)</visible>
-        </control>
-        <control type="label">
-          <posx>0</posx>
-          <posy>0</posy>
-          <width>105</width>
-          <height>105</height>
-          <align>center</align>
-          <aligny>center</aligny>
-          <label>$INFO[ListItem.SortLetter]</label>
-          <textcolor>ffffffff</textcolor>
-          <font>Font_MultiplexTVLabel</font>
-          <visible>Skin.HasSetting(scrollletters)</visible>
-        </control>
-      </control>
-    </control>
   </include>
 </includes>

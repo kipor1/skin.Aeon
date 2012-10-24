@@ -4,9 +4,9 @@
   <controls>
     <control type="group">
       <posx>0</posx>
-      <posy>900</posy>
+      <posy>854</posy>
       <width>1920</width>
-      <height>268</height>
+      <height>226</height>
       <animation type="Visible">
         <effect type="fade" time="400" start="0" end="100" />
         <effect type="slide" time="400" start="0,226" end="0,0" easing="out" tween="cubic" />
@@ -23,186 +23,58 @@
         <effect type="fade" time="400" start="100" end="0" />
         <effect type="slide" time="400" start="0,0" end="0,226" easing="in" tween="cubic" />
       </animation>
-      <control type="image">
-        <description>Panel</description>
+      <control type="progress">
+        <description>Progressbar</description>
         <posx>0</posx>
         <posy>0</posy>
-        <height>268</height>
         <width>1920</width>
-        <colordiffuse>cdffffff</colordiffuse>
-        <texture>osd/osd_back.png</texture>
-      </control>
-      <control type="progress" id="23">
-        <description>Progressbar</description>
-        <posx>168</posx>
-        <posy>90</posy>
-        <width>1586</width>
-        <height>22</height>
+        <height>226</height>
         <info>Player.Progress</info>
-        <texturebg>osd/osd_progress_back.png</texturebg>
-        <lefttexture>osd/osd_progress_left.png</lefttexture>
-        <midtexture>osd/osd_progress_mid.png</midtexture>
-        <righttexture>osd/osd_progress_right.png</righttexture>
+        <texturebg>osd/osd_progress_clear.png</texturebg>
+        <lefttexture>-</lefttexture>
+        <midtexture>osd/osd_progressmid.png</midtexture>
+        <righttexture>-</righttexture>
         <overlaytexture>-</overlaytexture>
-        <visible>true</visible>
-      </control>
-      <control type="label">
-        <posx>45</posx>
-        <posy>84</posy>
-        <width>450</width>
-        <height>38</height>
-        <font>Font_OSDTime</font>
-        <colordiffuse>d0FFFFFF</colordiffuse>
-        <label>$INFO[VideoPlayer.Time]</label>
-      </control>
-      <control type="label">
-        <posx>45</posx>
-        <posy>128</posy>
-        <width>450</width>
-        <height>38</height>
-        <font>Font_OSDTime</font>
-        <colordiffuse>d0FFFFFF</colordiffuse>
-        <label>$LOCALIZE[31720]: $INFO[System.Time]</label>
-        <visible>!Skin.HasSetting(currenttimeoff)</visible>
-      </control>
-      <control type="label">
-        <posx>0</posx>
-        <posy>117</posy>
-        <width>1920</width>
-        <height>22</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_OSDGenre</font>
-        <label>$INFO[VideoPlayer.Genre]</label>
-        <visible>VideoPlayer.Content(movies) + Skin.HasSetting(seekbarmovieinfo)</visible>
+        <include>Animation_CommonFade</include>
       </control>
       <control type="image">
-        <description>IMDB Rating</description>
-        <posx>862</posx>
-        <posy>142</posy>
-        <width>195</width>
-        <height>38</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <info>Player.StarRating</info>
-        <visible>VideoPlayer.Content(movies) + Skin.HasSetting(seekbarmovieinfo)</visible>
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>1920</width>
+        <height>226</height>
+        <texture>osd/fullscreen_bottom.png</texture>
       </control>
       <control type="label">
         <posx>0</posx>
-        <posy>33</posy>
+        <posy>68</posy>
         <width>1920</width>
-        <height>38</height>
+        <height>45</height>
         <align>center</align>
         <aligny>center</aligny>
-        <font>Font_OSDMusicTitle</font>
-        <label>$INFO[VideoPlayer.Title] ($INFO[VideoPlayer.Year])</label>
-        <visible>VideoPlayer.Content(movies) + Skin.HasSetting(seekbarmovieinfo)</visible>
-      </control>
-      <control type="label">
-        <posx>0</posx>
-        <posy>33</posy>
-        <width>1920</width>
-        <height>38</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_OSDMusicTitle</font>
-        <label>$INFO[VideoPlayer.TVShowTitle]</label>
-        <visible>VideoPlayer.Content(episodes) + Skin.HasSetting(seekbartvshowinfo)</visible>
-      </control>
-      <control type="label">
-        <posx>0</posx>
-        <posy>117</posy>
-        <width>1920</width>
-        <height>22</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_OSDGenre</font>
-        <label>Season $INFO[VideoPlayer.Season], Episode $INFO[VideoPlayer.Episode]</label>
-        <visible>VideoPlayer.Content(episodes) + Skin.HasSetting(seekbartvshowinfo)</visible>
-      </control>
-      <control type="label">
-        <posx>0</posx>
-        <posy>142</posy>
-        <width>1920</width>
-        <height>22</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_OSDGenre</font>
-        <label>$INFO[VideoPlayer.Title]</label>
-        <visible>VideoPlayer.Content(episodes) + Skin.HasSetting(seekbartvshowinfo)</visible>
-      </control>
-      <control type="image">
-        <description>Clearart</description>
-        <posx>1574</posx>
-        <posy>-158</posy>
-        <width>345</width>
-        <height>172</height>
-        <texture>clearart/$INFO[VideoPlayer.TVShowTitle].png</texture>
-        <aspectratio>keep</aspectratio>
-        <visible>VideoPlayer.Content(episodes) + Skin.HasSetting(seekbarclearart)</visible>
-      </control>
-      <control type="image">
-        <description>Cover Image</description>
-        <posx>75</posx>
-        <posy>795r</posy>
-        <width>375</width>
-        <height>562</height>
-        <texture diffuse="thumbs/movieposter_mask.png">$INFO[VideoPlayer.Cover]</texture>
-        <aspectratio aligny="bottom">Keep</aspectratio>
-        <visible>VideoPlayer.Content(movies) + Skin.HasSetting(seekbarmovieposter) + !Skin.HasSetting(seekbarmoviesmallposter)</visible>
-      </control>
-      <control type="image">
-        <description>Cover Image</description>
-        <posx>75</posx>
-        <posy>510r</posy>
-        <width>188</width>
-        <height>282</height>
-        <texture diffuse="thumbs/movieposter_mask.png">$INFO[VideoPlayer.Cover]</texture>
-        <aspectratio aligny="bottom">Keep</aspectratio>
-        <visible>VideoPlayer.Content(movies) + Skin.HasSetting(seekbarmovieposter) + Skin.HasSetting(seekbarmoviesmallposter)</visible>
-      </control>
-      <control type="image">
-        <description>Cover Image</description>
-        <posx>75</posx>
-        <posy>772r</posy>
-        <width>375</width>
-        <height>562</height>
-        <texture diffuse="multiplex/multiplex_tvmask.png">$INFO[VideoPlayer.Cover]</texture>
-        <aspectratio aligny="bottom">Keep</aspectratio>
-        <visible>!VideoPlayer.Content(movies) + Skin.HasSetting(seekbarthumb)</visible>
-      </control>
-      <control type="label">
-        <posx>0</posx>
-        <posy>126</posy>
-        <width>1920</width>
-        <height>38</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_OSDMusicTitle</font>
-        <label>$INFO[VideoPlayer.Title]</label>
+        <font>Font_OSDMusicArtist</font>
+        <label>31006</label>
         <animation effect="slide" start="0,0" end="0,-18" time="200" condition="Control.IsVisible(212)">Conditional</animation>
-        <visible>!Skin.HasSetting(seekbarmovieinfo) + VideoPlayer.Content(movies) | !Skin.HasSetting(seekbartvshowinfo) + VideoPlayer.Content(episodes) | VideoPlayer.Content(files)</visible>
       </control>
       <control type="label">
-        <posx>1875</posx>
-        <posy>84</posy>
-        <width>450</width>
-        <height>38</height>
-        <align>right</align>
-        <font>Font_OSDTime</font>
-        <colordiffuse>d0FFFFFF</colordiffuse>
-        <label>$INFO[VideoPlayer.Duration]</label>
+        <posx>0</posx>
+        <posy>112</posy>
+        <width>1920</width>
+        <height>45</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_OSDMusicTitle</font>
+        <label>[COLOR FFFFFFFF]$INFO[VideoPlayer.Title][/COLOR]</label>
+        <animation effect="slide" start="0,0" end="0,-18" time="200" condition="Control.IsVisible(212)">Conditional</animation>
       </control>
-      <control type="label">
-        <posx>1875</posx>
-        <posy>128</posy>
-        <width>450</width>
-        <height>38</height>
-        <align>right</align>
-        <font>Font_OSDTime</font>
-        <colordiffuse>d0FFFFFF</colordiffuse>
-        <label>$LOCALIZE[31710]: $INFO[Player.FinishTime]</label>
-        <visible>!Skin.HasSetting(finishtimeoff)</visible>
+      <control type="label" id="212">
+        <posx>0</posx>
+        <posy>138</posy>
+        <width>1920</width>
+        <height>45</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_OSDMusicArtist</font>
+        <label>[COLOR 91FFFFFF]$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration][/COLOR]</label>
       </control>
     </control>
   </controls>

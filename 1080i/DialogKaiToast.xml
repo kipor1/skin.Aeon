@@ -11,6 +11,14 @@
       <include>Dialogs_Group</include>
       <include>Dialogs_Tablet</include>
       <include>Dialogs_Exclam</include>
+      <control type="image" id="400">
+        <description>avatar</description>
+        <posx>3</posx>
+        <posy>4</posy>
+        <width>130</width>
+        <height>126</height>
+        <texture diffuse="thumbs/cdcover_mask.png">DefaultFile.png</texture>
+      </control>
       <control type="label" id="401">
         <include>Dialogs_Label2</include>
       </control>

@@ -3,11 +3,9 @@
   <allowoverlay>yes</allowoverlay>
   <controls>
     <control type="multiimage">
-      <description>Settings Backdrop</description>
-      <include>FullscreenDimensions</include>
-      <imagepath>backdrops/default_settings</imagepath>
+      <include>BackgroundVarsGlobal</include>
+      <include>BackgroundVarsSettings</include>
       <info>Skin.String(CustomSettings)</info>
-      <include>BackgroundTimings</include>
       <animation effect="fade" start="0" end="100" time="200" condition="Window.Previous(Home) | Skin.HasSetting(bmtransit)">WindowOpen</animation>
       <animation effect="fade" start="100" end="0" time="200" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">WindowClose</animation>
     </control>
@@ -124,7 +122,6 @@
         <width>1335</width>
         <height>141</height>
         <onclick>Skin.ToggleSetting(lowermainmenu)</onclick>
-        <include condition="Skin.HasSetting(lowerwidgets) + !Skin.HasSetting(lowermainmenu)">movewidgets</include>
         <onup>8</onup>
         <ondown>8</ondown>
         <onleft>32</onleft>
@@ -281,8 +278,7 @@
         <onclick>Skin.Reset(CustomTVFolder)</onclick>
         <onclick>Skin.Reset(CustomVideo)</onclick>
         <onclick>Skin.Reset(CustomVideoFolder)</onclick>
-        <onclick>Skin.Reset(CustomWeather)</onclick>
-        <onclick>Skin.Reset(CustomWeatherFolder)</onclick>
+        <onclick>Skin.Reset(Customadd-onsFolder)</onclick>
       </control>
       <include>Furniture_SettingsFrontPanel</include>
       <control type="image">

@@ -12,7 +12,6 @@
       <include>Dialogs_Tablet</include>
       <control type="progress" id="404">
         <include>Dialogs_Progress</include>
-        <info>System.Progressbar</info>
       </control>
       <include>Dialogs_HardDrive</include>
       <control type="label" id="1">

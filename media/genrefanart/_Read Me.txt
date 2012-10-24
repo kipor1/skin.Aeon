@@ -1,3 +1,0 @@
-Movie Fanart images in go here.
-
-<genrename>.jpg

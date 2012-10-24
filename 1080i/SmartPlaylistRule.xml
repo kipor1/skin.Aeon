@@ -104,7 +104,7 @@
         <align>center</align>
         <aligny>center</aligny>
         <texturefocus>-</texturefocus>
-        <texturenofocus></texturenofocus>
+        <texturenofocus />
         <textcolor>FF6a6565</textcolor>
         <selectedcolor>FFe4ec06</selectedcolor>
         <focusedcolor>FFFFFFFF</focusedcolor>

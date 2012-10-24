@@ -1,52 +1,13 @@
 ﻿<window id="0">
-  <defaultcontrol always="true">5043</defaultcontrol>
+  <defaultcontrol always="true">300</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
   <controls>
-    <control type="button" id="5043">
-      <description>visible at startup</description>
-      <posx>-30</posx>
-      <posy>-30</posy>
-      <width>1</width>
-      <height>1</height>
-      <texturenofocus>-</texturenofocus>
-      <texturefocus>-</texturefocus>
-      <onfocus>XBMC.RunScript(special://skin/scripts/RecentlyAdded.py)</onfocus>
-      <onfocus>Skin.SetBool(Startup)</onfocus>
-      <onfocus>SetFocus(500)</onfocus>
-      <visible>!Skin.HasSetting(Startup)</visible>
-    </control>
-    <control type="button" id="5043">
-      <description>visible after library update has finished</description>
-      <posx>-30</posx>
-      <posy>-30</posy>
-      <width>1</width>
-      <height>1</height>
-      <texturenofocus>-</texturenofocus>
-      <texturefocus>-</texturefocus>
-      <onfocus>XBMC.RunScript(special://skin/scripts/RecentlyAdded.py)</onfocus>
-      <onfocus>Skin.Reset(LibraryUpdated)</onfocus>
-      <onfocus>SetFocus(500)</onfocus>
-      <visible>Skin.HasSetting(Startup) + Skin.HasSetting(LibraryUpdated) + !Window.IsVisible(112) + !Window.IsVisible(133)</visible>
-    </control>
-    <control type="button" id="5043">
-      <description>visible in all other cases</description>
-      <posx>-30</posx>
-      <posy>-30</posy>
-      <width>1</width>
-      <height>1</height>
-      <texturenofocus>-</texturenofocus>
-      <texturefocus>-</texturefocus>
-      <onfocus>SetFocus(500)</onfocus>
-      <visible>Skin.HasSetting(Startup) + [!Skin.HasSetting(LibraryUpdated) |  [Skin.HasSetting(LibraryUpdated) + [Window.IsVisible(112) | Window.IsVisible(133)]]]</visible>
-    </control>
     <control type="label">
       <description>Force Weather update on load</description>
       <posx>0</posx>
       <posy>-150</posy>
       <label>$INFO[Weather.Conditions]</label>
       <font>-</font>
-      <onfocus>Skin.SetBool(Startup2)</onfocus>
-      <visible>Skin.HasSetting(Startup2)</visible>
     </control>
     <control type="image" id="87">
       <texture>-</texture>
@@ -68,11 +29,8 @@
       <imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath>
     </control>
     <include>Furniture_HomeNowPlaying</include>
-    <include condition="!StringCompare(Weather.Plugin,weather.com plus)">Objects_WeatherPopup</include>
-    <include condition="StringCompare(Weather.Plugin,weather.com plus)">Widget_Weather</include>
-    <include>latest_added</include>
+    <include>Objects_WeatherPopup</include>
     <include>Furniture_Time</include>
-    <include condition="Skin.HasSetting(showtotals)">Furniture_Library</include>
     <include>Furniture_HomeRSS</include>
     <include>Submenu</include>
     <control type="group">

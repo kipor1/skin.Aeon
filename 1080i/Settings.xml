@@ -1,14 +1,14 @@
 ﻿<window id="4">
-  <defaultcontrol always="true">6</defaultcontrol>
+  <defaultcontrol>1</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
   <controls>
     <control type="multiimage">
       <include>FullscreenDimensions</include>
       <include>BackgroundTimings</include>
-      <imagepath>backdrops/default_settings</imagepath>
+      <imagepath>special://skin/extras/backdrops/default_settings</imagepath>
       <info>Skin.String(CustomSettings)</info>
-      <animation effect="fade" start="0" end="100" time="200" condition="[Skin.HasSetting(settingsfade) + Window.Previous(Home)] | Skin.HasSetting(bmtransit)">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" time="200" condition="[[Skin.HasSetting(settingsfade) | Skin.HasSetting(nosettings)] + Window.Next(Home)] | [Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)]">WindowClose</animation>
+      <animation effect="fade" start="0" end="100" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="200" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">WindowClose</animation>
     </control>
     <control type="group">
       <include>FullscreenDimensions</include>
@@ -22,68 +22,471 @@
       </animation>
       <include>Furniture_SettingsBackPanel</include>
       <control type="image">
-        <include>Furniture_SettingsInternalBackPanel</include>
+        <posx>351</posx>
+        <posy>60</posy>
+        <width>1552</width>
+        <height>957</height>
+        <texture>settings/settings_intframe_bottom.png</texture>
         <include>Animation_SettingsInternalPanel</include>
       </control>
-      <include>Settings_XBMCSettingsButtons</include>
       <control type="group">
+        <!--settings buttons and labels-->
+        <include>Settings_ButtonGroupDimensions</include>
+        <animation effect="fade" time="125">Visible</animation>
+        <animation effect="fade" time="125">Hidden</animation>
+        <control type="button" id="1">
+          <!-- video settings-->
+          <description>My Videos</description>
+          <posy>0</posy>
+          <label>31140</label>
+          <onclick>ActivateWindow(MyVideosSettings)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>10</onup>
+          <ondown>2</ondown>
+        </control>
+        <control type="label">
+          <description>My Videos Sub Unfocused</description>
+          <posy>48</posy>
+          <label>31141</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(1)</visible>
+        </control>
+        <control type="label">
+          <description>My Videos Sub Unfocused</description>
+          <posy>48</posy>
+          <label>31141</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(1)</visible>
+        </control>
+        <control type="button" id="2">
+          <!-- music settings-->
+          <description>My Music</description>
+          <posy>87</posy>
+          <label>31142</label>
+          <onclick>ActivateWindow(MyMusicSettings)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>1</onup>
+          <ondown>3</ondown>
+        </control>
+        <control type="label">
+          <description>My Music Sub Unfocused</description>
+          <posy>135</posy>
+          <label>31143</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(2)</visible>
+        </control>
+        <control type="label">
+          <description>My Music Sub Unfocused</description>
+          <posy>135</posy>
+          <label>31143</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(2)</visible>
+        </control>
+        <control type="button" id="3">
+          <!-- pictures-->
+          <description>My Pictures</description>
+          <posy>174</posy>
+          <label>31146</label>
+          <onclick>ActivateWindow(MyPicturesSettings)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>2</onup>
+          <ondown>4</ondown>
+        </control>
+        <control type="label">
+          <description>My Pictures Sub Unfocused</description>
+          <posy>222</posy>
+          <label>31147</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(3)</visible>
+        </control>
+        <control type="label">
+          <description>My Pictures Sub Unfocused</description>
+          <posy>222</posy>
+          <label>31147</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(3)</visible>
+        </control>
+        <control type="button" id="4">
+          <!--weather-->
+          <description>My Weather</description>
+          <posy>261</posy>
+          <label>31148</label>
+          <onclick>ActivateWindow(MyWeatherSettings)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>3</onup>
+          <ondown>5</ondown>
+        </control>
+        <control type="label">
+          <description>My Weather Sub Unfocused</description>
+          <posy>309</posy>
+          <label>31149</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(4)</visible>
+        </control>
+        <control type="label">
+          <description>My Weather Sub Unfocused</description>
+          <posy>309</posy>
+          <label>31149</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(4)</visible>
+        </control>
+        <control type="button" id="5">
+          <!--network-->
+          <description>My Network</description>
+          <posy>348</posy>
+          <label>31150</label>
+          <onclick>ActivateWindow(NetworkSettings)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>4</onup>
+          <ondown>6</ondown>
+        </control>
+        <control type="label">
+          <description>My Network Sub Unfocused</description>
+          <posy>396</posy>
+          <label>31151</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(5)</visible>
+        </control>
+        <control type="label">
+          <description>My Network Sub Unfocused</description>
+          <posy>396</posy>
+          <label>31151</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(5)</visible>
+        </control>
+        <control type="button" id="6">
+          <!--system-->
+          <description>System</description>
+          <posy>435</posy>
+          <label>31152</label>
+          <onclick>ActivateWindow(SystemSettings)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>5</onup>
+          <ondown>7</ondown>
+        </control>
+        <control type="label">
+          <description>System Sub Unfocused</description>
+          <posy>483</posy>
+          <label>31153</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(6)</visible>
+        </control>
+        <control type="label">
+          <description>System Sub Unfocused</description>
+          <posy>483</posy>
+          <label>31153</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(6)</visible>
+        </control>
+        <control type="button" id="7">
+          <!--darstellung-->
+          <description>Appearance</description>
+          <posy>522</posy>
+          <label>31154</label>
+          <onclick>ActivateWindow(AppearanceSettings)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>6</onup>
+          <ondown>8</ondown>
+        </control>
+        <control type="label">
+          <description>Appearance Sub Unfocused</description>
+          <posy>570</posy>
+          <label>31155</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(7)</visible>
+        </control>
+        <control type="label">
+          <description>Appearance Sub Unfocused</description>
+          <posy>570</posy>
+          <label>31155</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(7)</visible>
+        </control>
+        <control type="button" id="8">
+          <!--benutzerkonten-->
+          <description>Backdrops Settings</description>
+          <posy>609</posy>
+          <label>31160</label>
+          <onclick>ActivateWindow(34)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>7</onup>
+          <ondown>9</ondown>
+        </control>
+        <control type="label">
+          <description>Backdrops Sub Unfocused</description>
+          <posy>657</posy>
+          <label>31161</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(8)</visible>
+        </control>
+        <control type="label">
+          <description>Backdrops Sub Unfocused</description>
+          <posy>657</posy>
+          <label>31161</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(8)</visible>
+        </control>
+        <control type="button" id="9">
+          <!--skin-anpassung-->
+          <description>Backdrops Settings</description>
+          <posy>696</posy>
+          <label>31156</label>
+          <onclick>ActivateWindow(604)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>8</onup>
+          <ondown>10</ondown>
+        </control>
+        <control type="label">
+          <description>Backdrops Sub Unfocused</description>
+          <posy>744</posy>
+          <label>31157</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(9)</visible>
+        </control>
+        <control type="label">
+          <description>Backdrops Sub Unfocused</description>
+          <posy>744</posy>
+          <label>31157</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(9)</visible>
+        </control>
+        <control type="button" id="10">
+          <!--Menupunkte einrichten-->
+          <description>Backdrops Settings</description>
+          <posy>783</posy>
+          <label>31158</label>
+          <onclick>ActivateWindow(56)</onclick>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>9</onup>
+          <ondown>1</ondown>
+        </control>
+        <control type="label">
+          <description>Backdrops Sub Unfocused</description>
+          <posy>831</posy>
+          <label>31159</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(10)</visible>
+        </control>
+        <control type="label">
+          <description>Backdrops Sub Unfocused</description>
+          <posy>831</posy>
+          <label>31159</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(10)</visible>
+        </control>
+      </control>
+      <control type="group">
+        <!-- images in settings -->
         <posx>498</posx>
         <posy>87</posy>
         <width>1260</width>
         <height>870</height>
         <control type="multiimage">
           <include>Furniture_SettingsTutorialSlide</include>
-          <imagepath>tutorials/tut_pictures</imagepath>
-          <visible>Control.HasFocus(9)</visible>
-        </control>
-        <control type="multiimage">
-          <include>Furniture_SettingsTutorialSlide</include>
           <imagepath>tutorials/tut_movies</imagepath>
-          <visible>Control.HasFocus(6)</visible>
-        </control>
-        <control type="multiimage">
-          <include>Furniture_SettingsTutorialSlide</include>
-          <imagepath>tutorials/tut_apps</imagepath>
-          <visible>Control.HasFocus(8)</visible>
+          <visible>Control.HasFocus(1)</visible>
         </control>
         <control type="multiimage">
           <include>Furniture_SettingsTutorialSlide</include>
           <imagepath>tutorials/tut_music</imagepath>
-          <visible>Control.HasFocus(7)</visible>
-        </control>
-        <control type="multiimage">
-          <include>Furniture_SettingsTutorialSlide</include>
-          <imagepath>tutorials/tut_system</imagepath>
-          <visible>Control.HasFocus(4)</visible>
-        </control>
-        <control type="multiimage">
-          <include>Furniture_SettingsTutorialSlide</include>
-          <imagepath>tutorials/tut_aeon</imagepath>
-          <visible>Control.HasFocus(11)</visible>
-        </control>
-        <control type="multiimage">
-          <include>Furniture_SettingsTutorialSlide</include>
-          <imagepath>tutorials/tut_profiles</imagepath>
-          <visible>Control.HasFocus(12)</visible>
-        </control>
-        <control type="multiimage">
-          <include>Furniture_SettingsTutorialSlide</include>
-          <imagepath>tutorials/tut_network</imagepath>
           <visible>Control.HasFocus(2)</visible>
         </control>
         <control type="multiimage">
           <include>Furniture_SettingsTutorialSlide</include>
-          <imagepath>tutorials/tut_appearance</imagepath>
+          <imagepath>tutorials/tut_pictures</imagepath>
           <visible>Control.HasFocus(3)</visible>
         </control>
         <control type="multiimage">
           <include>Furniture_SettingsTutorialSlide</include>
           <imagepath>tutorials/tut_weather</imagepath>
+          <visible>Control.HasFocus(4)</visible>
+        </control>
+        <control type="multiimage">
+          <include>Furniture_SettingsTutorialSlide</include>
+          <imagepath>tutorials/tut_network</imagepath>
+          <visible>Control.HasFocus(5)</visible>
+        </control>
+        <control type="multiimage">
+          <include>Furniture_SettingsTutorialSlide</include>
+          <imagepath>tutorials/tut_system</imagepath>
+          <visible>Control.HasFocus(6)</visible>
+        </control>
+        <control type="multiimage">
+          <include>Furniture_SettingsTutorialSlide</include>
+          <imagepath>tutorials/tut_appearance</imagepath>
+          <visible>Control.HasFocus(7)</visible>
+        </control>
+        <control type="multiimage">
+          <include>Furniture_SettingsTutorialSlide</include>
+          <imagepath>tutorials/tut_profiles</imagepath>
+          <visible>Control.HasFocus(8)</visible>
+        </control>
+        <control type="multiimage">
+          <include>Furniture_SettingsTutorialSlide</include>
+          <imagepath>tutorials/tut_aeon</imagepath>
+          <visible>Control.HasFocus(9)</visible>
+        </control>
+        <control type="multiimage">
+          <include>Furniture_SettingsTutorialSlide</include>
+          <imagepath>tutorials/tut_aeon</imagepath>
           <visible>Control.HasFocus(10)</visible>
         </control>
       </control>
-      <include>Labels_AeonMainLabels</include>
+      <control type="group">
+        <!-- Beschreibungen Network-->
+        <description>Settings Labels - Tier 1: Network</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(5)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31812</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31813</label>
+        </control>
+      </control>
+      <control type="group">
+        <!--appearance-->
+        <description>Settings Labels - Tier 1: Appearance</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(7)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31814</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31815</label>
+        </control>
+      </control>
+      <control type="group">
+        <!--system-->
+        <description>Settings Labels - Tier 1: System</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(6)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31816</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31817</label>
+        </control>
+      </control>
+      <control type="group">
+        <description>Settings Labels - Tier 1: Movies</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(1)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31800</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31801</label>
+        </control>
+      </control>
+      <control type="group">
+        <description>Settings Labels - Tier 1: Music</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(2)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31802</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31803</label>
+        </control>
+      </control>
+      <control type="group">
+        <description>Settings Labels - Tier 1: Menus</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(10)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31804</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31805</label>
+        </control>
+      </control>
+      <control type="group">
+        <description>Settings Labels - Tier 1: Pictures</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(3)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31806</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31807</label>
+        </control>
+      </control>
+      <control type="group">
+        <description>Settings Labels - Tier 1: Weather</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(4)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31808</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31809</label>
+        </control>
+      </control>
+      <control type="group">
+        <description>Settings Labels - Tier 1: Customisation Options</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(9)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31810</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31811</label>
+        </control>
+      </control>
+      <control type="group">
+        <description>Settings Labels - Tier 1: Advanced Options</description>
+        <include>Labels_MainLabelGroup</include>
+        <visible>Control.HasFocus(8)</visible>
+        <control type="label">
+          <include>Labels_MainLabelBigVars</include>
+          <label>31820</label>
+        </control>
+        <control type="label">
+          <include>Labels_MainLabelSmallVars</include>
+          <label>31821</label>
+        </control>
+      </control>
       <control type="image">
+        <!--background image-->
         <description>background image</description>
         <posx>63</posx>
         <posy>42</posy>
@@ -100,6 +503,6 @@
         <include>Animation_SettingsInternalPanel</include>
       </control>
     </control>
-    <!--<include>Background_ContextBlack</include>-->
+    <include>Background_ContextBlack</include>
   </controls>
 </window>

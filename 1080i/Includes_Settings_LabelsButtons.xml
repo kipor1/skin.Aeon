@@ -116,11 +116,11 @@
       <visible>Control.HasFocus(8)</visible>
       <control type="label">
         <include>Labels_MainLabelBigVars</include>
-        <label>31804</label>
+        <label>31941</label>
       </control>
       <control type="label">
         <include>Labels_MainLabelSmallVars</include>
-        <label>31805</label>
+        <label>31942</label>
       </control>
     </control>
     <control type="group">
@@ -694,7 +694,7 @@
         <onclick>SetFocus(400)</onclick>
         <onleft>400</onleft>
         <onright>400</onright>
-        <onup>21</onup>
+        <onup>10</onup>
         <ondown>7</ondown>
         <visible allowhiddenfocus="true">![Control.HasFocus(6) | ControlGroup(20).HasFocus]</visible>
       </control>
@@ -706,7 +706,7 @@
         <onclick>SetFocus(400)</onclick>
         <onleft>400</onleft>
         <onright>400</onright>
-        <onup>21</onup>
+        <onup>10</onup>
         <ondown>7</ondown>
         <visible>Control.HasFocus(6) | ControlGroup(20).HasFocus</visible>
       </control>
@@ -843,7 +843,7 @@
         <label>31244</label>
         <include>Objects_SettingsSectionMenuButton</include>
         <onup>9</onup>
-        <ondown>21</ondown>
+        <ondown>11</ondown>
         <onleft>800</onleft>
         <onright>800</onright>
         <visible allowhiddenfocus="true">![Control.HasFocus(10) | ControlGroup(14).HasFocus]</visible>
@@ -854,7 +854,7 @@
         <label>31244</label>
         <include>Objects_SettingsSectionMenuButtonFocused</include>
         <onup>9</onup>
-        <ondown>21</ondown>
+        <ondown>6</ondown>
         <onleft>40</onleft>
         <onright>40</onright>
         <visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
@@ -875,46 +875,6 @@
         <include>Objects_SettingsSectionMenuButtonSubtitle</include>
         <visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
       </control>
-      <!-- Start SeekBar Info Options -->
-      <control type="button" id="21">
-        <description>SeekBar Info</description>
-        <posy>435</posy>
-        <label>SEEKBAR</label>
-        <include>Objects_SettingsSectionMenuButton</include>
-        <onup>10</onup>
-        <ondown>6</ondown>
-        <onleft>900</onleft>
-        <onright>900</onright>
-        <visible allowhiddenfocus="true">![Control.HasFocus(21) | ControlGroup(15).HasFocus]</visible>
-      </control>
-      <control type="button">
-        <description>Purge</description>
-        <posy>435</posy>
-        <label>SEEKBAR</label>
-        <include>Objects_SettingsSectionMenuButtonFocused</include>
-        <onup>10</onup>
-        <ondown>6</ondown>
-        <onleft>40</onleft>
-        <onright>40</onright>
-        <visible>Control.HasFocus(21) | ControlGroup(15).HasFocus</visible>
-      </control>
-      <control type="label">
-        <description>My Weather Sub Unfocused</description>
-        <posy>483</posy>
-        <label>SEEKBAR INFO  OPTIONS</label>
-        <textcolor>FFf5f5f5</textcolor>
-        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
-        <visible>![Control.HasFocus(21) | ControlGroup(15).HasFocus]</visible>
-      </control>
-      <control type="label">
-        <description>My Weather Sub Unfocused</description>
-        <posy>483</posy>
-        <label>SEEKBAR INFO  OPTIONS</label>
-        <textcolor>FF262728</textcolor>
-        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
-        <visible>Control.HasFocus(21) | ControlGroup(15).HasFocus</visible>
-      </control>
-      <!-- End SeekBar Info Options -->
     </control>
   </include>
   <include name="Settings_XBMCSettingsButtons">
@@ -976,8 +936,8 @@
       <control type="button" id="8">
         <description>My Programs</description>
         <posy>174</posy>
-        <label>31144</label>
-        <onclick>ActivateWindow(MyProgramsSettings)</onclick>
+        <label>31940</label>
+        <onclick>ActivateWindow(AddonBrowser)</onclick>
         <include>Objects_SettingsSectionMenuButton</include>
         <onup>7</onup>
         <ondown>9</ondown>
@@ -985,7 +945,7 @@
       <control type="label">
         <description>My Programs Sub Unfocused</description>
         <posy>222</posy>
-        <label>31145</label>
+        <label>31941</label>
         <textcolor>FFf5f5f5</textcolor>
         <include>Objects_SettingsSectionMenuButtonSubtitle</include>
         <visible>!Control.HasFocus(8)</visible>
@@ -993,7 +953,7 @@
       <control type="label">
         <description>My Programs Sub Unfocused</description>
         <posy>222</posy>
-        <label>31145</label>
+        <label>31941</label>
         <textcolor>FF262728</textcolor>
         <include>Objects_SettingsSectionMenuButtonSubtitle</include>
         <visible>Control.HasFocus(8)</visible>

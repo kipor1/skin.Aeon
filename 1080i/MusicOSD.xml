@@ -19,59 +19,65 @@
       <control type="grouplist" id="213">
         <posx>363</posx>
         <posy>90</posy>
-        <width>1204</width>
+        <width>1294</width>
         <height>144</height>
         <itemgap>-15</itemgap>
         <onup>-</onup>
         <ondown>-</ondown>
         <orientation>horizontal</orientation>
+        <control type="button" id="921">
+          <include>Objects_OSDButton</include>
+          <onclick>Dialog.Close(MusicOSD)</onclick>
+          <onclick>RunScript(script.cu.lyrics,1)</onclick>
+        </control>
         <control type="button" id="9">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.ActivateWindow(500)</onclick>
+          <onclick>ActivateWindow(500)</onclick>
         </control>
         <control type="button" id="500">
           <include>Objects_OSDButton</include>
         </control>
         <control type="button" id="11">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.PlayerControl(Previous)</onclick>
+          <onclick>PlayerControl(Previous)</onclick>
         </control>
         <control type="button" id="12">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.PlayerControl(Rewind)</onclick>
+          <onclick>PlayerControl(Rewind)</onclick>
         </control>
         <control type="button" id="13">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.PlayerControl(Play)</onclick>
+          <onclick>PlayerControl(Play)</onclick>
         </control>
         <control type="button" id="18">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.PlayerControl(Stop)</onclick>
+          <onclick>PlayerControl(Stop)</onclick>
         </control>
         <control type="button" id="15">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.PlayerControl(Forward)</onclick>
+          <onclick>PlayerControl(Forward)</onclick>
         </control>
         <control type="button" id="16">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.PlayerControl(Next)</onclick>
+          <onclick>PlayerControl(Next)</onclick>
         </control>
         <control type="button" id="920">
           <include>Objects_OSDButton</include>
-          <onclick>XBMC.ActivateWindow(122)</onclick>
-        </control>
-        <control type="button" id="919">
-          <include>Objects_OSDButton</include>
-          <onclick>XBMC.ActivateWindow(121)</onclick>
+          <onclick>ActivateWindow(122)</onclick>
         </control>
       </control>
       <control type="grouplist" id="214">
         <posx>363</posx>
         <posy>90</posy>
-        <width>1204</width>
+        <width>1294</width>
         <height>144</height>
         <itemgap>-15</itemgap>
         <orientation>horizontal</orientation>
+        <control type="button">
+          <include>Objects_OSDButtonTop</include>
+          <texturenofocus>osd/osd_button_playlist.png</texturenofocus>
+          <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(921)">Conditional</animation>
+        </control>
         <control type="button">
           <include>Objects_OSDButtonTop</include>
           <texturenofocus>osd/osd_button_playlist.png</texturenofocus>
@@ -118,11 +124,6 @@
           <include>Objects_OSDButtonTop</include>
           <texturenofocus>osd/osd_button_vis.png</texturenofocus>
           <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(920)">Conditional</animation>
-        </control>
-        <control type="button">
-          <include>Objects_OSDButtonTop</include>
-          <texturenofocus>osd/osd_button_settings.png</texturenofocus>
-          <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(919)">Conditional</animation>
         </control>
       </control>
       <control type="progress" id="23">

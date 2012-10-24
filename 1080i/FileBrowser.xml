@@ -202,7 +202,7 @@
       <posy>902</posy>
       <width>198</width>
       <height>116</height>
-      <texturefocus>-</texturefocus>
+      <texturefocus>list/filebrowser_button2down.png</texturefocus>
       <texturenofocus>-</texturenofocus>
       <font>Font_FileBrowserButton</font>
       <label>186</label>

@@ -6,29 +6,69 @@
     <posx>0</posx>
     <posy>0</posy>
   </coordinates>
-  <include>Animation_DialogPopup</include>
+  <animation type="WindowOpen" reversible="false">
+    <effect type="zoom" start="80" end="100" center="640,360" delay="200" easing="out" tween="back" time="300" />
+    <effect type="fade" delay="200" start="0" end="100" time="300" />
+  </animation>
+  <animation type="WindowClose" reversible="false">
+    <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+    <effect type="fade" start="100" end="0" time="300" />
+  </animation>
   <controls>
     <control type="group">
-      <include>Dialogs_Group</include>
-      <include>Dialogs_Tablet</include>
-      <include>Dialogs_Exclam</include>
+      <posx>430</posx>
+      <posy>780</posy>
+      <width>1060</width>
+      <height>274</height>
+      <animation effect="slide" end="0,-338" time="400" easing="inout" tween="cubic" condition="Window.IsActive(Home) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+      <animation effect="slide" end="0,-600" time="200" easing="inout" tween="circle" condition="Control.IsVisible(57)">Conditional</animation>
+      <control type="image">
+        <posx>15</posx>
+        <posy>15</posy>
+        <width>1032</width>
+        <height>244</height>
+        <texture>dialogs/progress_backg.png</texture>
+      </control>
       <control type="label" id="2">
-        <include>Dialogs_Label1</include>
+        <posx>60</posx>
+        <posy>57</posy>
+        <width>940</width>
+        <height>76</height>
+        <textcolor>a7ffffff</textcolor>
+        <align>center</align>
+        <font>Font_ProgressLabelSmall</font>
+        <animation effect="slide" start="0,22" end="0,22" time="0" condition="IsEmpty(Control.GetLabel(3)) + IsEmpty(Control.GetLabel(4))">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,0" time="0" condition="!IsEmpty(Control.GetLabel(3)) + IsEmpty(Control.GetLabel(4))">Conditional</animation>
       </control>
       <control type="label" id="3">
-        <include>Dialogs_Label2</include>
+        <posx>60</posx>
+        <posy>92</posy>
+        <width>940</width>
+        <height>76</height>
+        <textcolor>a7ffffff</textcolor>
+        <align>center</align>
+        <font>Font_ProgressLabelSmall</font>
         <animation effect="slide" start="0,15" end="0,15" time="0" condition="IsEmpty(Control.GetLabel(4))">Conditional</animation>
       </control>
       <control type="label" id="4">
-        <include>Dialogs_Label2</include>
+        <posx>60</posx>
+        <posy>122</posy>
+        <width>940</width>
+        <height>76</height>
+        <textcolor>a7ffffff</textcolor>
+        <align>center</align>
+        <font>Font_ProgressLabelSmall</font>
       </control>
       <control type="button" id="10">
-        <posx>180</posx>
-        <posy>96</posy>
-        <width>147</width>
+        <posx>60</posx>
+        <posy>152</posy>
+        <width>940</width>
+        <height>76</height>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
         <align>center</align>
-        <textcolor>menutext</textcolor>
-        <font>Font_ProgressLabel</font>
+        <font>Font_ProgressLabelYesNo</font>
+        <textcolor>d0ffffff</textcolor>
         <label>106</label>
         <include>DialogInfo</include>
         <scroll>true</scroll>
@@ -42,12 +82,15 @@
         <visible allowhiddenfocus="true">Control.HasFocus(10)</visible>
       </control>
       <control type="button" id="11">
-        <posx>180</posx>
-        <posy>96</posy>
-        <width>147</width>
+        <posx>60</posx>
+        <posy>152</posy>
+        <width>940</width>
+        <height>76</height>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
         <align>center</align>
-        <textcolor>menutext</textcolor>
-        <font>Font_ProgressLabel</font>
+        <font>Font_ProgressLabelYesNo</font>
+        <textcolor>d0ffffff</textcolor>
         <label>107</label>
         <include>DialogInfo</include>
         <scroll>true</scroll>
@@ -61,24 +104,34 @@
         <visible allowhiddenfocus="true">Control.HasFocus(11)</visible>
       </control>
       <control type="label">
-        <posx>126</posx>
-        <posy>-22</posy>
+        <posx>15</posx>
+        <posy>15</posy>
         <height>244</height>
-        <width>75</width>
+        <width>98</width>
         <align>center</align>
         <aligny>center</aligny>
         <label>Y</label>
         <font>Font_KeyboardShapes</font>
       </control>
       <control type="label">
-        <posx>309</posx>
-        <posy>-22</posy>
+        <posx>957</posx>
+        <posy>15</posy>
         <height>244</height>
         <width>75</width>
         <align>center</align>
         <aligny>center</aligny>
         <label>Z</label>
         <font>Font_KeyboardShapes</font>
+      </control>
+      <control type="label" id="1">
+        <description>Heading Label</description>
+        <posx>60</posx>
+        <posy>75</posy>
+        <width>940</width>
+        <height>76</height>
+        <textcolor>a7ffffff</textcolor>
+        <align>center</align>
+        <font>-</font>
       </control>
     </control>
   </controls>

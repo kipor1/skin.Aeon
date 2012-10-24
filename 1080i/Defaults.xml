@@ -3,13 +3,13 @@
     <description>default image</description>
     <posx>0</posx>
     <posy>0</posy>
-    <texture />
+    <texture></texture>
   </default>
   <default type="label">
     <description>default label</description>
     <posx>120</posx>
     <posy>90</posy>
-    <label />
+    <label></label>
     <font>font13</font>
     <textcolor>d0FFFFFF</textcolor>
   </default>
@@ -147,7 +147,7 @@
     <spinheight>24</spinheight>
     <spinposx>640</spinposx>
     <spinposy>520</spinposy>
-    <spinfont />
+    <spinfont></spinfont>
     <spincolor>d0ffffff</spincolor>
     <textureup>scroll-up.png</textureup>
     <texturedown>scroll-down.png</texturedown>

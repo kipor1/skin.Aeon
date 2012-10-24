@@ -1,0 +1,169 @@
+﻿<includes>
+  <include name="Viewtype_Files">
+    <include>BackgroundTimings</include>
+    <!-- Browser -->
+    <control type="image">
+      <include>Animation_CommonFade</include>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>settings/settings_panelback_overlay.png</texture>
+      <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+    </control>
+    <control type="list" id="55">
+      <posx>387</posx>
+      <posy>180</posy>
+      <width>1404</width>
+      <height>420</height>
+      <onup>55</onup>
+      <ondown>55</ondown>
+      <onleft>6</onleft>
+      <onright>60</onright>
+      <scrolltime>160</scrolltime>
+      <viewtype label="40289">list</viewtype>
+      <orientation>vertical</orientation>
+      <focusposition>6</focusposition>
+      <pagecontrol>60</pagecontrol>
+      <itemlayout width="0" height="74">
+        <control type="label">
+          <posx>75</posx>
+          <posy>0</posy>
+          <width>804</width>
+          <height>74</height>
+          <aligny>center</aligny>
+          <font>Font_SettingsOptions</font>
+          <textcolor>FF939597</textcolor>
+          <selectedcolor>FFFFFFFF</selectedcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <scroll>false</scroll>
+          <visible>Control.HasFocus(6) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+        </control>
+        <control type="label">
+          <posx>1365</posx>
+          <posy>0</posy>
+          <width>804</width>
+          <height>74</height>
+          <font>Font_SettingsOptions</font>
+          <aligny>center</aligny>
+          <textcolor>FF939597</textcolor>
+          <align>right</align>
+          <aligny>center</aligny>
+          <label>$INFO[ListItem.Label2]</label>
+          <animation effect="fade" start="0" end="100" time="150" condition="Container.OnNext">Focus</animation>
+          <animation effect="fade" start="0" end="100" time="150" condition="Container.OnPrevious">Focus</animation>
+          <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+        </control>
+      </itemlayout>
+      <focusedlayout width="0" height="75">
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1404</width>
+          <height>74</height>
+          <texture>settings/settings_radiobuttonofffocus.png</texture>
+          <animation effect="slide" start="0,-75" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
+          <animation effect="slide" start="0,75" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
+          <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+        </control>
+        <control type="label">
+          <posx>75</posx>
+          <posy>0</posy>
+          <width>804</width>
+          <height>74</height>
+          <font>Font_SettingsOptions</font>
+          <aligny>center</aligny>
+          <textcolor>FFFFFFFF</textcolor>
+          <align>left</align>
+          <aligny>center</aligny>
+          <label>$INFO[ListItem.Label]</label>
+          <animation effect="fade" start="0" end="100" time="150" condition="Container.OnNext">Focus</animation>
+          <animation effect="fade" start="0" end="100" time="150" condition="Container.OnPrevious">Focus</animation>
+          <visible>Control.HasFocus(6) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+        </control>
+        <control type="label">
+          <posx>1365</posx>
+          <posy>0</posy>
+          <width>804</width>
+          <height>74</height>
+          <font>Font_SettingsOptions</font>
+          <aligny>center</aligny>
+          <textcolor>FFFFFFFF</textcolor>
+          <align>right</align>
+          <aligny>center</aligny>
+          <label>$INFO[ListItem.Label2]</label>
+          <animation effect="fade" start="0" end="100" time="150" condition="Container.OnNext">Focus</animation>
+          <animation effect="fade" start="0" end="100" time="150" condition="Container.OnPrevious">Focus</animation>
+          <visible>Control.HasFocus(6) + !Window.IsVisible(146) | Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+        </control>
+      </focusedlayout>
+    </control>
+    <control type="group">
+      <visible>Control.IsVisible(55)</visible>
+      <control type="group">
+        <visible>Control.HasFocus(6) + Container.Content(episodes) | Control.HasFocus(55) + Container.Content(episodes)</visible>
+        <posx>0</posx>
+        <posy>0</posy>
+      </control>
+      <control type="image">
+        <include>Animation_CommonFade</include>
+        <posx>849</posx>
+        <posy>657</posy>
+        <width>120</width>
+        <height>60</height>
+        <aspectratio align="left" aligny="top">keep</aspectratio>
+        <texture>home/nowplaying/nowplaying_arrow.png</texture>
+        <visible>!IsEmpty(ListItem.property(Addon.Description)) + Control.HasFocus(55) + !Window.IsVisible(146)</visible>
+      </control>
+      <control type="image">
+        <include>Animation_CommonFade</include>
+        <posx>450</posx>
+        <posy>636</posy>
+        <width>414</width>
+        <height>345</height>
+        <aspectratio align="left" aligny="top" stretchdiffuse="false">keep</aspectratio>
+        <texture background="true" diffuse="posterview/posterdiffuse.png" />
+        <texture fallback="DefaultAddSource.png">$INFO[ListItem.Icon]</texture>
+        <bordertexture border="5">list/list_episodeicon_frame.png</bordertexture>
+        <bordersize>8</bordersize>
+        <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+      </control>
+      <control type="textbox" id="401">
+        <description>Description</description>
+        <posx>900</posx>
+        <posy>669</posy>
+        <width>855</width>
+        <height>300</height>
+        <font>Plot</font>
+        <align>justify</align>
+        <textcolor>FFFFFFFF</textcolor>
+        <label>$INFO[ListItem.Property(Addon.Description)]</label>
+        <autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(allowscroll)</autoscroll>
+        <pagecontrol>61</pagecontrol>
+        <visible>Control.HasFocus(55) + !Window.IsVisible(146) | Control.HasFocus(60) + !Window.IsVisible(146)</visible>
+      </control>
+    </control>
+    <!-- Scroll Bar -->
+    <control type="scrollbar" id="60">
+      <description>Scroll bar</description>
+      <posx>1840</posx>
+      <posy>162</posy>
+      <width>98</width>
+      <height>450</height>
+      <visible allowhiddenfocus="true">Control.IsVisible(55) + Control.HasFocus(60)</visible>
+      <texturesliderbackground>windows/scrollbarbacklist.png</texturesliderbackground>
+      <texturesliderbar>-</texturesliderbar>
+      <texturesliderbarfocus>-</texturesliderbarfocus>
+      <textureslidernib>windows/scrollbarnub-nofocus.png</textureslidernib>
+      <textureslidernibfocus>windows/scrollbarnub-focus.png</textureslidernibfocus>
+      <pulseonselect />
+      <orientation>vertical</orientation>
+      <showonepage>false</showonepage>
+      <onup>60</onup>
+      <ondown>60</ondown>
+      <onleft>55</onleft>
+      <onright>55</onright>
+      <include>Animation_CommonFade</include>
+    </control>
+  </include>
+</includes>

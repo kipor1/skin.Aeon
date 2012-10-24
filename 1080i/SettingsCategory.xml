@@ -5,23 +5,66 @@
     <control type="multiimage">
       <include>FullscreenDimensions</include>
       <include>BackgroundTimings</include>
-      <imagepath>backdrops/default_settings</imagepath>
+      <imagepath>special://skin/extras/backdrops/default_settings</imagepath>
       <info>Skin.String(CustomSettings)</info>
       <animation effect="fade" start="0" end="100" time="200" condition="![Window.Previous(4) | Window.Previous(Home)]">WindowOpen</animation>
       <animation effect="fade" start="100" end="0" time="200" condition="![Window.Next(4) | Window.Next(Home)]">WindowClose</animation>
     </control>
     <control type="group">
       <include>FullscreenDimensions</include>
-      <animation type="WindowOpen" reversible="false" condition="!Window.Previous(4)">
-        <effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-        <effect type="fade" start="0" end="100" time="300" />
-      </animation>
-      <animation type="WindowClose" reversible="false" condition="!Window.Next(4)">
-        <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-        <effect type="fade" start="100" end="0" time="300" />
-      </animation>
       <include>Furniture_SettingsBackPanel</include>
-      <include>Settings_XBMCSettingsHeadings</include>
+      <control type="label">
+        <!-- section titles-->
+        <description>sectiontitle</description>
+        <label>31300</label>
+        <include>Objects_SettingsSectionTitle</include>
+        <visible>Window.IsActive(videossettings)</visible>
+      </control>
+      <control type="label">
+        <include>Objects_SettingsSectionTitle</include>
+        <label>31301</label>
+        <visible>Window.IsActive(picturessettings)</visible>
+      </control>
+      <control type="label">
+        <include>Objects_SettingsSectionTitle</include>
+        <label>31302</label>
+        <visible>Window.IsActive(appearancesettings)</visible>
+      </control>
+      <control type="label">
+        <include>Objects_SettingsSectionTitle</include>
+        <label>31303</label>
+        <visible>Window.IsActive(networksettings)</visible>
+      </control>
+      <control type="label">
+        <include>Objects_SettingsSectionTitle</include>
+        <label>31304</label>
+        <visible>Window.IsActive(systemsettings)</visible>
+      </control>
+      <control type="label">
+        <label>31305</label>
+        <include>Objects_SettingsSectionTitle</include>
+        <visible>Window.IsActive(musicsettings)</visible>
+      </control>
+      <control type="label">
+        <label>31306</label>
+        <include>Objects_SettingsSectionTitle</include>
+        <visible>Window.IsActive(weathersettings)</visible>
+      </control>
+      <control type="label">
+        <label>31307</label>
+        <include>Objects_SettingsSectionTitle</include>
+        <visible>Window.IsActive(programssettings)</visible>
+      </control>
+      <control type="label">
+        <posx>462</posx>
+        <posy>105</posy>
+        <width>1404</width>
+        <height>74</height>
+        <label>31308</label>
+        <textcolor>FFbec0c2</textcolor>
+        <include>Animation_CommonFadeOpenClose</include>
+        <include>Objects_SettingsSectionTitle</include>
+      </control>
       <control type="grouplist" id="3">
         <description>button area</description>
         <include>Settings_ButtonGroupDimensionsXBMC</include>
@@ -40,10 +83,9 @@
         <ondown>5</ondown>
         <onleft>3</onleft>
         <onright>3</onright>
-        <visible>Window.Previous(4) | Window.Previous(10) | Window.Previous(24) | Window.Previous(25) | Window.Previous(1) | Window.Previous(2) | Window.Previous(500) | Window.Previous(501) | Window.Previous(502) | Window.Previous(VideosSettings) | Window.Previous(Home)</visible>
       </control>
-      <include>Settings_XBMCSettingsSubheadings</include>
       <control type="button" id="10">
+        <!-- Default category button-->
         <description>Default Category Button</description>
         <posx>0</posx>
         <posy>0</posy>
@@ -63,6 +105,7 @@
         <onclick>SetFocus(800)</onclick>
       </control>
       <control type="image">
+        <!-- background-->
         <description>background image</description>
         <posx>63</posx>
         <posy>42</posy>
@@ -132,7 +175,6 @@
       <include>Animations_SettingsButtonFade</include>
       <onright>SetFocus(1)</onright>
     </control>
-    <!--<include>Background_ContextBlack</include>-->
-    <include>Settings_Welcome</include>
+    <include>Background_ContextBlack</include>
   </controls>
 </window>

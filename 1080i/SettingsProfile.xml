@@ -1,11 +1,11 @@
-﻿<window id="56">
+﻿<window id="34">
   <defaultcontrol>6</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
     <control type="multiimage">
       <include>FullscreenDimensions</include>
       <include>BackgroundTimings</include>
-      <imagepath>backdrops/default_settings</imagepath>
+      <imagepath>special://skin/extras/backdrops/default_settings</imagepath>
       <info>Skin.String(CustomSettings)</info>
     </control>
     <control type="group">
@@ -35,7 +35,86 @@
         <include>Animation_CommonFadeOpenClose</include>
         <font>Font_SettingsSectionTitle</font>
       </control>
-      <include>Settings_ProfileSettingsButtons</include>
+      <control type="group">
+        <include>Settings_ButtonGroupDimensionsXBMC</include>
+        <include>Animation_CommonFade</include>
+        <control type="button" id="6">
+          <description>Login Options</description>
+          <posy>0</posy>
+          <label>31163</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onclick>SetFocus(4)</onclick>
+          <onleft>4</onleft>
+          <onright>4</onright>
+          <onup>7</onup>
+          <ondown>7</ondown>
+          <visible allowhiddenfocus="true">![Control.HasFocus(6) | Control.HasFocus(4)]</visible>
+        </control>
+        <control type="button" id="6">
+          <description>Login Options</description>
+          <posy>0</posy>
+          <label>31163</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onclick>SetFocus(4)</onclick>
+          <onleft>4</onleft>
+          <onright>4</onright>
+          <onup>7</onup>
+          <ondown>7</ondown>
+          <visible>Control.HasFocus(6) | Control.HasFocus(4)</visible>
+        </control>
+        <control type="label">
+          <description>Login Options Unfocused</description>
+          <posy>48</posy>
+          <label>31164</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>![Control.HasFocus(6) | Control.HasFocus(4)]</visible>
+        </control>
+        <control type="label">
+          <description>Login Options Focused</description>
+          <posy>48</posy>
+          <label>31164</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(6) | Control.HasFocus(4)</visible>
+        </control>
+        <control type="button" id="7">
+          <posy>87</posy>
+          <label>31165</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>6</onup>
+          <ondown>6</ondown>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <visible allowhiddenfocus="true">![Control.HasFocus(7) | Control.HasFocus(2)]</visible>
+        </control>
+        <control type="button" id="7">
+          <posy>87</posy>
+          <label>31165</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onup>6</onup>
+          <ondown>6</ondown>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <visible>Control.HasFocus(7) | Control.HasFocus(2)</visible>
+        </control>
+        <control type="label">
+          <description>Users Sub Unfocused</description>
+          <posy>135</posy>
+          <label>31166</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>![Control.HasFocus(7) | Control.HasFocus(2)]</visible>
+        </control>
+        <control type="label">
+          <description>Users Sub Unfocused</description>
+          <posy>135</posy>
+          <label>31166</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(7) | Control.HasFocus(2)</visible>
+        </control>
+      </control>
       <control type="grouplist" id="9000">
         <include>Objects_SettingsControlAreaVars</include>
         <visible>Control.HasFocus(6) | Control.HasFocus(4)</visible>
@@ -137,7 +216,7 @@
       </control>
       <include>Furniture_SettingsFrontPanel</include>
     </control>
-    <!--<include>Background_ContextBlack</include>-->
+    <include>Background_ContextBlack</include>
     <include>Furniture_Debug</include>
   </controls>
 </window>

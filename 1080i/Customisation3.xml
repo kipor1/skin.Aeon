@@ -1,0 +1,1189 @@
+﻿<window id="604">
+  <defaultcontrol always="true">7</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+    <control type="button" id="3000">
+      <visible>!Skin.HasSetting(open_playlists)</visible>
+      <posx>-15</posx>
+      <posy>-15</posy>
+      <width>1</width>
+      <height>1</height>
+      <onfocus>RunScript(script.favourites,playlists=play)</onfocus>
+      <onfocus>SetFocus(18)</onfocus>
+    </control>
+    <control type="button" id="3000">
+      <visible>Skin.HasSetting(open_playlists)</visible>
+      <posx>-15</posx>
+      <posy>-15</posy>
+      <width>1</width>
+      <height>1</height>
+      <onfocus>RunScript(script.favourites,playlists=window)</onfocus>
+      <onfocus>SetFocus(18)</onfocus>
+    </control>
+    <control type="multiimage">
+      <description>Settings Backdrop</description>
+      <include>FullscreenDimensions</include>
+      <imagepath>special://skin/extras/backdrops/default_settings</imagepath>
+      <info>Skin.String(CustomSettings)</info>
+      <include>BackgroundTimings</include>
+      <animation effect="fade" start="0" end="100" time="200" condition="Window.Previous(Home)">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="200" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">WindowClose</animation>
+    </control>
+    <control type="group">
+      <include>FullscreenDimensions</include>
+      <animation type="WindowOpen" reversible="false" condition="Window.Previous(Home)">
+        <effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+        <effect type="fade" start="0" end="100" time="300" />
+      </animation>
+      <animation type="WindowClose" reversible="false" condition="Window.Next(Home) | Window.Next(25) | Window.Next(24) | Window.Next(1) | Window.Next(2) | Window.Next(500) | Window.Next(501) | Window.Next(502)">
+        <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+        <effect type="fade" start="100" end="0" time="300" />
+      </animation>
+      <include>Furniture_SettingsBackPanel</include>
+      <control type="group">
+        <include>Settings_ButtonGroupDimensions</include>
+        <include>Animation_CommonFade</include>
+        <control type="button" id="7">
+          <description>FURNITURE</description>
+          <posy>0</posy>
+          <label>31122</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>9</onup>
+          <ondown>6</ondown>
+          <onleft>301</onleft>
+          <onright>301</onright>
+          <visible allowhiddenfocus="true">![Control.HasFocus(7) | Control.HasFocus(301)]</visible>
+        </control>
+        <control type="button" id="7">
+          <description>FURNITURE</description>
+          <posy>0</posy>
+          <label>31122</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onup>9</onup>
+          <ondown>6</ondown>
+          <onleft>301</onleft>
+          <onright>301</onright>
+          <visible>Control.HasFocus(7) | Control.HasFocus(301)</visible>
+        </control>
+        <control type="label">
+          <description>Furniture Sub Unfocused</description>
+          <posy>48</posy>
+          <label>31123</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>![Control.HasFocus(7) | Control.HasFocus(301)]</visible>
+        </control>
+        <control type="label">
+          <description>Furniture Sub Unfocused</description>
+          <posy>48</posy>
+          <label>31123</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(7) | Control.HasFocus(301)</visible>
+        </control>
+        <control type="button" id="6">
+          <description>Backdrops</description>
+          <posy>87</posy>
+          <label>31120</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onclick>SetFocus(300)</onclick>
+          <onleft>300</onleft>
+          <onright>300</onright>
+          <onup>7</onup>
+          <ondown>8</ondown>
+          <visible allowhiddenfocus="true">![Control.HasFocus(6) | Control.HasFocus(300) | Control.HasFocus(92)]</visible>
+        </control>
+        <control type="button" id="6">
+          <description>Backdrops</description>
+          <posy>87</posy>
+          <label>31120</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onclick>SetFocus(300)</onclick>
+          <onleft>300</onleft>
+          <onright>300</onright>
+          <onup>7</onup>
+          <ondown>8</ondown>
+          <visible>Control.HasFocus(6) | Control.HasFocus(300) | Control.HasFocus(92)</visible>
+        </control>
+        <control type="label">
+          <description>Backdrops Unfocused</description>
+          <posy>135</posy>
+          <label>31121</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>![Control.HasFocus(6) | Control.HasFocus(300) | Control.HasFocus(92)]</visible>
+        </control>
+        <control type="label">
+          <description>Backdrops Focused</description>
+          <posy>135</posy>
+          <label>31121</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(6) | Control.HasFocus(300) | Control.HasFocus(92)</visible>
+        </control>
+        <control type="button" id="8">
+          <description>Ausstattung</description>
+          <posy>174</posy>
+          <label>31124</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>6</onup>
+          <ondown>14</ondown>
+          <onleft>30</onleft>
+          <onright>30</onright>
+          <onclick>SetFocus(30)</onclick>
+          <visible allowhiddenfocus="true">!Control.HasFocus(30) + !Control.HasFocus(31) + !Control.HasFocus(32)</visible>
+        </control>
+        <control type="button" id="8">
+          <description>Ausstattung</description>
+          <posy>174</posy>
+          <label>31124</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onup>6</onup>
+          <ondown>14</ondown>
+          <onleft>30</onleft>
+          <onright>30</onright>
+          <visible>Control.HasFocus(30) | Control.HasFocus(31) | Control.HasFocus(32)</visible>
+        </control>
+        <control type="label">
+          <description>My Programs Sub Unfocused</description>
+          <posy>222</posy>
+          <label>31125</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(8) + !Control.HasFocus(30) + !Control.HasFocus(31) + !Control.HasFocus(32)</visible>
+        </control>
+        <control type="label">
+          <description>My Programs Sub Unfocused</description>
+          <posy>222</posy>
+          <label>31125</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(8) | Control.HasFocus(30) | Control.HasFocus(31) | Control.HasFocus(32)</visible>
+        </control>
+        <control type="button" id="14">
+          <posy>261</posy>
+          <label>31234</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>8</onup>
+          <ondown>15</ondown>
+          <onleft>11</onleft>
+          <onright>11</onright>
+          <onclick>SetFocus(11)</onclick>
+          <visible allowhiddenfocus="true">![Control.HasFocus(14) | ControlGroup(11).HasFocus]</visible>
+        </control>
+        <control type="button" id="14">
+          <posy>261</posy>
+          <label>31234</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onup>8</onup>
+          <ondown>15</ondown>
+          <onleft>11</onleft>
+          <onright>11</onright>
+          <onclick>SetFocus(11)</onclick>
+          <visible>Control.HasFocus(14) | ControlGroup(11).HasFocus</visible>
+        </control>
+        <control type="label">
+          <description>Furniture Sub Unfocused</description>
+          <posy>309</posy>
+          <label>31235</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>![Control.HasFocus(14) | ControlGroup(11).HasFocus]</visible>
+        </control>
+        <control type="label">
+          <description>Furniture Sub Unfocused</description>
+          <posy>309</posy>
+          <label>31235</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(14) | ControlGroup(11).HasFocus</visible>
+        </control>
+        <control type="button" id="15">
+          <posy>348</posy>
+          <label>312351</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>14</onup>
+          <ondown>112</ondown>
+          <onleft>12</onleft>
+          <onright>12</onright>
+          <onclick>SetFocus(12)</onclick>
+          <visible allowhiddenfocus="true">![Control.HasFocus(15) | ControlGroup(12).HasFocus]</visible>
+        </control>
+        <control type="button" id="15">
+          <posy>348</posy>
+          <label>312351</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onup>14</onup>
+          <ondown>112</ondown>
+          <onleft>12</onleft>
+          <onright>12</onright>
+          <onclick>SetFocus(12)</onclick>
+          <visible>Control.HasFocus(15) | ControlGroup(12).HasFocus</visible>
+        </control>
+        <control type="label">
+          <description>Furniture Sub Unfocused</description>
+          <posy>396</posy>
+          <label>31235</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>![Control.HasFocus(15) | ControlGroup(12).HasFocus]</visible>
+        </control>
+        <control type="label">
+          <description>Furniture Sub Unfocused</description>
+          <posy>396</posy>
+          <label>31235</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(15) | ControlGroup(12).HasFocus</visible>
+        </control>
+        <control type="button" id="112">
+          <description>Home Menu Customization</description>
+          <posy>435</posy>
+          <label>31248</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>15</onup>
+          <ondown>9</ondown>
+          <onleft>17</onleft>
+          <onright>17</onright>
+          <onclick>SetFocus(17)</onclick>
+          <visible allowhiddenfocus="true">![Control.HasFocus(112) | [Control.HasFocus(17) | Control.HasFocus(18)]]</visible>
+        </control>
+        <control type="button" id="112">
+          <description>Home Menu Customization</description>
+          <posy>435</posy>
+          <label>31248</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onup>15</onup>
+          <ondown>9</ondown>
+          <onleft>17</onleft>
+          <onright>17</onright>
+          <onclick>SetFocus(17)</onclick>
+          <visible>Control.HasFocus(112) | [Control.HasFocus(17) | Control.HasFocus(18)]</visible>
+        </control>
+        <control type="label">
+          <description>Home Menu Customization Unfocused</description>
+          <posy>483</posy>
+          <label>312480</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>![Control.HasFocus(112) | [Control.HasFocus(17) | Control.HasFocus(18)]]</visible>
+        </control>
+        <control type="label">
+          <description>Home Menu Customization Unfocused</description>
+          <posy>483</posy>
+          <label>312480</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(112) | [Control.HasFocus(17) | Control.HasFocus(18)]</visible>
+        </control>
+        <control type="button" id="9">
+          <description>Purge</description>
+          <posy>522</posy>
+          <label>31126</label>
+          <include>Objects_SettingsSectionMenuButton</include>
+          <onup>112</onup>
+          <ondown>7</ondown>
+          <onleft>40</onleft>
+          <onright>40</onright>
+          <visible allowhiddenfocus="true">!Control.HasFocus(40)</visible>
+        </control>
+        <control type="button">
+          <description>Purge</description>
+          <posy>522</posy>
+          <label>31126</label>
+          <include>Objects_SettingsSectionMenuButtonFocused</include>
+          <onup>112</onup>
+          <ondown>7</ondown>
+          <onleft>40</onleft>
+          <onright>40</onright>
+          <visible>Control.HasFocus(40)</visible>
+        </control>
+        <control type="label">
+          <description>My Weather Sub Unfocused</description>
+          <posy>570</posy>
+          <label>31127</label>
+          <textcolor>FFf5f5f5</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>!Control.HasFocus(9) + !Control.HasFocus(40)</visible>
+        </control>
+        <control type="label">
+          <description>My Weather Sub Unfocused</description>
+          <posy>570</posy>
+          <label>31127</label>
+          <textcolor>FF262728</textcolor>
+          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+          <visible>Control.HasFocus(9) | Control.HasFocus(40)</visible>
+        </control>
+      </control>
+      <control type="image">
+        <description>Internal Panel (rear texture)</description>
+        <posx>351</posx>
+        <posy>60</posy>
+        <width>1552</width>
+        <height>957</height>
+        <texture>settings/settings_intframe_bottom.png</texture>
+        <include>Animation_SettingsInternalPanel</include>
+        <visible>Control.HasFocus(6) | Control.HasFocus(7) | Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(300) | Control.HasFocus(301) | Control.HasFocus(92)</visible>
+      </control>
+      <!-- Virtual Home page environment starts -->
+      <control type="group">
+        <posx>498</posx>
+        <posy>87</posy>
+        <width>1260</width>
+        <height>708</height>
+        <include>Animation_CommonFade</include>
+        <visible>Control.HasFocus(6) | Control.HasFocus(7) | Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(300) | Control.HasFocus(301) | Control.HasFocus(92) | Control.HasFocus(30) | Control.HasFocus(31) | Control.HasFocus(32)</visible>
+        <control type="image" id="87">
+          <visible>[Container(300).OnNext | Container(300).OnPrevious] | [Container(301).OnNext | Container(301).OnPrevious]</visible>
+          <animation effect="fade" time="300">Hidden</animation>
+        </control>
+        <control type="image" id="88">
+          <visible>Control.IsVisible(300) | Control.IsVisible(301)</visible>
+          <animation effect="fade" time="300">Hidden</animation>
+        </control>--&gt;
+
+				<control type="multiimage"><include>BackgroundVarsVirtual</include><imagepath background="true">$INFO[Container(300).ListItem.Icon]</imagepath><visible>Control.IsVisible(300)</visible></control><control type="multiimage"><include>BackgroundVarsVirtual</include><imagepath background="true">$INFO[Container(301).ListItem.Icon]</imagepath><visible>Control.IsVisible(301)</visible></control><control type="group"><!-- Virtual Time !highertime--><posx>879</posx><posy>312</posy><width>446</width><height>27</height><visible>!Window.IsActive(Home) + !Skin.HasSetting(highertime)</visible><animation effect="slide" start="0,0" end="0,225" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Control.HasFocus(92)">Conditional</animation><include>Animation_CommonFade</include><control type="image"><posx>-64</posx><posy>0</posy><width>446</width><height>27</height><texture>common/timepanel_mid.png</texture></control><control type="label" id="70"><posx>364</posx><posy>3</posy><width>394</width><font>Font_VirtualRSS</font><align>right</align><textcolor>d0ffffff</textcolor><label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label></control></control><control type="group"><!-- Virtual Time highertime--><posx>879</posx><posy>0</posy><width>446</width><height>27</height><visible>Skin.HasSetting(highertime)</visible><include>Animation_CommonFade</include><control type="image"><posx>-64</posx><posy>0</posy><width>446</width><height>24</height><texture flipy="true">common/timepanel_mid.png</texture></control><control type="label" id="70"><posx>364</posx><posy>3</posy><width>394</width><font>Font_VirtualRSS</font><align>right</align><textcolor>d0ffffff</textcolor><label>[COLOR FFe5e5e5][UPPERCASE]$INFO[System.Date][/UPPERCASE]  |  [/COLOR][COLOR FFcdcdcd]$INFO[System.Time][/COLOR]</label></control></control><control type="group"><!-- Virtual RSS oben--><posx>0</posx><posy>399</posy><width>1215</width><height>57</height><visible>!Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds)</visible><animation effect="slide" start="0,0" end="0,225" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Control.HasFocus(92)">Conditional</animation><include>Animation_CommonFade</include><control type="image"><posx>54</posx><posy>0</posy><width>1206</width><height>57</height><texture>common/rssbar_mid.png</texture></control><control type="rss" id="1"><description>My First RSS control</description><posx>108</posx><posy>4</posy><width>1154</width><visible>true</visible><font>Font_VirtualRSS</font><include>Colour_RSS</include><urlset>1</urlset></control><control type="image"><posx>78</posx><posy>0</posy><width>128</width><height>27</height><texture>common/rssbar_mid_fade.png</texture><colordiffuse>e3FFFFFF</colordiffuse></control></control><control type="group"><!-- Virtual RSS unten--><posx>0</posx><posy>651</posy><width>1215</width><height>57</height><visible>Skin.HasSetting(lowerrss) + system.getbool(lookandfeel.enablerssfeeds)</visible><include>Animation_CommonFade</include><control type="image"><posx>54</posx><posy>0</posy><width>1206</width><height>57</height><texture flipy="true">common/rssbar_mid.png</texture></control><control type="rss" id="1"><description>My First RSS control</description><posx>108</posx><posy>33</posy><width>1154</width><visible>true</visible><font>Font_VirtualRSS</font><include>Colour_RSS</include><urlset>1</urlset></control><control type="image"><posx>78</posx><posy>30</posy><width>128</width><height>27</height><texture flipy="true">common/rssbar_mid_fade.png</texture><colordiffuse>e3FFFFFF</colordiffuse></control></control><control type="image"><description>Darken screen for Backdrop type select</description><posx>0</posx><posy>0</posy><width>1260</width><height>706</height><texture>settings/backselect.png</texture><visible>Control.HasFocus(92)</visible><include>Animation_VisibleChange400</include></control><control type="group"><posx>0</posx><posy>-20</posy><width>1260</width><height>708</height><animation effect="slide" start="0,0" end="0,225" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu) + !Control.HasFocus(92)">Conditional</animation><include>Animation_CommonFade</include><control type="image"><posx>0</posx><posy>316</posy><width>1260</width><height>148</height><texture>home/homemenu_back.png</texture><include>Animation_CommonFade</include></control><control type="group"><posx>0</posx><posy>358</posy><width>1260</width><height>60</height><defaultcontrol>300</defaultcontrol><include>VirtualMainMenu</include><include>VirtualMainMenuOptions</include></control><control type="image"><posx>0</posx><posy>316</posy><width>1260</width><height>148</height><texture>home/homemenu_gradient.png</texture><include>Animation_CommonFade</include><visible>!Skin.HasSetting(nohomegradient)</visible><colordiffuse>d0FFFFFF</colordiffuse></control></control></control>
+      <control type="button" id="30">
+        <description>Home Menu furniture select button</description>
+        <posx>460</posx>
+        <posy>392</posy>
+        <width>1335</width>
+        <height>141</height>
+        <onclick>Skin.ToggleSetting(lowermainmenu)</onclick>
+        <!--		<include condition="Skin.HasSetting(lowerwidgets) + !Skin.HasSetting(lowermainmenu)">movewidgets</include>-->
+        <onup>8</onup>
+        <ondown>8</ondown>
+        <onleft>32</onleft>
+        <onright>31</onright>
+        <texturefocus>settings/settings_furniture_mainmenu.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <pulseonselect>true</pulseonselect>
+        <animation effect="slide" start="0,0" end="0,225" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+        <include>Animation_CommonFadeFocus</include>
+      </control>
+      <control type="button" id="31">
+        <!-- Time Buttons-->
+        <description>Time panel furniture select button - Normal version</description>
+        <posx>1294</posx>
+        <posy>386</posy>
+        <width>501</width>
+        <height>56</height>
+        <onclick>Skin.ToggleSetting(highertime)</onclick>
+        <onup>8</onup>
+        <ondown>8</ondown>
+        <onleft>30</onleft>
+        <onright>32</onright>
+        <texturefocus>settings/settings_furniture_timepanel.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <pulseonselect>true</pulseonselect>
+        <visible>!Skin.HasSetting(lowermainmenu)</visible>
+        <animation effect="slide" start="0,0" end="0,-315" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(highertime)">Conditional</animation>
+        <include>Animation_CommonFadeFocus</include>
+      </control>
+      <control type="button" id="31">
+        <description>Time panel furniture select button - Lower version</description>
+        <posx>1294</posx>
+        <posy>610</posy>
+        <width>501</width>
+        <height>56</height>
+        <onclick>Skin.ToggleSetting(highertime)</onclick>
+        <onup>8</onup>
+        <ondown>8</ondown>
+        <onleft>30</onleft>
+        <onright>32</onright>
+        <texturefocus>settings/settings_furniture_timepanel.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <pulseonselect>true</pulseonselect>
+        <visible>Skin.HasSetting(lowermainmenu)</visible>
+        <animation effect="slide" start="0,0" end="0,-543" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(highertime)">Conditional</animation>
+        <include>Animation_CommonFadeFocus</include>
+      </control>
+      <control type="button" id="32">
+        <!-- RSS Buttons-->
+        <description>RSS furniture select button - Normal version</description>
+        <posx>536</posx>
+        <posy>474</posy>
+        <width>1260</width>
+        <height>52</height>
+        <onclick>Skin.ToggleSetting(lowerrss)</onclick>
+        <onup>8</onup>
+        <ondown>8</ondown>
+        <onleft>31</onleft>
+        <onright>30</onright>
+        <texturefocus>settings/settings_furniture_rss.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <pulseonselect>true</pulseonselect>
+        <visible>!Skin.HasSetting(lowermainmenu)</visible>
+        <animation effect="slide" start="0,0" end="0,282" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowerrss)">Conditional</animation>
+        <include>Animation_CommonFadeFocus</include>
+      </control>
+      <control type="button" id="32">
+        <description>RSS furniture select button - Lower version</description>
+        <posx>536</posx>
+        <posy>702</posy>
+        <width>1260</width>
+        <height>52</height>
+        <onclick>Skin.ToggleSetting(lowerrss)</onclick>
+        <onup>8</onup>
+        <ondown>8</ondown>
+        <onleft>31</onleft>
+        <onright>30</onright>
+        <texturefocus>settings/settings_furniture_rss.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <pulseonselect>true</pulseonselect>
+        <visible>Skin.HasSetting(lowermainmenu)</visible>
+        <animation effect="slide" start="0,0" end="0,54" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(lowerrss)">Conditional</animation>
+        <include>Animation_CommonFadeFocus</include>
+      </control>
+      <control type="button" id="40">
+        <!-- Purge Button -->
+        <description>The Big Red Purge Button</description>
+        <posx>498</posx>
+        <posy>87</posy>
+        <width>1260</width>
+        <height>708</height>
+        <onup>9</onup>
+        <ondown>9</ondown>
+        <onleft>9</onleft>
+        <onright>9</onright>
+        <texturefocus>settings/settings_resetalert.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <pulseonselect>true</pulseonselect>
+        <include>Animation_CommonFadeFocus</include>
+        <onclick>Skin.Reset(CustomMusic)</onclick>
+        <onclick>Skin.Reset(CustomMusicFolder)</onclick>
+        <onclick>Skin.Reset(CustomGames)</onclick>
+        <onclick>Skin.Reset(CustomGamesFolder)</onclick>
+        <onclick>Skin.Reset(CustomPictures)</onclick>
+        <onclick>Skin.Reset(CustomPicturesFolder)</onclick>
+        <onclick>Skin.Reset(CustomMovies)</onclick>
+        <onclick>Skin.Reset(CustomMoviesFolder)</onclick>
+        <onclick>Skin.Reset(CustomTV)</onclick>
+        <onclick>Skin.Reset(CustomTVFolder)</onclick>
+        <onclick>Skin.Reset(CustomVideo)</onclick>
+        <onclick>Skin.Reset(CustomVideoFolder)</onclick>
+        <onclick>Skin.Reset(CustomWeather)</onclick>
+        <onclick>Skin.Reset(CustomWeatherFolder)</onclick>
+      </control>
+      <include>Furniture_SettingsFrontPanel</include>
+      <control type="image">
+        <posx>496</posx>
+        <posy>64</posy>
+        <width>1263</width>
+        <height>951</height>
+        <texture>settings/settings_intframe_top.png</texture>
+        <include>Animation_SettingsInternalPanel</include>
+        <visible>Control.HasFocus(6) | Control.HasFocus(7) | Control.HasFocus(8) | Control.HasFocus(9) | Control.HasFocus(300) | Control.HasFocus(301) | Control.HasFocus(92)</visible>
+      </control>
+      <control type="group">
+        <description>Main instruction labels</description>
+        <include>FullscreenDimensions</include>
+        <include>Animation_CommonFade</include>
+        <control type="group">
+          <description>31080</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(6) | Control.HasFocus(300)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>31081</label>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31082</label>
+          </control>
+        </control>
+        <control type="group">
+          <description>31083</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(92)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>$LOCALIZE[31102] $INFO[Control.GetLabel(300)] $LOCALIZE[31103]</label>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31085</label>
+          </control>
+        </control>
+        <control type="group">
+          <description>31086</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(7)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>31087</label>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31088</label>
+          </control>
+        </control>
+        <control type="group">
+          <description>31086</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(301)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>$LOCALIZE[31104]</label>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31088</label>
+          </control>
+        </control>
+        <control type="group">
+          <description>31089</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(8) | Control.HasFocus(30) | Control.HasFocus(31) | Control.HasFocus(32)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>31090</label>
+            <visible>Control.HasFocus(8) | Control.HasFocus(30) | Control.HasFocus(31) | Control.HasFocus(32)</visible>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31091</label>
+            <visible>Control.HasFocus(8)</visible>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31092</label>
+            <visible>Control.HasFocus(30)</visible>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31093</label>
+            <visible>Control.HasFocus(31) + Skin.HasSetting(highertime)</visible>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31094</label>
+            <visible>Control.HasFocus(31) + !Skin.HasSetting(highertime)</visible>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31095</label>
+            <visible>Control.HasFocus(32) + Skin.HasSetting(lowerrss)</visible>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31096</label>
+            <visible>Control.HasFocus(32) + !Skin.HasSetting(lowerrss)</visible>
+          </control>
+        </control>
+        <control type="group">
+          <description>31097</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(9)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>31098</label>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31099</label>
+          </control>
+        </control>
+        <control type="group">
+          <description>31097</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(40)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>31100</label>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31101</label>
+          </control>
+        </control>
+        <control type="group">
+          <description>Settings Labels - Tier 1: Advanced Options</description>
+          <include>Labels_MainLabelGroup</include>
+          <visible>Control.HasFocus(11)</visible>
+          <control type="label">
+            <include>Labels_MainLabelBigVars</include>
+            <label>31818</label>
+          </control>
+          <control type="label">
+            <include>Labels_MainLabelSmallVars</include>
+            <label>31819</label>
+          </control>
+        </control>
+      </control>
+      <control type="button" id="92">
+        <description>Backdrop type select button / Single backdrop icon</description>
+        <posx>1011</posx>
+        <posy>184</posy>
+        <width>236</width>
+        <height>144</height>
+        <texturenofocus>-</texturenofocus>
+        <texturefocus>-</texturefocus>
+        <visible allowhiddenfocus="true">Control.HasFocus(92)</visible>
+        <onup>Skin.SetImage($INFO[Skin.String(custom)])</onup>
+        <onup>SetFocus(300)</onup>
+        <ondown>Skin.SetPath($INFO[Skin.String(custom)])</ondown>
+        <ondown>SetFocus(300)</ondown>
+        <onleft>300</onleft>
+        <onright>300</onright>
+        <animation type="Visible" reversible="false">
+          <effect type="slide" start="0,150" end="0,0" time="600" tween="circle" easing="out" />
+          <effect type="fade" start="0" end="100" time="600" />
+        </animation>
+      </control>
+      <control type="image">
+        <posx>1028</posx>
+        <posy>600</posy>
+        <width>202</width>
+        <height>78</height>
+        <texture>settings/backselect_arrow.png</texture>
+        <visible>Control.HasFocus(92)</visible>
+        <animation type="Visible">
+          <effect type="fade" start="0" end="100" time="600" />
+          <effect type="slide" start="0,-150" end="0,0" time="600" tween="back" easing="out" />
+        </animation>
+      </control>
+      <control type="image">
+        <posx>1028</posx>
+        <posy>232</posy>
+        <width>202</width>
+        <height>78</height>
+        <texture flipy="true">settings/backselect_arrow.png</texture>
+        <visible>Control.HasFocus(92)</visible>
+        <animation type="Visible">
+          <effect type="fade" start="0" end="100" time="600" />
+          <effect type="slide" start="0,150" end="0,0" time="600" tween="back" easing="out" />
+        </animation>
+      </control>
+    </control>
+    <control type="grouplist" id="11">
+      <include>Objects_SettingsControlAreaVars</include>
+      <onup>11</onup>
+      <ondown>11</ondown>
+      <onleft>14</onleft>
+      <onright>14</onright>
+      <visible>Control.HasFocus(14) | ControlGroup(11).HasFocus</visible>
+      <control type="radiobutton" id="501">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31295</label>
+        <onclick>Skin.ToggleSetting(bighome)</onclick>
+        <selected>Skin.HasSetting(bighome)</selected>
+      </control>
+      <control type="radiobutton" id="502">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31253</label>
+        <onclick>Skin.ToggleSetting(launcherforgames)</onclick>
+        <selected>Skin.HasSetting(launcherforgames)</selected>
+      </control>
+      <control type="radiobutton" id="503">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31252</label>
+        <onclick>Skin.ToggleSetting(nohomegradient)</onclick>
+        <selected>!Skin.HasSetting(nohomegradient)</selected>
+      </control>
+      <control type="radiobutton" id="508">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312992</label>
+        <onclick>Skin.ToggleSetting(CustomWeather)</onclick>
+        <selected>Skin.HasSetting(CustomWeather)</selected>
+      </control>
+      <control type="radiobutton" id="509">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312993</label>
+        <onclick>Skin.ToggleSetting(weathericons)</onclick>
+        <selected>Skin.HasSetting(weathericons)</selected>
+      </control>
+      <control type="radiobutton" id="511">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32002</label>
+        <onclick>Skin.ToggleSetting(TotalsOff)</onclick>
+        <selected>!Skin.HasSetting(TotalsOff)</selected>
+      </control>
+      <control type="radiobutton" id="512">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32003</label>
+        <onclick>Skin.ToggleSetting(homeprogress)</onclick>
+        <selected>Skin.HasSetting(homeprogress)</selected>
+      </control>
+      <control type="radiobutton" id="514">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312704</label>
+        <onclick>Skin.ToggleSetting(animation_bg)</onclick>
+        <selected>Skin.HasSetting(animation_bg)</selected>
+      </control>
+    </control>
+    <control type="grouplist" id="12">
+      <include>Objects_SettingsControlAreaVars</include>
+      <onup>12</onup>
+      <ondown>12</ondown>
+      <onleft>15</onleft>
+      <onright>15</onright>
+      <visible>Control.HasFocus(15) | ControlGroup(12).HasFocus</visible>
+      <control type="radiobutton" id="400">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312991</label>
+        <onclick>Skin.ToggleSetting(homelatest)</onclick>
+        <selected>Skin.HasSetting(homelatest)</selected>
+      </control>
+      <control type="radiobutton" id="401">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312994</label>
+        <onclick>Skin.ToggleSetting(lowerwidgets)</onclick>
+        <selected>Skin.HasSetting(lowerwidgets)</selected>
+        <visible>Skin.HasSetting(homelatest)</visible>
+      </control>
+      <control type="radiobutton" id="402">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312541</label>
+        <onclick>Skin.ToggleSetting(homecdart)</onclick>
+        <selected>Skin.HasSetting(homecdart)</selected>
+      </control>
+      <control type="radiobutton" id="403">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32004</label>
+        <onclick>Skin.ToggleSetting(homevideowindow)</onclick>
+        <selected>Skin.HasSetting(homevideowindow)</selected>
+      </control>
+      <control type="radiobutton" id="404">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32024</label>
+        <onclick>Skin.ToggleSetting(homeplaylist)</onclick>
+        <selected>Skin.HasSetting(homeplaylist)</selected>
+      </control>
+      <control type="radiobutton" id="405">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32025</label>
+        <onclick>Skin.ToggleSetting(preferplaylist)</onclick>
+        <selected>Skin.HasSetting(preferplaylist)</selected>
+        <visible>Skin.HasSetting(homeplaylist)</visible>
+      </control>
+      <control type="radiobutton" id="406">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32026</label>
+        <onclick>Skin.ToggleSetting(tenitemsonplaylist)</onclick>
+        <selected>Skin.HasSetting(tenitemsonplaylist)</selected>
+        <visible>Skin.HasSetting(homeplaylist)</visible>
+      </control>
+    </control>
+    <control type="list" id="17">
+      <visible allowhiddenfocus="true">Control.HasFocus(112) | Control.HasFocus(17)</visible>
+      <include>Objects_SettingsControlAreaVars</include>
+      <onleft>112</onleft>
+      <onright>112</onright>
+      <onup>17</onup>
+      <ondown>17</ondown>
+      <animation effect="fade" start="100" end="0" time="200" condition="Control.HasFocus(18)">Conditional</animation>
+      <itemlayout height="74">
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1404</width>
+          <height>74</height>
+          <texture>settings/settings_radiobuttonoff.png</texture>
+        </control>
+        <control type="label">
+          <posy>0</posy>
+          <posx>75</posx>
+          <height>74</height>
+          <width>1404</width>
+          <aligny>center</aligny>
+          <font>Font_SettingsOptions</font>
+          <textcolor>FF939597</textcolor>
+          <info>ListItem.Label</info>
+        </control>
+      </itemlayout>
+      <focusedlayout height="74">
+        <control type="image">
+          <visible>Control.HasFocus(17)</visible>
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1404</width>
+          <height>74</height>
+          <texture>settings/settings_radiobuttonofffocus.png</texture>
+        </control>
+        <control type="label">
+          <posy>0</posy>
+          <posx>75</posx>
+          <height>74</height>
+          <width>1404</width>
+          <font>Font_SettingsOptions</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <info>ListItem.Label</info>
+          <aligny>center</aligny>
+        </control>
+      </focusedlayout>
+      <content>
+        <item id="1">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_1path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_1name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_1)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>!Skin.HasSetting(mainmenu_1)</visible>
+        </item>
+        <item id="1">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_1name)]</label>
+          <onclick>Skin.Reset(mainmenu_1name)</onclick>
+          <onclick>Skin.Reset(mainmenu_1path)</onclick>
+          <onclick>Skin.Reset(mainmenu_1)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_1)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_1)</onclick>
+          <visible>Skin.HasSetting(mainmenu_1)</visible>
+        </item>
+        <item id="2">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_2path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_2name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_2)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>Skin.HasSetting(mainmenu_1) + !Skin.HasSetting(mainmenu_2)</visible>
+        </item>
+        <item id="2">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_2name)]</label>
+          <onclick>Skin.Reset(mainmenu_2name)</onclick>
+          <onclick>Skin.Reset(mainmenu_2path)</onclick>
+          <onclick>Skin.Reset(mainmenu_2)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_2)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_2)</onclick>
+          <visible>Skin.HasSetting(mainmenu_2)</visible>
+        </item>
+        <item id="3">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_3path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_3name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_3)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>!Skin.HasSetting(mainmenu_3) + Skin.HasSetting(mainmenu_1) + Skin.HasSetting(mainmenu_2)</visible>
+        </item>
+        <item id="3">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_3name)]</label>
+          <onclick>Skin.Reset(mainmenu_3name)</onclick>
+          <onclick>Skin.Reset(mainmenu_3path)</onclick>
+          <onclick>Skin.Reset(mainmenu_3)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_3)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_3)</onclick>
+          <visible>Skin.HasSetting(mainmenu_3)</visible>
+        </item>
+        <item id="4">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_4path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_4name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_4)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>!Skin.HasSetting(mainmenu_4) + Skin.HasSetting(mainmenu_1) + Skin.HasSetting(mainmenu_2) + Skin.HasSetting(mainmenu_3)</visible>
+        </item>
+        <item id="4">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_4name)]</label>
+          <onclick>Skin.Reset(mainmenu_4name)</onclick>
+          <onclick>Skin.Reset(mainmenu_4path)</onclick>
+          <onclick>Skin.Reset(mainmenu_4)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_4)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_4)</onclick>
+          <visible>Skin.HasSetting(mainmenu_4)</visible>
+        </item>
+        <item id="5">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_5path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_5name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_5)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>!Skin.HasSetting(mainmenu_5) + Skin.HasSetting(mainmenu_1) + Skin.HasSetting(mainmenu_2) + Skin.HasSetting(mainmenu_3) + Skin.HasSetting(mainmenu_4)</visible>
+        </item>
+        <item id="5">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_5name)]</label>
+          <onclick>Skin.Reset(mainmenu_5name)</onclick>
+          <onclick>Skin.Reset(mainmenu_5path)</onclick>
+          <onclick>Skin.Reset(mainmenu_5)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_5)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_5)</onclick>
+          <visible>Skin.HasSetting(mainmenu_5)</visible>
+        </item>
+        <item id="6">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_6path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_6name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_6)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>!Skin.HasSetting(mainmenu_6) + Skin.HasSetting(mainmenu_1) + Skin.HasSetting(mainmenu_2) + Skin.HasSetting(mainmenu_3) + Skin.HasSetting(mainmenu_4) + Skin.HasSetting(mainmenu_5)</visible>
+        </item>
+        <item id="6">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_6name)]</label>
+          <onclick>Skin.Reset(mainmenu_6name)</onclick>
+          <onclick>Skin.Reset(mainmenu_6path)</onclick>
+          <onclick>Skin.Reset(mainmenu_6)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_6)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_6)</onclick>
+          <visible>Skin.HasSetting(mainmenu_6)</visible>
+        </item>
+        <item id="7">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_7path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_7name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_7)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>!Skin.HasSetting(mainmenu_7) + Skin.HasSetting(mainmenu_1) + Skin.HasSetting(mainmenu_2) + Skin.HasSetting(mainmenu_3) + Skin.HasSetting(mainmenu_4) + Skin.HasSetting(mainmenu_5) + Skin.HasSetting(mainmenu_6)</visible>
+        </item>
+        <item id="7">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_7name)]</label>
+          <onclick>Skin.Reset(mainmenu_7name)</onclick>
+          <onclick>Skin.Reset(mainmenu_7path)</onclick>
+          <onclick>Skin.Reset(mainmenu_7)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_7)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_7)</onclick>
+          <visible>Skin.HasSetting(mainmenu_7)</visible>
+        </item>
+        <item id="8">
+          <label>[B]$LOCALIZE[31857][/B]</label>
+          <onclick>Skin.SetString(custom_path,mainmenu_8path)</onclick>
+          <onclick>Skin.SetString(custom_name,mainmenu_8name)</onclick>
+          <onclick>Skin.SetString(custom_done,mainmenu_8)</onclick>
+          <onclick>SetFocus(3000)</onclick>
+          <visible>!Skin.HasSetting(mainmenu_8) + Skin.HasSetting(mainmenu_1) + Skin.HasSetting(mainmenu_2) + Skin.HasSetting(mainmenu_3) + Skin.HasSetting(mainmenu_4) + Skin.HasSetting(mainmenu_5) + Skin.HasSetting(mainmenu_6) + Skin.HasSetting(mainmenu_7)</visible>
+        </item>
+        <item id="8">
+          <label>[B]$LOCALIZE[192]:[/B] $INFO[Skin.String(mainmenu_8name)]</label>
+          <onclick>Skin.Reset(mainmenu_8name)</onclick>
+          <onclick>Skin.Reset(mainmenu_8path)</onclick>
+          <onclick>Skin.Reset(mainmenu_8)</onclick>
+          <onclick>Skin.Reset(no_mainmenu_38)</onclick>
+          <onclick>Skin.Reset(Custom_mainmenu_8)</onclick>
+          <visible>Skin.HasSetting(mainmenu_8)</visible>
+        </item>
+      </content>
+    </control>
+    <control type="list" id="18">
+      <visible allowhiddenfocus="true">Control.HasFocus(18)</visible>
+      <include>Objects_SettingsControlAreaVars</include>
+      <onleft>112</onleft>
+      <onright>112</onright>
+      <onup>18</onup>
+      <ondown>18</ondown>
+      <include>Animation_CommonFade</include>
+      <itemlayout height="74">
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1404</width>
+          <height>74</height>
+          <texture>settings/settings_radiobuttonoff.png</texture>
+          <colordiffuse>88ffffff</colordiffuse>
+        </control>
+        <control type="label">
+          <posy>0</posy>
+          <posx>75</posx>
+          <height>74</height>
+          <width>1404</width>
+          <aligny>center</aligny>
+          <font>Font_SettingsOptions</font>
+          <textcolor>FF939597</textcolor>
+          <info>ListItem.Label</info>
+        </control>
+      </itemlayout>
+      <focusedlayout height="74">
+        <control type="image">
+          <visible>Control.HasFocus(18)</visible>
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1404</width>
+          <height>74</height>
+          <texture>settings/settings_radiobuttonofffocus.png</texture>
+          <colordiffuse>88ffffff</colordiffuse>
+        </control>
+        <control type="label">
+          <posy>0</posy>
+          <posx>75</posx>
+          <height>74</height>
+          <width>1404</width>
+          <font>Font_SettingsOptions</font>
+          <textcolor>FFFFFFFF</textcolor>
+          <info>ListItem.Label</info>
+          <aligny>center</aligny>
+        </control>
+      </focusedlayout>
+      <content>
+        <item id="1">
+          <label2>$INFO[Window(0).Property(favourite.1.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.1.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.1.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.1.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.1.name))</visible>
+        </item>
+        <item id="2">
+          <label2>$INFO[Window(0).Property(favourite.2.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.2.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.2.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.2.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.2.name))</visible>
+        </item>
+        <item id="3">
+          <label2>$INFO[Window(0).Property(favourite.3.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.3.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.3.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.3.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.3.name))</visible>
+        </item>
+        <item id="4">
+          <label2>$INFO[Window(0).Property(favourite.4.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.4.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.4.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.4.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.4.name))</visible>
+        </item>
+        <item id="5">
+          <label2>$INFO[Window(0).Property(favourite.5.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.5.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.5.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.5.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.5.name))</visible>
+        </item>
+        <item id="6">
+          <label2>$INFO[Window(0).Property(favourite.6.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.6.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.6.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.6.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.6.name))</visible>
+        </item>
+        <item id="7">
+          <label2>$INFO[Window(0).Property(favourite.7.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.7.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.7.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.7.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.7.name))</visible>
+        </item>
+        <item id="8">
+          <label2>$INFO[Window(0).Property(favourite.8.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.8.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.8.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.8.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.8.name))</visible>
+        </item>
+        <item id="9">
+          <label2>$INFO[Window(0).Property(favourite.9.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.9.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.9.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.9.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.9.name))</visible>
+        </item>
+        <item id="10">
+          <label2>$INFO[Window(0).Property(favourite.10.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.10.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.10.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.10.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.10.name))</visible>
+        </item>
+        <item id="11">
+          <label2>$INFO[Window(0).Property(favourite.11.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.11.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.11.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.11.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.11.name))</visible>
+        </item>
+        <item id="12">
+          <label2>$INFO[Window(0).Property(favourite.12.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.12.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.12.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.12.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.12.name))</visible>
+        </item>
+        <item id="13">
+          <label2>$INFO[Window(0).Property(favourite.13.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.13.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.13.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.13.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.13.name))</visible>
+        </item>
+        <item id="14">
+          <label2>$INFO[Window(0).Property(favourite.14.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.14.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.14.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.14.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.14.name))</visible>
+        </item>
+        <item id="15">
+          <label2>$INFO[Window(0).Property(favourite.15.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.15.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.15.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.15.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.15.name))</visible>
+        </item>
+        <item id="16">
+          <label2>$INFO[Window(0).Property(favourite.16.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.16.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.16.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.16.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.16.name))</visible>
+        </item>
+        <item id="17">
+          <label2>$INFO[Window(0).Property(favourite.17.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.17.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.17.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.17.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.17.name))</visible>
+        </item>
+        <item id="18">
+          <label2>$INFO[Window(0).Property(favourite.18.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.18.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.18.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.18.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.18.name))</visible>
+        </item>
+        <item id="19">
+          <label2>$INFO[Window(0).Property(favourite.19.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.19.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.19.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.19.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.19.name))</visible>
+        </item>
+        <item id="20">
+          <label2>$INFO[Window(0).Property(favourite.20.path)]</label2>
+          <label>$INFO[Window(0).Property(favourite.20.name)]</label>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_path)],$INFO[Window(0).Property(favourite.20.path)])</onclick>
+          <onclick>Skin.SetString($INFO[Skin.String(custom_name)],$INFO[Window(0).Property(favourite.20.name)])</onclick>
+          <onclick>Skin.SetBool($INFO[Skin.String(custom_done)])</onclick>
+          <onclick>SetFocus(17)</onclick>
+          <visible>!IsEmpty(Window(0).Property(favourite.20.name))</visible>
+        </item>
+      </content>
+    </control>
+    <include>Background_ContextBlack</include>
+    <include>Furniture_Debug</include>
+  </controls>
+</window>

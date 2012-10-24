@@ -6,20 +6,20 @@
     <posy>0</posy>
   </coordinates>
   <include>Animation_DialogPopup</include>
-  <visible>Window.IsActive(130)</visible>
+  <visible>Window.IsActive(ProfileSettings)</visible>
   <controls>
     <control>
       <description>Title Label</description>
       <label>Profile Settings</label>
       <include>Window-Title</include>
-      <visible>!Window.IsActive(131)</visible>
+      <visible>!Window.IsActive(LockSettings)</visible>
     </control>
     <control type="group">
       <posx>326</posx>
       <posy>324</posy>
       <width>1270</width>
       <height>432</height>
-      <visible>![Window.IsActive(103) | Window.IsActive(126) | Window.IsActive(131)]</visible>
+      <visible>![Window.IsActive(virtualkeyboard) | Window.IsActive(126) | Window.IsActive(LockSettings)]</visible>
       <control type="image" id="1">
         <description>background image</description>
         <posx>0</posx>
@@ -126,7 +126,6 @@
         <aligny>center</aligny>
         <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
         <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
-        <include>fast-fade</include>
       </control>
       <control type="spincontrolex" id="9">
         <description>directory content select spincontrol</description>

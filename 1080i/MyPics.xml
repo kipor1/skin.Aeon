@@ -1,7 +1,7 @@
 ﻿<window id="2">
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
-  <views>550,50,54,51,57,53</views>
+  <views>50,51,57,53</views>
   <controls>
     <control type="image" id="101">
       <posx>0</posx>
@@ -35,48 +35,46 @@
     <control type="image">
       <include>FullscreenDimensions</include>
       <texture>windows/fanart_back.png</texture>
-      <visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(listitem.filenameandpath)</visible>
-      <visible>substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif)</visible>
+      <visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(ListItem.filenameandpath)</visible>
+      <visible>substring(ListItem.filenameandpath,jpg) | substring(ListItem.filenameandpath,bmp) | substring(ListItem.filenameandpath,png) | substring(ListItem.filenameandpath,tif)</visible>
       <animation effect="fade" end="0" time="200">WindowClose</animation>
       <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
     </control>
     <control type="largeimage" id="71">
       <include>FullscreenDimensions</include>
-      <visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(listitem.filenameandpath)</visible>
-      <visible>substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif)</visible>
+      <visible>!Skin.HasSetting(nopicturefanart) + !Control.IsVisible(53) + !Control.IsVisible(50) + !IsEmpty(ListItem.filenameandpath)</visible>
+      <visible>substring(ListItem.filenameandpath,jpg) | substring(ListItem.filenameandpath,bmp) | substring(ListItem.filenameandpath,png) | substring(ListItem.filenameandpath,tif)</visible>
       <animation effect="fade" end="0" time="200">WindowClose</animation>
       <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
-      <texture>$INFO[listitem.filenameandpath]</texture>
+      <texture>$INFO[ListItem.filenameandpath]</texture>
       <fadetime>400</fadetime>
       <aspectratio align="top">keep</aspectratio>
     </control>
     <control type="largeimage" id="668">
       <include>FullscreenDimensions</include>
-      <texture>$INFO[listitem.filenameandpath]</texture>
+      <texture>$INFO[ListItem.filenameandpath]</texture>
       <fadetime>400</fadetime>
       <aspectratio align="top">keep</aspectratio>
-      <visible>Control.IsVisible(51) + [substring(listitem.filenameandpath,jpg) | substring(listitem.filenameandpath,bmp) | substring(listitem.filenameandpath,png) | substring(listitem.filenameandpath,tif) | substring(listitem.filenameandpath,ico) | substring(listitem.filenameandpath,pcx) | substring(listitem.filenameandpath,tga)]</visible>
+      <visible>Control.IsVisible(51) + [substring(ListItem.filenameandpath,jpg) | substring(ListItem.filenameandpath,bmp) | substring(ListItem.filenameandpath,png) | substring(ListItem.filenameandpath,tif) | substring(ListItem.filenameandpath,ico) | substring(ListItem.filenameandpath,pcx) | substring(ListItem.filenameandpath,tga)]</visible>
       <include>Animation_CommonFade</include>
     </control>
-    <include>MediaBackdropsMultiplex</include>
+    <include>CurtainsBackdrop</include>
     <include>Furniture_WallBackground</include>
     <control type="group">
       <include>FullscreenDimensions</include>
       <include>Animation_OpenCloseZoom</include>
       <include>Furniture_Time</include>
+      <include>Furniture_NowPlayingWidget</include>
       <include>Furniture_MediaPanel</include>
       <include>Viewtype_Wall</include>
       <include>Viewtype_StripShow</include>
       <include>Viewtype_Showcase</include>
       <include>Viewtype_List</include>
-      <include>Viewtype_List_Slim</include>
-      <include>Viewtype_ClearList</include>
-      <include>Furniture_WallTime</include>
-      <include>Furniture_WallRSS</include>
-      <include>NewMediaMenu</include>
+      <include condition="system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(globalrss)">Furniture_RSS</include>
+      <include condition="!Skin.HasSetting(kiosk)">MediaMenu</include>
     </control>
     <include>Furniture_DarkGradient</include>
-    <!--<include>Background_ContextBlack</include>-->
+    <include>Background_ContextBlack</include>
     <include condition="Skin.HasSetting(debug)">Furniture_Debug</include>
   </controls>
 </window>

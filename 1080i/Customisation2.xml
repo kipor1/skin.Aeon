@@ -1,0 +1,406 @@
+﻿<window id="676">
+  <defaultcontrol always="true">8</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control type="multiimage">
+      <include>FullscreenDimensions</include>
+      <imagepath>special://skin/extras/backdrops/default_settings</imagepath>
+      <info>Skin.String(CustomSettings)</info>
+      <include>BackgroundTimings</include>
+    </control>
+    <include>Furniture_SettingsBackPanel</include>
+    <control type="label">
+      <description>sectiontitle</description>
+      <label>31230</label>
+      <include>Objects_SettingsSectionTitle</include>
+    </control>
+    <control type="label">
+      <visible>![Control.HasFocus(23) | ControlGroup(17).HasFocus | ControlGroup(18).HasFocus | Control.HasFocus(24)]</visible>
+      <description>sectiontitle</description>
+      <posx>462</posx>
+      <posy>105</posy>
+      <width>1404</width>
+      <height>74</height>
+      <label>31231</label>
+      <textcolor>FFbec0c2</textcolor>
+      <include>Animation_CommonFadeOpenClose</include>
+      <font>Font_SettingsSectionTitle</font>
+    </control>
+    <control type="group">
+      <include>Settings_ButtonGroupDimensionsXBMC</include>
+      <include>Animation_CommonFade</include>
+      <control type="button" id="8">
+        <posy>0</posy>
+        <label>312471</label>
+        <include>Objects_SettingsSectionMenuButton</include>
+        <onup>23</onup>
+        <ondown>10</ondown>
+        <onleft>600</onleft>
+        <onright>600</onright>
+        <onclick>SetFocus(600)</onclick>
+        <visible allowhiddenfocus="true">![Control.HasFocus(8) | ControlGroup(12).HasFocus]</visible>
+      </control>
+      <control type="button" id="8">
+        <posy>0</posy>
+        <label>312471</label>
+        <include>Objects_SettingsSectionMenuButtonFocused</include>
+        <onup>23</onup>
+        <ondown>10</ondown>
+        <onleft>600</onleft>
+        <onright>600</onright>
+        <visible>Control.HasFocus(8) | ControlGroup(12).HasFocus</visible>
+      </control>
+      <control type="label">
+        <description>My Programs Sub Unfocused</description>
+        <posy>48</posy>
+        <label>31247</label>
+        <textcolor>FFf5f5f5</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>![Control.HasFocus(8) | ControlGroup(12).HasFocus]</visible>
+      </control>
+      <control type="label">
+        <description>My Programs Sub Unfocused</description>
+        <posy>48</posy>
+        <label>31247</label>
+        <textcolor>FF262728</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>Control.HasFocus(8) | ControlGroup(12).HasFocus</visible>
+      </control>
+      <control type="button" id="10">
+        <description>MUSIC VIEWTYPES</description>
+        <posy>87</posy>
+        <label>312472</label>
+        <include>Objects_SettingsSectionMenuButton</include>
+        <onup>8</onup>
+        <ondown>22</ondown>
+        <onleft>800</onleft>
+        <onright>800</onright>
+        <visible allowhiddenfocus="true">![Control.HasFocus(10) | ControlGroup(14).HasFocus]</visible>
+      </control>
+      <control type="button">
+        <description>MUSIC VIEWTYPES</description>
+        <posy>87</posy>
+        <label>312472</label>
+        <include>Objects_SettingsSectionMenuButtonFocused</include>
+        <onup>8</onup>
+        <ondown>22</ondown>
+        <onleft>40</onleft>
+        <onright>40</onright>
+        <visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
+      </control>
+      <control type="label">
+        <description>My Weather Sub Unfocused</description>
+        <posy>135</posy>
+        <label>31247</label>
+        <textcolor>FFf5f5f5</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>![Control.HasFocus(10) | ControlGroup(14).HasFocus]</visible>
+      </control>
+      <control type="label">
+        <description>My Weather Sub Unfocused</description>
+        <posy>135</posy>
+        <label>31247</label>
+        <textcolor>FF262728</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
+      </control>
+      <control type="button" id="22">
+        <description>Layouts Info</description>
+        <posy>174</posy>
+        <label>312473</label>
+        <include>Objects_SettingsSectionMenuButton</include>
+        <onup>10</onup>
+        <ondown>23</ondown>
+        <onleft>1000</onleft>
+        <onright>1000</onright>
+        <visible allowhiddenfocus="true">![Control.HasFocus(22) | ControlGroup(16).HasFocus]</visible>
+      </control>
+      <control type="button">
+        <description>Purge</description>
+        <posy>174</posy>
+        <label>312473</label>
+        <include>Objects_SettingsSectionMenuButtonFocused</include>
+        <onup>10</onup>
+        <ondown>23</ondown>
+        <onleft>40</onleft>
+        <onright>40</onright>
+        <visible>Control.HasFocus(22) | ControlGroup(16).HasFocus</visible>
+      </control>
+      <control type="label">
+        <description>My Weather Sub Unfocused</description>
+        <posy>222</posy>
+        <label>31247</label>
+        <textcolor>FFf5f5f5</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>![Control.HasFocus(22) | ControlGroup(16).HasFocus]</visible>
+      </control>
+      <control type="label">
+        <description>My Weather Sub Unfocused</description>
+        <posy>222</posy>
+        <label>31247</label>
+        <textcolor>FF262728</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>Control.HasFocus(22) | ControlGroup(16).HasFocus</visible>
+      </control>
+      <control type="button" id="23">
+        <description>Layouts Info</description>
+        <posy>261</posy>
+        <label>312474</label>
+        <include>Objects_SettingsSectionMenuButton</include>
+        <onup>22</onup>
+        <ondown>8</ondown>
+        <onleft>1100</onleft>
+        <onright>1100</onright>
+        <visible allowhiddenfocus="true">![Control.HasFocus(23) | ControlGroup(17).HasFocus]</visible>
+      </control>
+      <control type="button">
+        <description>Purge</description>
+        <posy>261</posy>
+        <label>312474</label>
+        <include>Objects_SettingsSectionMenuButtonFocused</include>
+        <onup>22</onup>
+        <ondown>8</ondown>
+        <onleft>40</onleft>
+        <onright>40</onright>
+        <visible>Control.HasFocus(23) | ControlGroup(17).HasFocus</visible>
+      </control>
+      <control type="label">
+        <description>My Weather Sub Unfocused</description>
+        <posy>309</posy>
+        <label>312475</label>
+        <textcolor>FFf5f5f5</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>![Control.HasFocus(23) | ControlGroup(17).HasFocus]</visible>
+      </control>
+      <control type="label">
+        <description>My Weather Sub Unfocused</description>
+        <posy>309</posy>
+        <label>312475</label>
+        <textcolor>FF262728</textcolor>
+        <include>Objects_SettingsSectionMenuButtonSubtitle</include>
+        <visible>Control.HasFocus(23) | ControlGroup(17).HasFocus</visible>
+      </control>
+    </control>
+    <control type="grouplist" id="12">
+      <include>Objects_SettingsControlAreaVars</include>
+      <onup>12</onup>
+      <ondown>12</ondown>
+      <onleft>8</onleft>
+      <onright>8</onright>
+      <visible>Control.HasFocus(8) | ControlGroup(12).HasFocus</visible>
+      <control type="radiobutton" id="600">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31751</label>
+        <onclick>Skin.ToggleSetting(ShowcaseOff)</onclick>
+        <selected>!Skin.HasSetting(ShowcaseOff)</selected>
+      </control>
+      <control type="radiobutton" id="601">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31786</label>
+        <onclick>Skin.ToggleSetting(MultiwallOff)</onclick>
+        <selected>!Skin.HasSetting(MultiwallOff)</selected>
+      </control>
+      <control type="radiobutton" id="602">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31582</label>
+        <onclick>Skin.ToggleSetting(MultiplexOldOff)</onclick>
+        <selected>!Skin.HasSetting(MultiplexOldOff)</selected>
+      </control>
+      <control type="radiobutton" id="603">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31580</label>
+        <onclick>Skin.ToggleSetting(ListLowOff)</onclick>
+        <selected>!Skin.HasSetting(ListLowOff)</selected>
+      </control>
+      <control type="radiobutton" id="606">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31757</label>
+        <onclick>Skin.ToggleSetting(MultiplexOff)</onclick>
+        <selected>!Skin.HasSetting(MultiplexOff)</selected>
+      </control>
+      <control type="radiobutton" id="607">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31750</label>
+        <onclick>Skin.ToggleSetting(WallOff)</onclick>
+        <selected>!Skin.HasSetting(WallOff)</selected>
+      </control>
+      <control type="radiobutton" id="608">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31579</label>
+        <onclick>Skin.ToggleSetting(LargeListOff)</onclick>
+        <selected>!Skin.HasSetting(LargeListOff)</selected>
+      </control>
+      <control type="radiobutton" id="609">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31787</label>
+        <onclick>Skin.ToggleSetting(PosterViewOff)</onclick>
+        <selected>!Skin.HasSetting(PosterViewOff)</selected>
+      </control>
+    </control>
+    <control type="grouplist" id="14">
+      <include>Objects_SettingsControlAreaVars</include>
+      <onup>14</onup>
+      <ondown>14</ondown>
+      <onleft>10</onleft>
+      <onright>10</onright>
+      <visible>Control.HasFocus(10) | ControlGroup(14).HasFocus</visible>
+      <control type="radiobutton" id="800">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31751</label>
+        <onclick>Skin.ToggleSetting(MusicShowcaseOff)</onclick>
+        <selected>!Skin.HasSetting(MusicShowcaseOff)</selected>
+      </control>
+      <control type="radiobutton" id="802">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31582</label>
+        <onclick>Skin.ToggleSetting(MusicMultiplexOff)</onclick>
+        <selected>!Skin.HasSetting(MusicMultiplexOff)</selected>
+      </control>
+      <control type="radiobutton" id="803">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31580</label>
+        <onclick>Skin.ToggleSetting(MusicListLowOff)</onclick>
+        <selected>!Skin.HasSetting(MusicListLowOff)</selected>
+      </control>
+      <control type="radiobutton" id="807">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31757</label>
+        <onclick>Skin.ToggleSetting(MusicWallOff)</onclick>
+        <selected>!Skin.HasSetting(MusicWallOff)</selected>
+      </control>
+      <control type="radiobutton" id="808">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31786</label>
+        <onclick>Skin.ToggleSetting(MusicMultiwallOff)</onclick>
+        <selected>!Skin.HasSetting(MusicMultiwallOff)</selected>
+      </control>
+    </control>
+    <control type="grouplist" id="16">
+      <include>Objects_SettingsControlAreaVars</include>
+      <onup>16</onup>
+      <ondown>16</ondown>
+      <onleft>22</onleft>
+      <onright>22</onright>
+      <visible>Control.HasFocus(22) | ControlGroup(16).HasFocus</visible>
+      <control type="radiobutton" id="1000">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31751</label>
+        <onclick>Skin.ToggleSetting(ShowcaseTVOff)</onclick>
+        <selected>!Skin.HasSetting(ShowcaseTVOff)</selected>
+      </control>
+      <control type="radiobutton" id="1001">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31786</label>
+        <onclick>Skin.ToggleSetting(MultiwallTVOff)</onclick>
+        <selected>!Skin.HasSetting(MultiwallTVOff)</selected>
+      </control>
+      <control type="radiobutton" id="1002">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31582</label>
+        <onclick>Skin.ToggleSetting(MultiplexOldTVOff)</onclick>
+        <selected>!Skin.HasSetting(MultiplexOldTVOff)</selected>
+      </control>
+      <control type="radiobutton" id="1003">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31580</label>
+        <onclick>Skin.ToggleSetting(ListLowTVOff)</onclick>
+        <selected>!Skin.HasSetting(ListLowTVOff)</selected>
+      </control>
+      <control type="radiobutton" id="1006">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31757</label>
+        <onclick>Skin.ToggleSetting(MultiplexTVOff)</onclick>
+        <selected>!Skin.HasSetting(MultiplexTVOff)</selected>
+      </control>
+      <control type="radiobutton" id="1007">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31750</label>
+        <onclick>Skin.ToggleSetting(WallTVOff)</onclick>
+        <selected>!Skin.HasSetting(WallTVOff)</selected>
+      </control>
+      <control type="radiobutton" id="1008">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31579</label>
+        <onclick>Skin.ToggleSetting(LargeListTVOff)</onclick>
+        <selected>!Skin.HasSetting(LargeListTVOff)</selected>
+      </control>
+    </control>
+    <control type="grouplist" id="17">
+      <include>Objects_SettingsControlAreaVars</include>
+      <onup>17</onup>
+      <ondown>17</ondown>
+      <onleft>23</onleft>
+      <onright>23</onright>
+      <visible>Control.HasFocus(23) | ControlGroup(17).HasFocus</visible>
+      <control type="radiobutton" id="1100">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31287</label>
+        <onclick>Skin.ToggleSetting(kiosk)</onclick>
+        <selected>Skin.HasSetting(kiosk)</selected>
+      </control>
+      <control type="radiobutton" id="1101">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312870</label>
+        <onclick>Skin.ToggleSetting(kioskininfo)</onclick>
+        <selected>Skin.HasSetting(kioskininfo)</selected>
+      </control>
+      <control type="radiobutton" id="1102">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32005</label>
+        <onclick>Skin.ToggleSetting(tvposter)</onclick>
+        <selected>Skin.HasSetting(tvposter)</selected>
+      </control>
+      <control type="radiobutton" id="1103">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32006</label>
+        <onclick>Skin.ToggleSetting(dvdcase)</onclick>
+        <selected>Skin.HasSetting(dvdcase)</selected>
+      </control>
+      <control type="radiobutton" id="1104">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32007</label>
+        <onclick>Skin.ToggleSetting(scrollletters)</onclick>
+        <selected>Skin.HasSetting(scrollletters)</selected>
+      </control>
+      <control type="radiobutton" id="1105">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31281</label>
+        <onclick>Skin.ToggleSetting(nomediaflags)</onclick>
+        <selected>!Skin.HasSetting(nomediaflags)</selected>
+      </control>
+      <control type="radiobutton" id="1106">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312692</label>
+        <onclick>Skin.ToggleSetting(multiplexfixedlist)</onclick>
+        <selected>Skin.HasSetting(multiplexfixedlist)</selected>
+      </control>
+      <control type="radiobutton" id="1107">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>312693</label>
+        <onclick>Skin.ToggleSetting(landscapefixedlist)</onclick>
+        <selected>Skin.HasSetting(landscapefixedlist)</selected>
+      </control>
+      <control type="radiobutton" id="1109">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32008</label>
+        <onclick>Skin.ToggleSetting(globalrss)</onclick>
+        <selected>Skin.HasSetting(globalrss)</selected>
+      </control>
+      <control type="radiobutton" id="1110">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>31822</label>
+        <onclick>Skin.ToggleSetting(mediamenuslide)</onclick>
+        <selected>Skin.HasSetting(mediamenuslide)</selected>
+      </control>
+      <control type="radiobutton" id="1111">
+        <include>Objects_SettingsDefaultRadioButton</include>
+        <label>32010</label>
+        <onclick>Skin.ToggleSetting(showcasefixedlist)</onclick>
+        <selected>Skin.HasSetting(showcasefixedlist)</selected>
+      </control>
+    </control>
+    <include>Furniture_SettingsFrontPanel</include>
+    <!--<include>Background_ContextBlack</include>-->
+    <include>Furniture_Debug</include>
+  </controls>
+</window>
