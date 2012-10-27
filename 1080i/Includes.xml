@@ -1,131 +1,1397 @@
-﻿<includes>
-  <include file="Defaults.xml" />
-  <include file="Includes_Animations.xml" />
-  <include file="Includes_Backgrounds.xml" />
-  <include file="Includes_Conditions.xml" />
-  <include file="Includes_Dialogs.xml" />
-  <include file="Includes_Objects.xml" />
-  <include file="Includes_Furniture.xml" />
-  <include file="Includes_Colours.xml" />
-  <include file="Includes_MainMenu.xml" />
-  <include file="Includes_Reset.xml" />
-  <include file="Includes_Assistant_LabelsButtons.xml" />
-  <include file="Includes_Settings_LabelsButtons.xml" />
-  <include file="Includes_Settings_Presets.xml" />
-  <include file="Includes_Settings_Welcome.xml" />
-  <include file="Includes_MediaFlags.xml" />
-  <include file="Includes_ViewSelect.xml" />
-  <include file="Includes_Submenu.xml" />
-  <include file="Viewtype_Showcase.xml" />
-  <include file="Viewtype_StripShow.xml" />
-  <include file="Viewtype_Multiplex.xml" />
-  <include file="Viewtype_MultiplexOld.xml" />
-  <include file="Viewtype_List.xml" />
-  <include file="Viewtype_Wall.xml" />
-  <!-- Text colours ================================== -->
-  <include name="subcolornofocus">
-    <textcolor>ff969696</textcolor>
-    <selectedcolor>ff969696</selectedcolor>
-  </include>
-  <include name="listcolornofocus">
-    <textcolor>dcffffff</textcolor>
-    <selectedcolor>dcffffff</selectedcolor>
-  </include>
-  <include name="subcolorfocus">
-    <textcolor>ff2e2e2e</textcolor>
-    <selectedcolor>ff2e2e2e</selectedcolor>
-  </include>
-  <include name="listcolorfocus">
-    <textcolor>ff2e2e2e</textcolor>
-    <selectedcolor>ff2e2e2e</selectedcolor>
-  </include>
-  <include name="detailcolornofocus">
-    <textcolor>dcbdbdbd</textcolor>
-    <selectedcolor>dcbdbdbd</selectedcolor>
-  </include>
-  <include name="listobjects">
-    <textcolor>ff969696</textcolor>
-  </include>
-  <include name="detailcolorfocus">
-    <textcolor>FF585858</textcolor>
-    <selectedcolor>FF585858</selectedcolor>
-  </include>
-  <include name="playsymbol">
-    <textcolor>00FFFFFF</textcolor>
-    <selectedcolor>10FFFFFF</selectedcolor>
-  </include>
-  <include name="playlistcolor1">
-    <textcolor>FFFFFFFF</textcolor>
-    <selectedcolor>e1b1e021</selectedcolor>
-  </include>
-  <include name="playlistcolor2">
-    <textcolor>FFFFFFFF</textcolor>
-    <selectedcolor>e1b1e021</selectedcolor>
-  </include>
-  <include name="settingsmenufont">
-    <textcolor>FFa8a8a8</textcolor>
-    <selectedcolor>e1b1e021</selectedcolor>
-    <focusedcolor>ffffffff</focusedcolor>
-  </include>
-  <include name="settingsmenubar">
-    <textcolor>FFffffff</textcolor>
-    <focusedcolor>FFffff00</focusedcolor>
-    <selectedcolor>FFffff00</selectedcolor>
-  </include>
-  <include name="osdfont">
-    <textcolor>FFffffff</textcolor>
-    <focusedcolor>FFababab</focusedcolor>
-    <selectedcolor>FFababab</selectedcolor>
-  </include>
-  <include name="osdfont2">
-    <textcolor>FFb8b8b8</textcolor>
-    <focusedcolor>FFFFFFFF</focusedcolor>
-    <selectedcolor>FFFFFFFF</selectedcolor>
-  </include>
-  <!-- Global time and weather panel ================================== -->
-  <include name="Window-Files">
-    <control type="label" id="12">
-      <posx>105</posx>
-      <posy>870</posy>
-      <label>-</label>
-      <font>objects</font>
-      <textcolor>59FFFFFF</textcolor>
-      <include>common-fade-quick</include>
-      <visible>!Control.IsVisible(51) + !Control.IsVisible(57) + !Control.IsVisible(58) + !Control.IsVisible(53)</visible>
-    </control>
-  </include>
-  <!-- Menu styles ================================== -->
-  <include name="filemanmenugroup">
-    <posx>100</posx>
-    <posy>896</posy>
-    <width>1718</width>
-    <height>60</height>
-    <itemgap>0</itemgap>
-    <orientation>horizontal</orientation>
-    <onup>21</onup>
-    <ondown>21</ondown>
-    <include>common-fade-quick</include>
-  </include>
-  <include name="browsermenugroup">
-    <posx>100</posx>
-    <posy>848</posy>
-    <width>1718</width>
-    <height>60</height>
-    <itemgap>0</itemgap>
-    <orientation>horizontal</orientation>
-    <onup>450</onup>
-    <ondown>450</ondown>
-    <include>common-fade-quick</include>
-  </include>
-  <include name="selectmenugroup">
-    <posx>453</posx>
-    <posy>848</posy>
-    <width>1718</width>
-    <height>60</height>
-    <itemgap>0</itemgap>
-    <orientation>horizontal</orientation>
-    <onup>450</onup>
-    <ondown>450</ondown>
-    <include>common-fade-quick</include>
-  </include>
+<includes>
+
+file="ViewsLiveTV.xml" />
+    
+<include file="Defaults.xml" />
+	<include file="Includes_Animations.xml" />
+	<include file="Includes_Backgrounds.xml" />
+	<include file="Includes_Conditions.xml" />
+	<include file="Includes_Dialogs.xml" />
+	<include file="Includes_Objects.xml" />
+	<include file="Includes_Furniture.xml" />
+	<include file="Includes_Colours.xml" />
+	<include file="Includes_MainMenu.xml" />
+	<include file="Includes_Reset.xml" />
+	<include file="Includes_Assistant_LabelsButtons.xml" />
+	<include file="Includes_Settings_LabelsButtons.xml" />
+	<include file="Includes_Settings_Presets.xml" />
+	<include file="Includes_Settings_Welcome.xml" />
+	<include file="Includes_MediaFlags.xml" />
+	<include file="Includes_Submenu.xml" />
+	<include file="Viewtype_Showcase.xml" />
+	<include file="Viewtype_StripShow.xml" />
+	<include file="Viewtype_Multiplex.xml" />
+	<include file="Viewtype_MultiplexOld.xml" />
+	<include file="Viewtype_List.xml" />
+	<include file="Viewtype_Wall.xml" />
+	<include file="Viewtype_List_Slim.xml" />
+	<include file="Includes_Filemanager.xml" />
+	<include file="Viewtype_List_Low.xml" />
+	<include file="Includes_LowList.xml" />
+	<include file="Includes_CDDVDMod.xml" />
+	<include file="Includes_NightMod.xml" />
+	<include file="Includes_WallMod.xml" />
+	<include file="Includes_Latest_Added.xml" />
+	<include file="Includes_MultiplexFlow.xml" />
+	<include file="mod_moviegenre_list1.xml" />
+	<include file="Viewtype_ClearList.xml" />
+	<include file="Widget_Weather.xml" />
+	<include file="Viewtype_Music_Multiplex.xml" />
+	<include file="Includes_genre.xml" />
+	<include file="Includes_MediaMenu.xml" />	
+
+	<constant name="FanartCrossfadeTime">400</constant>
+    <include name="FullscreenDimensions">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</include>
+	
+	<include name="CommonBackground">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+			<visible>!Container.Scrolling + !Skin.HasSetting(Show_Fanart)</visible>
+			<include>VisibleFadeEffect</include>
+			<include>Window_OpenClose_Animation</include>
+		</control>
+	</include>
+	<include name="CommonVideoBackground">
+
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<imagepath fallback="special://skin/backgrounds/movies.png" background="true">$INFO[Skin.String(CustomMoviesFolder)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+			<visible>Container.Content(Movies) + [IsEmpty(ListItem.Property(Fanart_Image))]</visible>
+			<include>Animation_OpenCloseZoom</include>
+		</control>
+		<control tye="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<imagepath fallback="special://skin/backgrounds/tvshows.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_TVShow_Folder)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>1000</fadetime>
+			<visible>[Container.Content(TVShows) | Container.Content(Seasons) |Container.Content(Episodes)] + [!IsEmpty(Skin.String(Home_Custom_Back_TVShow_Folder) + Skin.HasSetting(HomeMenuNoTVShowsButton)])</visible>
+			<include>Animation_OpenCloseZoom</include>
+		</control>
+	</include>
+	<include name="WindowHeader">
+<!-- Aeon home mid rss fade -->		
+		
+		<control type="image">
+			    <posx>80</posx>
+			    <posy>407</posy>
+			    <width>96</width>
+			    <height>19</height>
+			    <texture>home/Home_Mid_RSS/rssbar_mid_fade.png</texture>
+			    <colordiffuse>e3FFFFFF</colordiffuse>
+				<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
+					<effect type="fade" start="0" end="100" time="300" />
+				</animation>
+				<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+				<visible>Window.IsVisible(home) + system.getbool(lookandfeel.enablerssfeeds) + !Skin.HasSetting(Aeon_Mid)</visible>
+		    </control>
+			
+<!-- Aeon home Low rss fade -->		
+		
+		<control type="image">
+			    <posx>80</posx>
+			    <posy>637</posy>
+			    <width>96</width>
+			    <height>19</height>
+			    <texture>home/Home_Mid_RSS/rssbar_mid_fade.png</texture>
+			    <colordiffuse>e3FFFFFF</colordiffuse>
+				<animation type="WindowOpen" condition="!Skin.HasSetting(nozooms)" reversible="false">
+					<effect type="fade" start="0" end="100" time="300" />
+				</animation>
+				<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+				<visible>Window.IsVisible(home) + system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Aeon_Mid)</visible>
+		    </control>		
+		<control type="group">
+			<posx>420</posx>
+		    <posy>300</posy>
+			<width>500</width>
+			<height>100</height>
+			<visible>!Window.IsVisible(VolumeBar)</visible>
+		
+
+			
+			
+			
+
+			<!-- Volume is Muted -->
+			<control type="image">
+				<posx>0</posx>
+			    <posy>0</posy>
+				<width>435</width>
+				<height>87</height>
+				<texture>common/Volume/scan_backg.png</texture>
+				<visible>Window.IsVisible(Mutebug)</visible>
+			</control>
+			<control type="image">
+				<posx>76</posx>
+			    <posy>3</posy>
+				<width>346</width>
+				<height>80</height>
+				<texture>common/Volume/ProgressBack.png</texture>
+				<visible>Window.IsVisible(Mutebug)</visible>
+			</control>				
+			<control type="label">
+                <posx>202</posx>
+				<posy>45</posy>
+				<aligny>center</aligny>
+				<font>Font_Volume_Muted</font>
+				<textcolor>white</textcolor>
+				<label>$LOCALIZE[31000]</label>
+				<visible>Window.IsVisible(Mutebug)</visible>
+				<include>VisibleFadeEffect</include>
+			</control>
+			<control type="image">
+				<posx>1</posx>
+			    <posy>4</posy>
+				<width>75</width>
+				<height>75</height>
+				<texture>common/Volume/icon_mute.png</texture>
+				<visible>Window.IsVisible(Mutebug)</visible>
+				<include>VisibleFadeEffect</include>
+			</control>
+			<!-- System is Busy -->
+			<control type="label">
+				<description>Busy label</description>
+				<width min="0" max="200">auto</width>
+				<height>35</height>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>blue</textcolor>
+				<label>$LOCALIZE[31001]</label>
+				<visible>true</visible>
+				<include>VisibleFadeEffect</include>
+				<visible>Window.IsVisible(BusyDialog)</visible>
+			</control>
+			<control type="image">
+				<description>Busy animation</description>
+				<width>35</width>
+				<height>35</height>
+				<texture>busy.png</texture>
+				<aspectratio>keep</aspectratio>
+				<animation effect="rotate" start="0" end="360" center="auto" time="1000" loop="true" condition="true">conditional</animation>
+				<visible>Window.IsVisible(BusyDialog)</visible>
+			</control>
+		</control>
+	</include>
+	<include name="WindowFooter">
+
+		<control type="grouplist">
+			<posx>650</posx>
+			<posy>80r</posy>
+			<width>620</width>
+			<height>25</height>
+			<orientation>horizontal</orientation>
+			<align>right</align>
+			<itemgap>5</itemgap>
+			<control type="label">
+				<description>Root Folder Name</description>
+				<width min="0" max="300">auto</width>
+				<height>25</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[20108][/B]</label>
+				<visible>IsEmpty(Container.FolderPath)</visible>
+			</control>
+			<control type="label">
+				<description>Folder Name</description>
+				<width min="0" max="300">auto</width>
+				<height>25</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[20342][/B]</label>
+				<visible>Container.Content(Movies)</visible>
+			</control>
+			<control type="label">
+				<description>Folder Name</description>
+				<width min="0" max="300">auto</width>
+				<height>25</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[20343][/B]</label>
+				<visible>Container.Content(TVShows)</visible>
+			</control>
+			<control type="label">
+				<description>Folder Name</description>
+				<width min="0" max="300">auto</width>
+				<height>25</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[20389][/B]</label>
+				<visible>Container.Content(MusicVideos)</visible>
+			</control>
+			<control type="label">
+				<description>Folder Name</description>
+				<width min="0" max="500">auto</width>
+				<height>25</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$INFO[ListItem.TVShowTitle][/B]</label>
+				<visible>[Container.Content(Seasons) | Container.Content(Episodes)] + !stringcompare(Container.FolderPath,videodb://5/)</visible>
+			</control>
+			<control type="label">
+				<description>Folder Name</description>
+				<width min="0" max="300">auto</width>
+				<height>25</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$INFO[ListItem.Season, - $LOCALIZE[20373] ][/B]</label>
+				<visible>Container.Content(Episodes) + !stringcompare(Container.FolderPath,videodb://5/)</visible>
+			</control>
+			<control type="label">
+				<description>Episodes Folder Name</description>
+				<width min="0" max="300">auto</width>
+				<height>25</height>
+				<font>font12</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[20360][/B]</label>
+				<visible>stringcompare(Container.FolderPath,videodb://5/)</visible>
+			</control>
+			<control type="label">
+				<description>Recently Added</description>
+				<width min="0" max="300">auto</width>
+				<height>25</height>
+				<font>Droid16</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B] - $LOCALIZE[31009][/B]</label>
+				<visible>stringcompare(Container.FolderPath,videodb://4/) | stringcompare(Container.FolderPath,videodb://5/) | stringcompare(Container.FolderPath,videodb://6/)</visible>
+			</control>
+			<control type="label">
+				<description>Episodes Folder Name</description>
+				<width min="0" max="600">auto</width>
+				<height>25</height>
+				<font>Droid16</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[24001]$INFO[Container.Property(AddonCategory), - ][/B]</label>
+				<visible>substring(Container.FolderPath,addons://,left)</visible>
+			</control>
+			<control type="label">
+				<description>Folder Name</description>
+				<width min="0" max="600">auto</width>
+				<height>25</height>
+				<font>Droid16</font>
+				<textcolor>grey2</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$INFO[Container.FolderName][/B]</label>
+				<visible>!Window.IsVisible(VideoLibrary) + !Window.IsVisible(MusicLibrary) + !Window.IsVisible(AddonBrowser)</visible>
+			</control>
+		</control>
+		<control type="label">
+			<description>Page Count Label</description>
+			<posx>10r</posx>
+			<posy>25r</posy>
+			<width>500</width>
+			<height>20</height>
+			<font>Droid16</font>
+			<textcolor>grey2</textcolor>
+			<scroll>false</scroll>
+			<align>right</align>
+			<aligny>center</aligny>
+			<label>$INFO[Container.TotalTime, $LOCALIZE[180] [B](,)[/B]] $LOCALIZE[31024] [B]($INFO[Container.CurrentPage]/$INFO[Container.NumPages])[/B]</label>
+		</control>
+	</include>
+	<include name="BehindDialogFadeOut">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black-back.png</texture>
+			<animation effect="fade" time="400">Visible</animation>
+			<animation effect="fade" time="200">Hidden</animation>
+			<visible>Window.IsActive(SongInformation) | Window.IsActive(Favourites) | Window.IsActive(ShutdownMenu) | Window.IsActive(FileBrowser) | Window.IsActive(TextViewer) | Window.IsActive(AddonSettings) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-Apple_Movie_Trailers-settings.xml) | Window.IsActive(script-Apple_Movie_Trailers-chooser.xml) | Window.IsActive(script-Apple_Movie_Trailers-search.xml) | Window.IsActive(script-Apple_Movie_Trailers-showtimes.xml) | Window.IsActive(script-XBMC_Lyrics-settings.xml) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml) | Window.IsActive(AddonInformation)</visible>
+		</control>
+	</include>
+	<include name="CommonOptionsMenuBack">
+		<include>VisibleFadeEffect</include>
+		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus</visible>
+		<animation effect="slide" start="0,0" end="60,0" time="200" condition="Player.HasMedia + !VideoPlayer.Content(LiveTV)">conditional</animation>
+		<posx>0</posx>
+		<posy>0</posy>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>200</width>
+			<height>720</height>
+			<texture>views/viewmenu/SubBack.png</texture>
+			<include>Animation_Bottom_Left_CD_Open_Close</include>
+		</control>
+
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>200</width>
+			<height>40</height>
+			<texture>views/viewmenu/HorizontalGlow.png</texture>
+			<include>dialogeffect2</include>
+		</control>
+	</include>
+	<include name="CommonNowPlaying_Controls">
+		<control type="group" id="9001">
+			<posx>0</posx>
+			<posy>0</posy>
+			<onleft>50</onleft>
+			<visible>[Player.HasMedia + !VideoPlayer.Content(LiveTV)] + [ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus]</visible>
+			<include>Animation_Bottom_Left_CD_Open_Close</include>
+<!-- video submenu background -->	
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>60</width>
+				<height>720</height>
+				<texture>views/viewmenu/SubBack.png</texture>
+			</control>
+<!-- video submenu buttons start -->	
+			<control type="button" id="600">
+				<posx>5</posx>
+				<posy>0</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>-</label>
+				<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>606</onup>
+				<ondown>601</ondown>
+				<onclick>XBMC.PlayerControl(Previous)</onclick>
+			</control>
+			<control type="image">
+				<description>Play image</description>
+				<posx>10</posx>
+				<posy>5</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-PrevNF.png</texture>
+			</control>
+
+			<control type="button" id="601">
+				<posx>5</posx>
+				<posy>45</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>-</label>
+				<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>600</onup>
+				<ondown>603</ondown>
+				<onclick>right</onclick>
+				<onclick>XBMC.PlayerControl(Stop)</onclick>
+			</control>
+			<control type="image">
+				<description>Stop image</description>
+				<posx>10</posx>
+				<posy>50</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-StopNF.png</texture>
+			</control>
+
+			<control type="button" id="603">
+				<posx>5</posx>
+				<posy>90</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>-</label>
+				<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>601</onup>
+				<ondown>602</ondown>
+				<onclick>XBMC.PlayerControl(Play)</onclick>
+			</control>
+			<control type="image">
+				<description>Pause image</description>
+				<posx>10</posx>
+				<posy>95</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-PauseNF.png</texture>
+				<visible>!Player.Paused</visible>
+			</control>
+			<control type="image">
+				<description>Play image</description>
+				<posx>10</posx>
+				<posy>95</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-PlayNF.png</texture>
+				<visible>Player.Paused</visible>
+			</control>
+
+			<control type="button" id="602">
+				<posx>5</posx>
+				<posy>135</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>-</label>
+				<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>603</onup>
+				<ondown>604</ondown>
+				<onclick>XBMC.PlayerControl(Next)</onclick>
+			</control>
+			<control type="image">
+				<description>Next image</description>
+				<posx>10</posx>
+				<posy>140</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-NextNF.png</texture>
+			</control>
+
+			<control type="button" id="604">
+				<posx>5</posx>
+				<posy>180</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>-</label>
+				<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onclick>XBMC.PlayerControl(Repeat)</onclick>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>602</onup>
+				<ondown>605</ondown>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>185</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-RepeatNF.png</texture>
+				<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>185</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-RepeatOneNF.png</texture>
+				<visible>Playlist.IsRepeatOne</visible>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>185</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-RepeatAllNF.png</texture>
+				<visible>Playlist.IsRepeat</visible>
+			</control>
+
+			<control type="button" id="605">
+				<posx>5</posx>
+				<posy>225</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>-</label>
+				<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onclick>XBMC.PlayerControl(Random)</onclick>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>604</onup>
+				<ondown>606</ondown>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>230</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-RandomNF.png</texture>
+				<visible>!Playlist.IsRandom</visible>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>230</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-RandomOnNF.png</texture>
+				<visible>Playlist.IsRandom</visible>
+			</control>
+
+			<control type="button" id="606">
+				<posx>5</posx>
+				<posy>360</posy>
+				<width>45</width>
+				<height>45</height>
+				<label>-</label>
+				<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>605</onup>
+				<ondown>600</ondown>
+				<onclick>FullScreen</onclick>
+			</control>
+			<control type="image">
+				<posx>10</posx>
+				<posy>365</posy>
+				<width>35</width>
+				<height>35</height>
+				<texture>common/mediabuttons/PlayerControls-FullScreenNF.png</texture>
+			</control>
+		</control>
+	</include>
+
+	<include name="CommonNowPlaying">
+		<control type="group">
+			<posx>260</posx>
+			<posy>0</posy>
+			<visible>Player.HasMedia + ControlGroup(9001).HasFocus</visible>
+			<include>VisibleFadeEffect</include>
+			<control type="image">
+				<description>shadow border</description>
+				<posx>-8</posx>
+				<posy>-13</posy>
+				<width>306</width>
+				<height>720</height>
+				<texture border="10">border-shadow.png</texture>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>-5</posy>
+				<width>290</width>
+				<height>720</height>
+				<texture border="8">SubBack.png</texture>
+			</control>
+<!-- video submenu now playing label -->				
+			<control type="label">
+				<posx>20</posx>
+				<posy>5</posy>
+				<width>250</width>
+				<height>20</height>
+				<label>$LOCALIZE[13350]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label">
+				<posx>270</posx>
+				<posy>395</posy>
+				<width>250</width>
+				<height>20</height>
+				<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font13_Numeric</font>
+				<textcolor>blue</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+			</control>
+			<control type="group">
+			    <posx>0</posx>
+				<posy>75</posy>
+				<visible>Player.HasAudio</visible>
+				<control type="image">
+					<posx>10</posx>
+					<posy>40</posy>
+					<width>270</width>
+					<height>200</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[MusicPlayer.Cover]</texture>
+					<bordertexture border="5">black-back.png</bordertexture>
+					<bordersize>1</bordersize>
+				</control>
+				<control type="fadelabel">
+					<posx>20</posx>
+					<posy>260</posy>
+					<width>250</width>
+					<height>20</height>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font11</font>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scrollout>false</scrollout>
+					<pauseatend>2000</pauseatend>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>285</posy>
+					<width>240</width>
+					<height>1</height>
+					<texture>separator2.png</texture>
+				</control>
+				<control type="fadelabel">
+					<posx>20</posx>
+					<posy>290</posy>
+					<width>250</width>
+					<height>20</height>
+					<label>[B]$INFO[MusicPlayer.Title][/B]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font11</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scrollout>false</scrollout>
+					<pauseatend>2000</pauseatend>
+				</control>
+				<control type="fadelabel">
+					<posx>20</posx>
+					<posy>370</posy>
+					<width>250</width>
+					<height>20</height>
+					<label>$INFO[MusicPlayer.Album]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font11</font>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scrollout>false</scrollout>
+					<pauseatend>2000</pauseatend>
+				</control>
+			</control>
+			<control type="group">
+				<posx>0</posx>
+				<posy>75</posy>
+				<visible>Player.HasVideo</visible>
+				<control type="image">
+					<posx>10</posx>
+					<posy>40</posy>
+					<width>270</width>
+					<height>200</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[VideoPlayer.Cover]</texture>
+					<bordertexture border="5">black-back.png</bordertexture>
+					<bordersize>1</bordersize>
+				</control>
+				<control type="image">
+					<posx>50</posx>
+					<posy>285</posy>
+					<width>240</width>
+					<height>1</height>
+					<texture>separator2.png</texture>
+				</control>
+				<control type="fadelabel">
+					<posx>20</posx>
+					<posy>290</posy>
+					<width>250</width>
+					<height>20</height>
+					<label>[B]$INFO[VideoPlayer.Title][/B]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font11</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scrollout>false</scrollout>
+					<pauseatend>2000</pauseatend>
+				</control>
+				<control type="group">
+					<visible>VideoPlayer.Content(Movies)</visible>
+					<control type="fadelabel">
+						<posx>20</posx>
+						<posy>260</posy>
+						<width>250</width>
+						<height>20</height>
+						<label>$INFO[VideoPlayer.Director]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font11</font>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scrollout>false</scrollout>
+						<pauseatend>2000</pauseatend>
+					</control>
+					<control type="fadelabel">
+						<posx>20</posx>
+						<posy>320</posy>
+						<width>250</width>
+						<height>20</height>
+						<label>$INFO[VideoPlayer.Genre]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font11</font>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scrollout>false</scrollout>
+						<pauseatend>2000</pauseatend>
+					</control>
+				</control>
+				<control type="group">
+					<visible>VideoPlayer.Content(Episodes)</visible>
+					<control type="fadelabel">
+						<posx>20</posx>
+						<posy>260</posy>
+						<width>250</width>
+						<height>20</height>
+						<label>$INFO[VideoPlayer.TVShowTitle]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font11</font>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scrollout>false</scrollout>
+						<pauseatend>2000</pauseatend>
+					</control>
+					<control type="fadelabel">
+						<posx>20</posx>
+						<posy>320</posy>
+						<width>250</width>
+						<height>20</height>
+						<label>$INFO[VideoPlayer.Season,$LOCALIZE[20373]: ] $INFO[VideoPlayer.Episode,$LOCALIZE[20359]: ]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font11</font>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scrollout>false</scrollout>
+						<pauseatend>2000</pauseatend>
+					</control>
+				</control>
+				<control type="group">
+					<visible>VideoPlayer.Content(MusicVideos)</visible>
+					<control type="fadelabel">
+						<posx>20</posx>
+						<posy>260</posy>
+						<width>250</width>
+						<height>20</height>
+						<label>$INFO[VideoPlayer.Artist]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font11</font>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scrollout>false</scrollout>
+						<pauseatend>2000</pauseatend>
+					</control>
+					<control type="fadelabel">
+						<posx>20</posx>
+						<posy>320</posy>
+						<width>250</width>
+						<height>20</height>
+						<label>$INFO[VideoPlayer.Album]</label>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>font11</font>
+						<textcolor>grey2</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<scrollout>false</scrollout>
+						<pauseatend>2000</pauseatend>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="ScrollOffsetLabel">
+		<control type="group">
+			<visible>Container.Scrolling + [StringCompare(Container.SortMethod,$LOCALIZE[551]) | StringCompare(Container.SortMethod,$LOCALIZE[561]) | StringCompare(Container.SortMethod,$LOCALIZE[558]) | StringCompare(Container.SortMethod,$LOCALIZE[557]) | StringCompare(Container.SortMethod,$LOCALIZE[556])]</visible>
+			<animation effect="fade" time="100">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<posx>600</posx>
+			<posy>324</posy>
+			<width>320</width>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>80</width>
+				<height>80</height>
+				<texture border="5">ThumbFO.png</texture>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>80</width>
+				<height>80</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[B]$INFO[ListItem.SortLetter][/B]</label>
+				<textcolor>black</textcolor>
+				<font>font50</font>
+			</control>
+		</control>
+	</include>
+	<include name="ButtonCommonValues">
+		<height>29</height>
+		<width>215</width>
+		<font>Droid16</font>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<shadowcolor>black</shadowcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>10</textoffsetx>
+		<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+		<pulseonselect>true</pulseonselect>
+	</include>
+	<include name="ButtonCommonValues2">
+		<height>29</height>
+		<width>215</width>
+		<font>Droid19</font>
+		<textcolor>white</textcolor>
+		<focusedcolor>black</focusedcolor>
+		<shadowcolor>black</shadowcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>10</textoffsetx>
+		<texturefocus>views/viewmenu/menubutton_vertical_focus.png</texturefocus>
+		<pulseonselect>true</pulseonselect>
+	</include>	
+	<include name="ButtonHomeSubCommonValues">
+		<height>27</height>
+		<width>150</width>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_Submenu</font>
+		<texturefocus border="5">button-focus2.png</texturefocus>
+		<texturenofocus border="5">-</texturenofocus>
+		<pulseonselect>true</pulseonselect>
+	</include>
+<!-- Video, Music Info Values -->	
+	<include name="ButtonInfoDialogsCommonValues">
+		<height>20</height>
+		<width>90</width>
+		<font>Droid14</font>
+		<textcolor>grey2</textcolor>
+		<focusedcolor>white</focusedcolor>
+		<align>center</align>
+		<aligny>center</aligny>
+		<pulseonselect>no</pulseonselect>
+	</include>
+	<include name="Common_RSS_Feed">
+		<control type="group">
+			<control type="image">
+				<posx>0</posx>
+				<posy>680</posy>
+				<width>1280</width>
+				<height>40</height>
+				<texture>Footer.png</texture>
+				<animation reversible="false" effect="zoom" start="0,670,1280,50" end="0,680,1280,40" time="200" condition="Window.Previous(VideoFiles) | Window.Previous(VideoLibrary) | Window.Previous(MusicFiles) | Window.Previous(MusicLibrary) | Window.Previous(Pictures) | Window.Previous(Programs) | Window.Previous(FileManager) | Window.Previous(Weather) | Window.Previous(AddonBrowser) | Window.Previous(Profiles) | Window.Previous(TV)">WindowOpen</animation>
+				<animation reversible="false" effect="zoom" end="0,670,1280,50" start="0,680,1280,40" time="200" condition="Window.Next(VideoFiles) | Window.Next(VideoLibrary) | Window.Next(MusicFiles) | Window.Next(MusicLibrary) | Window.Next(Pictures) | Window.Next(Programs) | Window.Next(FileManager) | Window.Next(Weather) | Window.Next(AddonBrowser) | Window.Next(Profiles) | Window.Next(TV)">WindowClose</animation>
+			</control>
+			<control type="group">
+				<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
+				<animation effect="slide" start="0,0" end="150,0" time="200" tween="quadratic" easing="out" condition="Player.HasMedia + Window.IsVisible(Home) + !VideoPlayer.Content(LiveTV)">Conditional</animation>
+				<control type="rss">
+					<description>rss feed</description>
+					<posx>65</posx>
+					<posy>32r</posy>
+					<width>1215</width>
+					<font>font11</font>
+					<urlset>1</urlset>
+					<textcolor>black</textcolor>
+					<titlecolor>black</titlecolor>
+					<headlinecolor>black</headlinecolor>
+					<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="image">
+					<posx>20</posx>
+					<posy>36r</posy>
+					<width>32</width>
+					<height>32</height>
+					<texture border="5">icon_rss.png</texture>
+					<include>Window_OpenClose_Animation</include>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="Window_OpenClose_Animation">
+		<animation effect="fade" time="200">WindowOpen</animation>
+		<animation effect="fade" time="200">WindowClose</animation>
+	</include>
+	<include name="dialogeffect">
+		<animation effect="fade" time="200">WindowOpen</animation>
+		<animation effect="fade" time="200">WindowClose</animation>
+	</include>
+	<include name="DialogEffectZoom">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+			<effect type="fade" start="0" end="100" time="300" delay="200" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300"/>
+			<effect type="fade" start="100" end="0" time="300" />
+		</animation>
+	</include>
+	<include name="ViewVisibleEffect">
+		<animation type="WindowOpen" reversible="false">
+			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300"/>
+			<effect type="fade" start="0" end="100" time="300"/>
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300"/>
+			<effect type="fade" start="100" end="0" time="300" />
+		</animation>
+	</include>
+	<include name="VisibleFadeEffect">
+		<animation effect="fade" time="200">Visible</animation>
+		<animation effect="fade" time="200">Hidden</animation>
+	</include>
+
+aeon main menu font
+	<include name="MainMenu_Label">
+		<posy>0</posy>
+		<height>61</height>
+		<font>Font_MainMenu</font>
+		<posx>80</posx>
+		<width>280</width>
+		<info>ListItem.Label</info>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	
+    <include name="no_tv_theme"> 
+            <onfocus>SetFocus(50)</onfocus> 
+        </include> 
+    <include name="yes_tv_theme"> 
+         <onfocus>XBMC.RunScript(script.TvTunes,backend=True&amploop=True)</onfocus> 
+         <onfocus>SetFocus(50)</onfocus> 
+    </include> 
+
+<!-- Movie Info Starts-->	
+
+
+<!-- Movie Info Certificate-->
+
+    	<include name="Objects_FSInfoCertificate">
+		<posx>2</posx>
+		<posy>67</posy>
+		<width>176</width>
+		<height>40</height>	
+		<colordiffuse>grey2</colordiffuse>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+	</include>
+
+<!-- Movie Info year (see dialogvideoinfo xml)-->
+	
+		<include name="Objects_FSInfoYear">
+		<width>109</width>
+		<height>53</height>
+		<aligny>center</aligny>
+		<font>Droid35</font>
+		<label fallback="-">$INFO[ListItem.Year]</label>
+	</include>
+	
+<!-- Movie Info Genre (see dialogvideoinfo xml)-->
+	
+		<include name="Objects_FSInfoGenre">
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>Droid21</font>
+		<label fallback="-">[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+		<height>56</height>		
+	</include>
+
+<!-- Movie Info Labels cast/director (see dialogvideoinfo xml)-->
+	
+		<include name="Objects_FSInfoValue">
+		<posx>113</posx>
+		<width>500</width>
+		<height>29</height>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>Droid18</font>	
+	</include>
+
+<!-- Movie Info Labels cast/director (see dialogvideoinfo xml)-->
+	
+		<include name="Objects_FSInfoLabel">
+		<posx>3</posx>
+		<width>110</width>
+		<height>29</height>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>Droid15</font>	
+	</include>
+	<include name="Labels_MainLabelGroup">
+		<posx>220</posx>
+		<posy>550</posy>
+		<width>1280</width>
+		<height>720</height>
+		<animation effect="fade" time="500">Visible</animation>
+		<animation effect="fade" time="200">Hidden</animation>
+		<animation effect="fade" time="500">WindowOpen</animation>
+		<animation effect="fade" time="200">WindowClose</animation>
+		<animation effect="slide" start="0,-8" end="0,-8" time="0" condition="Window.IsActive(4)">Conditional</animation>		
+	</include>
+========================
+<!-- Settings screens -->
+	<!-- Objects For Settings -->
+	<include name="Furniture_SettingsTutorialSlide">
+		<include>Furniture_SettingsSlideVars</include>
+		<timeperimage>999999</timeperimage>
+		<fadetime>300</fadetime>
+		<randomize>true</randomize>
+		<include>Animation_SettingsSlide</include>
+	</include>
+	<include name="Furniture_SettingsSlideVars">
+		<width>840</width>
+		<height>472</height>	
+	</include>	
+	<include name="Objects_SettingsSectionMenuButtonVars">
+		<posx>0</posx>
+		<width>216</width>
+		<height>58</height>
+		<font>Droid19</font>
+		<focusedcolor>FF262728</focusedcolor>
+		<selectedcolor>FF262728</selectedcolor>
+		<textoffsety>7</textoffsety>
+		<textoffsetx>30</textoffsetx>
+		<aligny>top</aligny>
+		<pulseonselect>no</pulseonselect>
+		<include>dialogeffect1</include>
+	</include>
+	<include name="Objects_SettingsSectionMenuButton">
+		<include>Objects_SettingsSectionMenuButtonVars</include>
+		<textcolor>white</textcolor>
+		<texturefocus>settings/settings_leftmenufocus.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+	</include>
+	<include name="Objects_SettingsSectionMenuButtonSubtitle">
+		<posx>30</posx>
+		<width>216</width>
+		<height>58</height>
+		<font>Droid16</font>
+		<aligny>top</aligny>
+		<include>Animation_CommonFadeOpenClose</include>		
+	</include>	
+
+	<include name="Objects_SettingsSectionMenuButtonFocused">
+		<include>Objects_SettingsSectionMenuButtonVars</include>
+		<textcolor>FF262728</textcolor>
+		<texturenofocus>settings/settings_leftmenufocus.png</texturenofocus>
+		<texturefocus>-</texturefocus>
+	</include>
+	<include name="Objects_SettingsSectionMenuButtonFocused2">
+		<include>Objects_SettingsSectionMenuButtonSubtitle</include>
+		<textcolor>FF262728</textcolor>
+		<texturenofocus>settings/settings_leftmenufocus.png</texturenofocus>
+		<texturefocus>-</texturefocus>
+	</include>	
+	<include name="Objects_SettingsSectionMenuButtonVars">
+		<posx>0</posx>
+		<width>216</width>
+		<height>58</height>
+		<font>Droid20</font>
+		<focusedcolor>FF262728</focusedcolor>
+		<selectedcolor>FF262728</selectedcolor>
+		<textoffsety>7</textoffsety>
+		<textoffsetx>30</textoffsetx>
+		<aligny>top</aligny>
+		<pulseonselect>no</pulseonselect>
+		<include>Animation_CommonFadeOpenClose</include>
+	</include>	
+<!-- Context menus -->
+	<include name="Objects_ContextMenuButton">
+		<description>button template</description>
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>39</height>
+		<width>308</width>
+		<textcolor>FF383838</textcolor>
+		<focusedcolor>FFdfdfdf</focusedcolor>
+		<texturenofocus>dialogs/context_nofocus.png</texturenofocus>
+		<texturefocus>dialogs/context_highlight.png</texturefocus>
+		<alttexturefocus>dialogs/context_highlight.png</alttexturefocus> 
+		<alttexturenofocus>dialogs/context_nofocus.png</alttexturenofocus> 
+		<pulseonselect>true</pulseonselect>
+		<align>center</align>
+		<aligny>top</aligny>
+		<font>Droid17</font>
+		<textoffsety>8</textoffsety>
+	</include>
+	
+	<include name="Objects_ContextMenuRadioButton">
+		<textcolor>FF8f8f8f</textcolor>
+		<focusedcolor>FFFFFFFF</focusedcolor>
+		<radiowidth>94</radiowidth>
+		<radioposx>190</radioposx>
+		<radioheight>65</radioheight>
+		<aligny>center</aligny>
+		<texturenofocus>dialogs/context_nofocus.png</texturenofocus>
+		<texturefocus>dialogs/context_highlight.png</texturefocus>
+		<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
+		<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
+		<width>269</width>
+		<height>39</height>
+		<align>left</align>
+		<font>Font_ContextMenuButton</font>
+		<textoffsetx>10</textoffsetx>
+	</include>	
+<!-- Button menu -->
+
+	<include name="Objects_ButtonMenuLabel">
+		<width>320</width>
+		<height>120</height>
+		<posx>0</posx>
+		<posy>230</posy>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_ViewChangeLabel</font>
+		<textcolor>61FFFFFF</textcolor>
+	</include>
+
+	<include name="Objects_ButtonMenuButton">
+		<posx>24</posx>	
+		<posy>30</posy>
+		<width>273</width>
+		<height>273</height>
+		<colordiffuse>abFFFFFF</colordiffuse>
+	</include>
+	
+	<include name="Objects_ButtonMenuLabelFocused">
+		<width>320</width>
+		<height>120</height>
+		<posx>0</posx>
+		<posy>230</posy>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Font_ViewChangeLabel</font>
+		<include>Colour_OffWhite</include>
+		<include>Animation_VisibleChange400</include>
+	</include>
+
+	<include name="Objects_ButtonMenuButtonFocused">
+		<posx>24</posx>	
+		<posy>30</posy>
+		<width>273</width>
+		<height>273</height>
+		<include>Animation_VisibleChange400</include>
+	</include>	
+
+	<include name="Objects_ButtonMenu10Group">
+			<height>429</height>	
+	</include>
+	
+	<include name="Objects_ButtonMenu9Group">
+			<height>390</height>	
+	</include>
+	
+	<include name="Objects_ButtonMenu8Group">
+			<height>351</height>	
+	</include>
+
+<!-- Login Screen -->
+	
+	<include name="LoginThumbDimensions">
+		<posx>18</posx>
+		<posy>18</posy>
+		<width>234</width>
+		<height>234</height>
+	</include>
+	
+	<include name="LoginThumbReflectionDimensions">
+		<posx>18</posx>
+		<posy>254</posy>
+		<width>234</width>
+		<height>234</height>
+	</include>	
+	
+	<include name="LoginThumb">
+		<include>LoginThumbDimensions</include>
+		<texture diffuse="thumbs/cdcover_mask.png">defaultAudio.png</texture>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+	</include>
+
+	<include name="LoginGlassOverlayDimensions">
+		<posx>-14</posx>
+		<posy>-14</posy>
+		<width>298</width>
+		<height>298</height>
+	</include>
+	
+	<include name="LoginGlassOverlay">
+		<include>LoginThumbDimensions</include>
+		<bordertexture border="-18">thumbs/cd_shadow.png</bordertexture>
+		<texture>thumbs/cd_glass_noedge.png</texture>
+		<texture>cdcover_frame.png</texture>
+	</include>
+
+	<include name="LoginThumbReflection">
+		<include>LoginThumbReflectionDimensions</include>
+		<colordiffuse>d0FFFFFF</colordiffuse>
+		<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">defaultmusic.png</texture>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+	</include>
+
+	<include name="EmptyLibraryLabelMovies">
+		<label>$LOCALIZE[31609][CR]$LOCALIZE[31610]</label>	
+	</include>
+	
+	<include name="EmptyLibraryLabelMusic">
+		<label>$LOCALIZE[31609][CR]$LOCALIZE[31611]</label>	
+	</include>	
+</includes>	
+
+	<include name="Objects_DoubleKeyOff">
+		<posy>0</posy>		
+		<width>110</width>
+		<height>68</height>
+		<texturefocus>common/keyboard/keyboard_doublenf.png</texturefocus>		
+		<texturenofocus>common/keyboard/keyboard_doublenf.png</texturenofocus>
+		<include>Objects_KeyOffVars</include>
+	</include>
+	
+	<include name="Objects_DoubleKeyOffSymbol">
+		<posy>0</posy>		
+		<width>110</width>
+		<height>68</height>
+		<texturefocus>common/keyboard/keyboard_doublenf.png</texturefocus>		
+		<texturenofocus>common/keyboard/keyboard_doublenf.png</texturenofocus>
+		<include>Objects_KeyOffSymbolVars</include>
+	</include>	
+	
+	<include name="Objects_KeyOffSymbolVars">
+		<textcolor>77FFFFFF</textcolor>
+		<focusedcolor>77FFFFFF</focusedcolor>
+		<selectedcolor>77FFFFFF</selectedcolor>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsety>21</textoffsety>
+		<font>Droid16</font>		
+	</include>	
+	
+	<include name="Objects_SingleKeyOff">
+		<posy>0</posy>			
+		<width>68</width>
+		<height>68</height>
+		<texturefocus>common/keyboard/keyboard_singlenf.png</texturefocus>		
+		<texturenofocus>common/keyboard/keyboard_singlenf.png</texturenofocus>
+		<include>common/Objects_KeyOffVars</include>
+	</include>
+
+	<include name="Objects_TripleKeyOff">
+		<posy>0</posy>			
+		<width>152</width>
+		<height>68</height>
+		<texturefocus>common/keyboard/keyboard_triplenf.png</texturefocus>		
+		<texturenofocus>common/keyboard/keyboard_triplenf.png</texturenofocus>
+		<include>Objects_KeyOffVars</include>
+	</include>
+
+	<include name="Objects_KeyOffVars">
+		<textcolor>77FFFFFF</textcolor>
+		<focusedcolor>77FFFFFF</focusedcolor>
+		<selectedcolor>77FFFFFF</selectedcolor>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsety>21</textoffsety>
+		<font>Droid16</font>		
+	</include>	
+	
+	<include name="Objects_FSInfoButtonWide">
+		<include>Colour_Grey</include>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus>-</texturefocus>
+		<textoffsetx>0</textoffsetx>
+		<align>left</align>
+		<aligny>center</aligny>
+		<width>140</width>
+		<height>29</height>
+		<font>Droid16</font>
+	</include>
+	
+	<include name="Objects_FSInfoMenuMusic">
+		<posx>3</posx>
+		<posy>222</posy>
+		<width>570</width>
+		<height>29</height>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus>-</texturefocus>
+		<alttexturenofocus>-</alttexturenofocus>
+		<alttexturefocus>-</alttexturefocus>
+		<pulseonselect>false</pulseonselect>
+		<textcolor>grey2</textcolor>
+		<disabledcolor>3cFFFFFF</disabledcolor>
+		<textoffsetx>0</textoffsetx>
+		<orientation>horizontal</orientation>
+		<align>left</align>
+		<font>Droid16</font>
+	</include>	
+
+	<include name="Objects_MediaMenuButton">
+		<height>34</height>
+		<width>225</width>
+		<texturenofocus>common/menudivider.png</texturenofocus>
+		<texturefocus>common/menudivider.png</texturefocus>
+		<alttexturenofocus>common/menudivider.png</alttexturenofocus>
+		<alttexturefocus>common/menudivider.png</alttexturefocus>
+		<pulseonselect>false</pulseonselect>
+		<textcolor>60FFFFFF</textcolor>
+		<focusedcolor>d0ffffff</focusedcolor>
+		<disabledcolor>3cFFFFFF</disabledcolor>
+		<textoffsetx>0</textoffsetx>
+		<align>center</align>
+		<font>Droid16</font>
+		<include>Animation_CommonFade</include>
+	</include>
+
+	<include name="listcolorfocus">
+		<textcolor>ff2e2e2e</textcolor>
+		<selectedcolor>ff2e2e2e</selectedcolor>
+	</include>
+
+	<include name="ListLabel_MainSmall">
+		<posx>45</posx>
+		<posy>0</posy>
+		<include condition="[Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)]">ListLabel_WidthMusic</include>
+		<include condition="![Window.IsActive(500) | Window.IsActive(501) | Window.IsActive(502) | Container.Content(episodes)]">ListLabel_Width</include>		
+		<height>39</height>
+		<font>Droid16</font>
+		<aligny>center</aligny>
+		<animation effect="slide" start="60,0" end="60,0" time="0" condition="Container.Content(episodes) | Container.Content(songs) | Window.IsActive(500) | substring(container.folderpath,special://profile/playlists/music/,Left)">Conditional</animation>			
+	</include>		
+	
 </includes>
+
+

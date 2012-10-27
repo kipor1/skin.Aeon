@@ -135,6 +135,10 @@
           <label>296</label>
           <include>Objects_BookmarkButton</include>
         </control>
+        <control type="button" id="4">
+          <label>20406</label>
+          <include>Objects_BookmarkButton</include>
+        </control>
       </control>
       <control type="image">
         <posx>0</posx>

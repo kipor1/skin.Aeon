@@ -18,23 +18,22 @@
   </include>
   <include name="Submenu">
     <control type="button" id="352">
-      <onfocus>Skin.SetBool(lowermainmenu)</onfocus>
       <onfocus>SetFocus(300)</onfocus>
     </control>
     <control type="group">
-      <posx>214</posx>
+      <posx>118</posx>
       <posy>609</posy>
       <visible>ControlGroup(940).HasFocus()</visible>
       <animation effect="slide" start="0,0" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
       <include>Animation_CommonFade</include>
       <control type="image">
-        <width>1491</width>
+        <width>1684</width>
         <height>50</height>
-        <texture>home/submenubar_movies.png</texture>
+        <texture>home/submenubar_music.png</texture>
       </control>
       <control type="grouplist" id="940">
         <posx>58</posx>
-        <width>1376</width>
+        <width>1572</width>
         <height>50</height>
         <itemgap>0</itemgap>
         <onup>300</onup>
@@ -81,6 +80,12 @@
           <include>MovieShortcutBools</include>
           <label>31926</label>
           <onclick>XBMC.ActivateWindow(MyVideoLibrary,moviestudios,return)</onclick>
+        </control>
+        <control type="button" id="47">
+          <include>Submenu_Button</include>
+          <include>MovieShortcutBools</include>
+          <label>FILES</label>
+          <onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
         </control>
       </control>
     </control>
@@ -147,19 +152,19 @@
       </control>
     </control>
     <control type="group">
-      <posx>423</posx>
+      <posx>214</posx>
       <posy>609</posy>
       <visible>ControlGroup(942).HasFocus()</visible>
       <animation effect="slide" start="0,0" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
       <include>Animation_CommonFade</include>
       <control type="image">
-        <width>1076</width>
+        <width>1491</width>
         <height>50</height>
-        <texture>home/submenubar_tv.png</texture>
+        <texture>home/submenubar_movies.png</texture>
       </control>
       <control type="grouplist" id="942">
         <posx>58</posx>
-        <width>982</width>
+        <width>1376</width>
         <height>50</height>
         <itemgap>0</itemgap>
         <onup>300</onup>
@@ -194,6 +199,19 @@
           <include>TVShortcutBools</include>
           <label>31923</label>
           <onclick>XBMC.ActivateWindow(MyVideoLibrary,tvshowyears,return)</onclick>
+        </control>
+        <control type="button" id="45">
+          <include>Submenu_Button</include>
+          <include>TVShortcutBools</include>
+          <label>PLUGINS</label>
+          <onclick>XBMC.ActivateWindow(MyVideoFiles,plugin://video)</onclick>
+          <!--<label>IPLAYER</label><onclick>XBMC.ActivateWindow(MyVideoFiles,plugin://video/IPLAYER)</onclick>-->
+        </control>
+        <control type="button" id="46">
+          <include>Submenu_Button</include>
+          <include>TVShortcutBools</include>
+          <label>FILES</label>
+          <onclick>XBMC.ActivateWindow(MyVideoFiles)</onclick>
         </control>
       </control>
     </control>
@@ -256,6 +274,74 @@
           <include>Submenu_Button</include>
           <label>31160</label>
           <onclick>XBMC.ActivateWindow(Profiles)</onclick>
+        </control>
+      </control>
+    </control>
+    <control type="group">
+      <posx>118</posx>
+      <posy>609</posy>
+      <visible>ControlGroup(944).HasFocus()</visible>
+      <animation effect="slide" start="0,0" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+      <include>Animation_CommonFade</include>
+      <control type="image">
+        <width>1684</width>
+        <height>50</height>
+        <texture>home/submenubar_music.png</texture>
+      </control>
+      <control type="grouplist" id="944">
+        <posx>58</posx>
+        <width>1572</width>
+        <height>50</height>
+        <itemgap>0</itemgap>
+        <align>center</align>
+        <onup>300</onup>
+        <ondown>352</ondown>
+        <scroll>false</scroll>
+        <orientation>horizontal</orientation>
+        <control type="button" id="40">
+          <include>Submenu_Button</include>
+          <description>Shutdown</description>
+          <label>31208</label>
+          <onclick>Shutdown</onclick>
+        </control>
+        <control type="button" id="41">
+          <include>Submenu_Button</include>
+          <description>Eject Tray</description>
+          <label>31210</label>
+          <onclick>EjectTray()</onclick>
+        </control>
+        <control type="button" id="42">
+          <include>Submenu_Button</include>
+          <description>Restart XBMC</description>
+          <label>31207</label>
+          <onclick>RestartApp</onclick>
+        </control>
+        <control type="button" id="43">
+          <include>Submenu_Button</include>
+          <label>31211</label>
+          <onclick>Reboot</onclick>
+        </control>
+        <control type="button" id="44">
+          <include>Submenu_Button</include>
+          <label>31212</label>
+          <onclick>Suspend</onclick>
+        </control>
+        <control type="button" id="45">
+          <include>Submenu_Button</include>
+          <label>31213</label>
+          <onclick>Hibernate</onclick>
+        </control>
+        <control type="button" id="46">
+          <include>Submenu_Button</include>
+          <description>Log Out</description>
+          <label>31209</label>
+          <onclick>System.LogOff</onclick>
+        </control>
+        <control type="button" id="47">
+          <include>Submenu_Button</include>
+          <description>Shutdown Timer</description>
+          <label>31214</label>
+          <onclick>AlarmClock(,Shutdown,)</onclick>
         </control>
       </control>
     </control>

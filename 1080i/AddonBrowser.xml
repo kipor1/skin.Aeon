@@ -1,193 +1,118 @@
-﻿<window id="20">
-  <defaultcontrol always="true">55</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+﻿<window id="501">
+  <defaultcontrol always="true">61</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <views>61,550,551,53,54</views>
   <controls>
-    <control type="multiimage">
-      <include>FullscreenDimensions</include>
-      <include>BackgroundTimings</include>
-      <imagepath>special://skin/extras/backdrops/default_addons</imagepath>
-      <info>Skin.String(CustomAddons)</info>
-    </control>
+    <include>CommonBackground</include>
     <control type="group">
-      <include>FullscreenDimensions</include>
-      <animation type="WindowOpen" reversible="false" condition="!Window.Previous(4)">
-        <effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-        <effect type="fade" start="0" end="100" time="300" />
-      </animation>
-      <animation type="WindowClose" reversible="false" condition="!Window.Next(4)">
-        <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-        <effect type="fade" start="100" end="0" time="300" />
-      </animation>
-      <include>Furniture_SettingsBackPanel</include>
-      <control type="label">
-        <description>sectiontitle</description>
-        <label>33063</label>
-        <include>Objects_SettingsSectionTitle</include>
-        <visible>!Window.IsVisible(146)</visible>
-      </control>
-      <control type="label">
-        <description>sectiontitle</description>
-        <posx>462</posx>
-        <posy>105</posy>
-        <width>1404</width>
-        <height>74</height>
-        <label>24001</label>
-        <textcolor>FFbec0c2</textcolor>
-        <include>Animation_CommonFadeOpenClose</include>
-        <font>Font_SettingsSectionTitle</font>
-        <visible>!Window.IsVisible(146)</visible>
-      </control>
-      <control type="group">
-        <include>Settings_ButtonGroupDimensionsXBMC</include>
-        <include>Animation_CommonFade</include>
-        <control type="button" id="6">
-          <description>Addons List Focused</description>
-          <posy>0</posy>
-          <label>24001</label>
-          <include>Objects_SettingsSectionMenuButton</include>
-          <onclick>SetFocus(55)</onclick>
-          <onleft>6</onleft>
-          <onright>55</onright>
-          <onup>7</onup>
-          <ondown>7</ondown>
-          <visible>!Window.IsVisible(146)</visible>
-        </control>
-        <control type="label">
-          <description>Addons List Unfocused subtitle</description>
-          <posy>48</posy>
-          <label>32027</label>
-          <textcolor>FFf5f5f5</textcolor>
-          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
-          <visible>![Control.HasFocus(6)] + !Window.IsVisible(146)</visible>
-        </control>
-        <control type="label">
-          <description>Addons List Focused subtitle</description>
-          <posy>48</posy>
-          <label>32027</label>
-          <textcolor>FF262728</textcolor>
-          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
-          <visible>Control.HasFocus(6)</visible>
-        </control>
-        <control type="button" id="7">
-          <description>Configure Update Unfocused</description>
-          <posy>87</posy>
-          <label>24069</label>
-          <include>Objects_SettingsSectionMenuButton</include>
-          <onclick>SetFocus(5)</onclick>
-          <onup>6</onup>
-          <ondown>6</ondown>
-          <onleft>5</onleft>
-          <onright>5</onright>
-          <visible>!Window.IsVisible(146)</visible>
-        </control>
-        <control type="button" id="7">
-          <description>Configure Update Focused</description>
-          <posy>87</posy>
-          <label>24069</label>
-          <include>Objects_SettingsSectionMenuButtonFocused</include>
-          <onclick>SetFocus(5)</onclick>
-          <onup>6</onup>
-          <ondown>6</ondown>
-          <onleft>5</onleft>
-          <onright>5</onright>
-          <visible>Control.HasFocus(7) | Control.HasFocus(5)</visible>
-        </control>
-        <control type="label">
-          <description>Configure Update Subtitle Unfocused</description>
-          <posy>135</posy>
-          <label>24063</label>
-          <textcolor>FFf5f5f5</textcolor>
-          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
-          <visible>![Control.HasFocus(7) | Control.HasFocus(5)] + !Window.IsVisible(146)</visible>
-        </control>
-        <control type="label">
-          <description>Configure Update Subtitle Focused</description>
-          <posy>135</posy>
-          <label>24063</label>
-          <textcolor>FF262728</textcolor>
-          <include>Objects_SettingsSectionMenuButtonSubtitle</include>
-          <visible>Control.HasFocus(7) | Control.HasFocus(5)</visible>
-        </control>
-      </control>
+      <include>ViewVisibleEffect</include>
+      <include>CommonLower_Info</include>
+      <include>MusicListView</include>
+      <include>CommonRootView_Addons</include>
+      <!-- view id = 550 -->
+      <include>CommonRootView_Info_Addons</include>
+      <!-- view id = 551 -->
+      <include>ThumbnailView</include>
+      <!-- view id = 53 -->
+      <include>ThumbnailView_Info</include>
+      <!-- view id = 54 -->
+      <include>ScrollOffsetLabel</include>
+    </control>
+    <include>CommonNowPlaying_Controls</include>
+    <!-- This is ControlGroup(9001) -->
+    <include>CommonNowPlaying</include>
+    <control type="group">
+      <include>CommonOptionsMenuBack</include>
       <control type="group" id="9000">
-        <include>CommonNowPlaying</include>
-        <include>Objects_SettingsControlAreaVars</include>
+        <posx>8</posx>
+        <posy>45</posy>
         <control type="button" id="2">
           <description>View As button</description>
           <posx>0</posx>
           <posy>0</posy>
           <include>ButtonCommonValues</include>
           <label>-</label>
-          <onleft>50</onleft>
-          <onright>50</onright>
-          <onup>611</onup>
+          <onleft>9001</onleft>
+          <onright>550</onright>
+          <onup>6</onup>
           <ondown>3</ondown>
-          <visible>false</visible>
+        </control>
+        <control type="image">
+          <description>NoFocus Background for Sort button</description>
+          <posx>0</posx>
+          <posy>68</posy>
+          <width>357</width>
+          <height>68</height>
+          <texture border="5">button-nofocus.png</texture>
+          <visible>Control.HasFocus(4)</visible>
         </control>
         <control type="button" id="3">
           <description>Sort by button</description>
           <posx>0</posx>
-          <posy>60</posy>
+          <posy>68</posy>
+          <width>357</width>
           <include>ButtonCommonValues</include>
           <label>103</label>
-          <onleft>50</onleft>
+          <onleft>9001</onleft>
           <onright>4</onright>
           <onup>2</onup>
           <ondown>5</ondown>
-          <visible>false</visible>
+        </control>
+        <control type="image">
+          <description>NoFocus Background for Sort Direction Toggle</description>
+          <posx>360</posx>
+          <posy>68</posy>
+          <width>60</width>
+          <height>68</height>
+          <texture border="5">button-nofocus.png</texture>
+          <visible>Control.HasFocus(3)</visible>
+        </control>
+        <control type="image">
+          <description>Focus Background for Sort Direction Toggle</description>
+          <posx>360</posx>
+          <posy>68</posy>
+          <width>60</width>
+          <height>68</height>
+          <texture border="5">button-focus2.png</texture>
+          <visible>Control.HasFocus(4)</visible>
         </control>
         <control type="togglebutton" id="4">
           <description>Sort asc</description>
-          <posx>330</posx>
-          <posy>80</posy>
+          <posx>375</posx>
+          <posy>87</posy>
           <label>-</label>
+          <texturefocus>scroll-up.png</texturefocus>
+          <texturenofocus>scroll-up.png</texturenofocus>
+          <alttexturefocus>scroll-down.png</alttexturefocus>
+          <alttexturenofocus>scroll-down.png</alttexturenofocus>
           <onleft>3</onleft>
           <onright>50</onright>
           <onup>2</onup>
           <ondown>5</ondown>
-          <visible>false</visible>
-        </control>
-        <control type="label">
-          <posx>0</posx>
-          <posy>135</posy>
-          <width>375</width>
-          <height>68</height>
-          <font>font12caps</font>
-          <label>$LOCALIZE[24002]</label>
-          <textcolor>dialogheader</textcolor>
-          <align>center</align>
-          <aligny>center</aligny>
-          <visible>false</visible>
         </control>
         <control type="radiobutton" id="5">
-          <include>Objects_SettingsDefaultRadioButton</include>
-          <description>Enable auto-updates</description>
-          <label>24063</label>
-          <onleft>7</onleft>
-          <onright>7</onright>
-          <onup>6</onup>
-          <ondown>6</ondown>
-          <visible>Control.HasFocus(7) | Control.HasFocus(5)</visible>
-        </control>
-        <control type="button" id="610">
-          <description>Fake Button to fix Player Controls Navigation</description>
-          <onup>5</onup>
-          <ondown>603</ondown>
-          <visible>false</visible>
-        </control>
-        <control type="group">
+          <description>AutoUpdate Button</description>
           <posx>0</posx>
-          <posy>390</posy>
-          <include>CommonNowPlaying_Controls</include>
+          <posy>135</posy>
+          <include>ButtonCommonValues</include>
+          <label>24063</label>
+          <onleft>9001</onleft>
+          <onright>550</onright>
+          <onup>3</onup>
+          <ondown>6</ondown>
         </control>
-        <control type="button" id="611">
-          <description>Fake Button to fix Player Controls Navigation</description>
-          <onup>608</onup>
+        <control type="radiobutton" id="6">
+          <description>No notifications</description>
+          <posx>0</posx>
+          <posy>195</posy>
+          <include>ButtonCommonValues</include>
+          <label>25000</label>
+          <onleft>9001</onleft>
+          <onright>550</onright>
+          <onup>5</onup>
           <ondown>2</ondown>
-          <visible>false</visible>
         </control>
       </control>
-      <include>Viewtype_Files</include>
     </control>
   </controls>
 </window>

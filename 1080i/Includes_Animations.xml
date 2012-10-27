@@ -131,7 +131,7 @@
     <animation effect="fade" start="100" end="0" time="400" condition="Window.IsActive(603)">Conditional</animation>
   </include>
   <include name="Animation_MediaMenuSlide">
-    <animation type="Conditional" condition="[Control.IsVisible(52) + [Control.HasFocus(52) | Control.HasFocus(60) | Control.HasFocus(197) | Control.HasFocus(110)]] | [Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | [Control.IsVisible(59) + Control.HasFocus(59)]">
+    <animation type="Conditional" condition="[Control.IsVisible(54) + [Control.HasFocus(54) | Control.HasFocus(2505)]] | [Control.IsVisible(52) + [Control.HasFocus(52) | Control.HasFocus(60) | Control.HasFocus(197) | Control.HasFocus(110)]] | [Control.IsVisible(552) + [Control.HasFocus(552) | Control.HasFocus(60) | Control.HasFocus(197) | Control.HasFocus(110)]] | [Control.IsVisible(50) + [Control.HasFocus(50) | Control.HasFocus(61)]] | [Control.IsVisible(550) + [Control.HasFocus(550) | Control.HasFocus(61)]] | [Control.IsVisible(551) + [Control.HasFocus(551) | Control.HasFocus(61) | Control.HasFocus(55110)]] | [Control.IsVisible(51) + [Control.HasFocus(51) | Control.HasFocus(195) | Control.HasFocus(60)]] | [Control.IsVisible(58) + Control.HasFocus(58)] | [Control.IsVisible(57) + [Control.HasFocus(57) | Control.HasFocus(70197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322) | Control.HasFocus(71) | Control.HasFocus(85) | Control.HasFocus(60)]] | [Control.IsVisible(53) + [Control.HasFocus(53) | Control.HasFocus(71) | Control.HasFocus(85)]] | [Control.IsVisible(59) + Control.HasFocus(59)]">
       <effect type="slide" end="0,-86" time="400" easing="in" tween="cubic" />
       <effect type="fade" start="100" end="0" time="400" />
     </animation>
@@ -157,7 +157,7 @@
     <animation effect="fade" condition="Skin.HasSetting(nozooms)" time="500">WindowOpen</animation>
     <animation effect="fade" condition="Skin.HasSetting(nozooms)" time="200">WindowClose</animation>
   </include>
-  <include name="Animation_SettingsButtonFade">
+  <include name="Animations_SettingsButtonFade">
     <animation effect="fade" time="125">Visible</animation>
     <animation effect="fade" time="125">Hidden</animation>
     <animation effect="fade" time="125">WindowOpen</animation>
@@ -196,7 +196,7 @@
     <animation effect="fade" start="0" end="100" time="800">Visible</animation>
   </include>
   <include name="Animation_HideShowcase">
-    <animation type="Conditional" reversible="true" condition="Control.HasFocus(94) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)">
+    <animation type="Conditional" reversible="true" condition="Control.HasFocus(70197) | Control.HasFocus(320) | Control.HasFocus(321) | Control.HasFocus(322)">
       <effect type="slide" start="0,0" end="0,600" time="400" tween="cubic" easing="in" />
     </animation>
   </include>
@@ -230,8 +230,13 @@
     <animation effect="fade" time="200">Hidden</animation>
   </include>
   <include name="Animation_MultiplexFocusZoom">
-    <animation effect="zoom" center="56,80" start="100" end="110" time="200" tween="cubic" easing="inout">Focus</animation>
-    <animation effect="zoom" center="56,80" start="110" end="100" time="200" tween="cubic" easing="inout">Unfocus</animation>
+    <animation effect="zoom" center="56,70" start="100" end="115" time="200" tween="cubic" easing="inout">Focus</animation>
+    <animation effect="zoom" center="56,70" start="115" end="100" time="200" tween="cubic" easing="inout">Unfocus</animation>
+  </include>
+  <!-- DVD Box Zoom -->
+  <include name="Animation_MultiplexFocusZoomDVD">
+    <animation effect="zoom" center="56,80" start="100" end="125" time="200" tween="cubic" easing="inout">Focus</animation>
+    <animation effect="zoom" center="56,80" start="125" end="100" time="200" tween="cubic" easing="inout">Unfocus</animation>
   </include>
   <include name="Animation_MultiplexTVFocusZoom">
     <animation effect="zoom" center="106,50" start="100" end="110" time="200" tween="cubic" easing="inout">Focus</animation>

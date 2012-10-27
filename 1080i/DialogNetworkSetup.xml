@@ -192,7 +192,7 @@
     </control>
     <control type="label" id="7">
       <description>separator label</description>
-      <label></label>
+      <label />
       <width>525</width>
       <height>33</height>
       <font>special13</font>
@@ -203,7 +203,7 @@
       <description>dialog Heading</description>
       <posx>112</posx>
       <posy>124</posy>
-      <label></label>
+      <label />
       <font>special13</font>
       <textcolor>dialogheader</textcolor>
     </control>

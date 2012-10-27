@@ -12,22 +12,22 @@
       <description>top left mover</description>
       <posx>0</posx>
       <posy>0</posy>
-      <texturefocus>calibration/calibrate-topleft-focus.png</texturefocus>
-      <texturenofocus>calibration/calibrate-topleft.png</texturenofocus>
+      <texturefocus>calibrate-topleft-focus.png</texturefocus>
+      <texturenofocus>calibrate-topleft.png</texturenofocus>
     </control>
     <control type="mover" id="9">
       <description>right bottom mover</description>
       <posx>1050</posx>
       <posy>750</posy>
-      <texturefocus>calibration/calibrate-bottomright-focus.png</texturefocus>
-      <texturenofocus>calibration/calibrate-bottomright.png</texturenofocus>
+      <texturefocus>calibrate-bottomright-focus.png</texturefocus>
+      <texturenofocus>calibrate-bottomright.png</texturenofocus>
     </control>
     <control type="mover" id="10">
       <description>subtitle position mover</description>
       <posx>300</posx>
       <posy>750</posy>
-      <texturefocus>calibration/calibrate-subtitles-focus.png</texturefocus>
-      <texturenofocus>calibration/calibrate-subtitles.png</texturenofocus>
+      <texturefocus>calibrate-subtitles-focus.png</texturefocus>
+      <texturenofocus>calibrate-subtitles.png</texturenofocus>
     </control>
     <control type="resize" id="11">
       <description>pixel aspect ratio box</description>
@@ -35,8 +35,8 @@
       <posy>405</posy>
       <width>432</width>
       <height>432</height>
-      <texturefocus>calibration/calibrate-pixelratio-focus.png</texturefocus>
-      <texturenofocus>calibration/calibrate-pixelratio.png</texturenofocus>
+      <texturefocus>calibrate-pixelratio-focus.png</texturefocus>
+      <texturenofocus>calibrate-pixelratio.png</texturenofocus>
     </control>
     <control type="group">
       <posx>360</posx>

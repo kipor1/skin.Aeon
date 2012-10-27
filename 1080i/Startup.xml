@@ -1,56 +1,21 @@
 ﻿<window>
   <defaultcontrol always="true">10</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
   <controls>
     <control type="button" id="10">
-      <onfocus>Skin.SetBool(Startup)</onfocus>
-      <onfocus>Skin.SetBool(Startup2)</onfocus>
-      <onfocus>Skin.SetBool(fanartlayout)</onfocus>
-      <onfocus>Skin.SetBool(animation_bg)</onfocus>
-      <onfocus>Skin.SetBool(tvposter)</onfocus>
-      <onfocus>Skin.SetBool(allowscroll)</onfocus>
-      <onfocus>Skin.SetBool(cdartinvis)</onfocus>
-      <onfocus>Skin.SetBool(AlaskaPausedLabel)</onfocus>
-      <onfocus>Skin.SetBool(globalrss)</onfocus>
-      <onfocus>Skin.SetBool(scrollletters)</onfocus>
-      <onfocus>Skin.SetBool(CustomWeather)</onfocus>
-      <onfocus>Skin.SetBool(weathericons)</onfocus>
-      <onfocus>Skin.SetBool(homecdart)</onfocus>
-      <onfocus>Skin.SetBool(homevideowindow)</onfocus>
-      <onfocus>Skin.SetBool(animation_bg)</onfocus>
-      <onfocus>Skin.SetBool(homelatest)</onfocus>
-      <onfocus>Skin.SetBool(seasonsfanart)</onfocus>
-      <onfocus>Skin.SetBool(episodesfanart)</onfocus>
-      <onfocus>Skin.SetBool(tvshowfanart)</onfocus>
-      <onfocus>Skin.SetBool(moviefanart)</onfocus>
-      <onfocus>Skin.SetBool(musicfanart)</onfocus>
-      <onfocus>Skin.SetBool(homeplaylist)</onfocus>
-      <onfocus>SetFocus(1)</onfocus>
+      <description>trigger</description>
+      <onfocus>ReplaceWindow(Home)</onfocus>
       <texturenofocus>-</texturenofocus>
       <texturefocus>-</texturefocus>
-      <visible>!Skin.HasSetting(veryfirststart)</visible>
+      <visible>!Skin.HasSetting(Use_Startup_Playlist)</visible>
     </control>
     <control type="button" id="10">
-      <onfocus>SetFocus(1)</onfocus>
-      <texturenofocus>-</texturenofocus>
-      <texturefocus>-</texturefocus>
-      <visible>Skin.HasSetting(veryfirststart)</visible>
-    </control>
-    <control type="button" id="1">
-      <description>ReplaceWindow Trigger</description>
-      <onfocus>Skin.SetBool(veryfirststart)</onfocus>
+      <description>trigger with startup Playlist</description>
+      <onfocus>XBMC.PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
       <onfocus>ReplaceWindow(Home)</onfocus>
-      <texturefocus>-</texturefocus>
       <texturenofocus>-</texturenofocus>
-      <visible>!Skin.HasSetting(startplay)</visible>
-    </control>
-    <control type="button" id="1">
-      <description>ReplaceWindow Trigger</description>
-      <onfocus>Skin.SetBool(veryfirststart)</onfocus>
-      <onfocus>PlayMedia($INFO[Skin.String(startuplocation)])</onfocus>
-      <onfocus>ReplaceWindow(Home)</onfocus>
       <texturefocus>-</texturefocus>
-      <texturenofocus>-</texturenofocus>
-      <visible>Skin.HasSetting(startplay)</visible>
+      <visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
     </control>
   </controls>
 </window>

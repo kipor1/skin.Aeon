@@ -172,7 +172,7 @@
       </control>
       <control type="label">
         <description>IMDB rating</description>
-        <posx>114</posx>
+        <posx>129</posx>
         <posy>844</posy>
         <width>165</width>
         <height>44</height>

@@ -32,8 +32,8 @@
       <control type="image" id="304">
         <width>1920</width>
         <height>399</height>
-        <include condition="!Skin.HasSetting(darkfloor)">StripShowIconBackLight</include>
-        <include condition="Skin.HasSetting(darkfloor)">StripShowIconBackNight</include>
+        <include condition="!Skin.HasSetting(darkstripshow)">StripShowIconBackLight</include>
+        <include condition="Skin.HasSetting(darkstripshow)">StripShowIconBackNight</include>
         <visible>!Control.IsVisible(105)</visible>
         <animation effect="slide" start="0,0" end="0,264" time="600" easing="out" tween="cubic">Hidden</animation>
         <animation effect="fade" start="0" end="100" time="200">Visible</animation>
@@ -42,8 +42,8 @@
         <posy>264</posy>
         <width>1920</width>
         <height>399</height>
-        <include condition="!Skin.HasSetting(darkfloor)">StripShowIconBackLight</include>
-        <include condition="Skin.HasSetting(darkfloor)">StripShowIconBackNight</include>
+        <include condition="!Skin.HasSetting(darkstripshow)">StripShowIconBackLight</include>
+        <include condition="Skin.HasSetting(darkstripshow)">StripShowIconBackNight</include>
         <visible>Control.IsVisible(105) + !Control.IsVisible(304)</visible>
         <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
         <animation effect="slide" start="0,0" end="0,150" time="200" tween="cubic" easing="inout" delay="5000" condition="Control.IsVisible(108)">Conditional</animation>
@@ -55,7 +55,7 @@
         <height>297</height>
         <texture>stripshow/stripshow_iconframe.png</texture>
         <visible>!Control.IsVisible(105)</visible>
-        <animation effect="fade" start="60" end="60" time="0" condition="!Skin.HasSetting(darkfloor)">Conditional</animation>
+        <animation effect="fade" start="60" end="60" time="0" condition="!Skin.HasSetting(darkstripshow)">Conditional</animation>
         <animation effect="fade" start="0" end="100" time="200">Visible</animation>
       </control>
     </control>
@@ -96,7 +96,7 @@
       <onup>2</onup>
       <ondown>60</ondown>
       <orientation>horizontal</orientation>
-      <visible>Window.IsActive(pictures)</visible>
+      <visible>Window.IsActive(2)</visible>
       <include>Animation_HideStripShow</include>
       <itemlayout width="288" height="288" condition="!Skin.HasSetting(stripshowmax)">
         <control type="image">
@@ -105,10 +105,10 @@
         </control>
         <control type="image">
           <include>StripShowIconDimensionsMax</include>
-          <texture>DefaultPicture.png</texture>
+          <texture>defaultpicture.png</texture>
           <aspectratio scalediffuse="false">scale</aspectratio>
           <info>ListItem.Icon</info>
-          <visible>Window.IsActive(pictures)</visible>
+          <visible>Window.IsActive(2)</visible>
         </control>
         <control type="image">
           <include>StripShowIconDimensionsMax</include>
@@ -129,10 +129,10 @@
         </control>
         <control type="image">
           <include>StripShowIconDimensionsMax</include>
-          <texture>DefaultPicture.png</texture>
+          <texture>defaultpicture.png</texture>
           <aspectratio scalediffuse="false">scale</aspectratio>
           <info>ListItem.Icon</info>
-          <visible>Window.IsActive(pictures)</visible>
+          <visible>Window.IsActive(2)</visible>
           <animation effect="zoom" center="96,96" start="100" end="110" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
         </control>
         <control type="image">
@@ -150,10 +150,10 @@
         </control>
         <control type="image">
           <include>StripShowIconDimensionsMin</include>
-          <texture>DefaultPicture.png</texture>
+          <texture>defaultpicture.png</texture>
           <aspectratio scalediffuse="false">scale</aspectratio>
           <info>ListItem.Icon</info>
-          <visible>Window.IsActive(pictures)</visible>
+          <visible>Window.IsActive(2)</visible>
         </control>
         <control type="image">
           <include>StripShowIconDimensionsMin</include>
@@ -169,10 +169,10 @@
         </control>
         <control type="image">
           <include>StripShowIconDimensionsMin</include>
-          <texture>DefaultPicture.png</texture>
+          <texture>defaultpicture.png</texture>
           <aspectratio scalediffuse="false">scale</aspectratio>
           <info>ListItem.Icon</info>
-          <visible>Window.IsActive(pictures)</visible>
+          <visible>Window.IsActive(2)</visible>
           <animation effect="zoom" center="68,68" start="100" end="120" time="400" easing="out" tween="cubic" reversible="false">Focus</animation>
         </control>
         <control type="image">

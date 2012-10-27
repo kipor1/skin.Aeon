@@ -1,0 +1,2191 @@
+﻿<includes>
+  <!-- Multiplex Flow -->
+  <include name="MovieMultiplexThumbNormal">
+    <include>MultiplexIconDimensionsWrapFlow</include>
+    <align>center</align>
+    <texture background="true" diffuse="multiplex/multiplex_mask.png">defaultvideobigposter.png</texture>
+    <aspectratio scalediffuse="false">stretch</aspectratio>
+  </include>
+  <include name="MovieMultiplexThumbDVD">
+    <include>MultiplexIconDimensionsWrapDVDCoverFlow</include>
+    <align>center</align>
+    <texture background="true" diffuse="multiplex/boxes/multiplex_mask.png">defaultvideobigposter.png</texture>
+    <aspectratio scalediffuse="false">stretch</aspectratio>
+  </include>
+  <include name="MovieMultiplexThumb">
+    <include condition="!Skin.HasSetting(dvdcase)">MovieMultiplexThumbNormal</include>
+    <include condition="Skin.HasSetting(dvdcase)">MovieMultiplexThumbDVD</include>
+  </include>
+  <include name="MovieMultiplexNormalCase">
+    <include>MultiplexIconDimensionsWrapFlow</include>
+    <texture>multiplex/multiplex_glass.png</texture>
+    <bordertexture border="-17">multiplex/multiplex_border.png</bordertexture>
+  </include>
+  <include name="MovieMultiplexDVDBorder">
+    <control type="image">
+      <include>MultiplexIconDimensionsWrapDVDCaseFlow</include>
+      <texture>multiplex/boxes/multiplex_border.png</texture>
+      <visible>Skin.HasSetting(dvdcase)</visible>
+    </control>
+  </include>
+  <include name="MovieMultiplexDVDCase">
+    <include>MultiplexIconDimensionsWrapDVDCaseFlow</include>
+    <texture>multiplex/boxes/multiplex_glass.png</texture>
+  </include>
+  <include name="MovieMultiplexGlassOverlay">
+    <include condition="!Skin.HasSetting(dvdcase)">MovieMultiplexNormalCase</include>
+    <include condition="Skin.HasSetting(dvdcase)">MovieMultiplexDVDCase</include>
+  </include>
+  <include name="MovieMultiplexMaskReflectionNormal">
+    <include>MultiplexIconDimensionsWrapReflectFlow</include>
+    <texture background="true" flipy="true" diffuse="multiplex/multiplex_maskreflect.png">defaultvideo.png</texture>
+  </include>
+  <include name="MovieMultiplexMaskReflectionDVD">
+    <include>MultiplexIconDimensionsWrapReflectDVDCoverFlow</include>
+    <texture background="true" flipy="true" diffuse="multiplex/boxes/multiplex_maskreflect.png">defaultvideo.png</texture>
+  </include>
+  <include name="MovieMultiplexThumbReflection">
+    <include condition="!Skin.HasSetting(dvdcase)">MovieMultiplexMaskReflectionNormal</include>
+    <include condition="Skin.HasSetting(dvdcase)">MovieMultiplexMaskReflectionDVD</include>
+    <aspectratio scalediffuse="false">stretch</aspectratio>
+  </include>
+  <include name="MovieMultiplexThumbReflectionMain">
+    <include condition="!Skin.HasSetting(dvdcase)">MovieMultiplexMaskReflectionNormal</include>
+    <include condition="Skin.HasSetting(dvdcase)">MovieMultiplexMaskReflectionDVD</include>
+    <aspectratio scalediffuse="false">stretch</aspectratio>
+  </include>
+  <include name="MovieMultiplexCaseReflectionDVD">
+    <include>MultiplexIconDimensionsWrapReflectDVDCaseFlow</include>
+    <texture>multiplex/boxes/multiplex_borderreflect.png</texture>
+    <aspectratio scalediffuse="false">stretch</aspectratio>
+    <visible>Skin.HasSetting(dvdcase)</visible>
+  </include>
+  <include name="MovieMultiplexThumbReflectionDVD">
+    <include>MultiplexIconDimensionsWrapReflectDVDCaseFlow</include>
+    <texture>multiplex/boxes/multiplex_glassreflect.png</texture>
+    <aspectratio scalediffuse="false">stretch</aspectratio>
+    <visible>Skin.HasSetting(dvdcase)</visible>
+  </include>
+  <include name="MovieMultiplexThumbReflectionDVDMain">
+    <include>MovieMultiplexPosterReflectionDVD</include>
+    <aspectratio scalediffuse="false">stretch</aspectratio>
+    <visible>Skin.HasSetting(dvdcase)</visible>
+  </include>
+  <include name="MultiplexMovieFlowNormalVars">
+    <animation effect="zoom" center="640,177" start="94" end="94" time="0" condition="true">Conditional</animation>
+    <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+      <effect type="zoom" center="640,177" start="100" end="106.383" time="800" />
+      <effect type="slide" center="960" end="0,-30" time="800" />
+    </animation>
+    <posy>30</posy>
+  </include>
+  <include name="MultiplexMovieOverlays">
+    <control type="image">
+      <description>Glass overlay</description>
+      <include>MovieMultiplexGlassOverlay</include>
+    </control>
+    <control type="image">
+      <description>Case reflection</description>
+      <include>MovieMultiplexCaseReflectionDVD</include>
+    </control>
+  </include>
+  <include name="MultiplexMoviesFlow">
+    <include condition="!Skin.HasSetting(dvdcase)">MultiplexMovieFlowNormalVars</include>
+    <control type="group" id="8001">
+      <posy>570</posy>
+      <camera x="960" y="832" />
+      <visible>Control.IsVisible(52) + Container.OnNext + Skin.HasSetting(multiplexflow)</visible>
+      <animation effect="slide" end="-108,0" time="250" reversible="false">Hidden</animation>
+      <control type="group">
+        <posx>-14</posx>
+        <visible>Container.OnNext</visible>
+        <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="-21" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="-14,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-8).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-8).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-8).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-8).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-8).Overlay)</visible>
+            <info>ListItem(-8).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>94</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="99" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="66,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-7).Overlay)</visible>
+            <info>ListItem(-7).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>202</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="219" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="146,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-6).Overlay)</visible>
+            <info>ListItem(-6).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>310</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="339" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="226,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-5).Overlay)</visible>
+            <info>ListItem(-5).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>418</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="459" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="306,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-4).Overlay)</visible>
+            <info>ListItem(-4).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>526</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="579" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="386,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-3).Overlay)</visible>
+            <info>ListItem(-3).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>634</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="699" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="466,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-2).Overlay)</visible>
+            <info>ListItem(-2).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1636</posx>
+        <visible>!Container.OnNext</visible>
+        <animation effect="fade" start="0" end="100" delay="0" time="250" reversible="false">Visible</animation>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="2061" start="45" end="45" time="0" />
+          <effect type="zoom" center="1374,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(7).Overlay)</visible>
+            <info>ListItem(7).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1528</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1941" start="45" end="45" time="0" />
+          <effect type="zoom" center="1294,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(6).Overlay)</visible>
+            <info>ListItem(6).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1420</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1821" start="45" end="45" time="0" />
+          <effect type="zoom" center="1214,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(5).Overlay)</visible>
+            <info>ListItem(5).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1312</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1701" start="45" end="45" time="0" />
+          <effect type="zoom" center="1134,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(4).Overlay)</visible>
+            <info>ListItem(4).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1204</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1581" start="45" end="45" time="0" />
+          <effect type="zoom" center="1054,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(3).Overlay)</visible>
+            <info>ListItem(3).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1096</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1461" start="45" end="45" time="0" />
+          <effect type="zoom" center="974,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(2).Overlay)</visible>
+            <info>ListItem(2).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>988</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1341" start="45" end="45" time="0" />
+          <effect type="zoom" center="894,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(1).Overlay)</visible>
+            <info>ListItem(1).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <visible>Container.OnNext</visible>
+        <animation effect="slide" end="12,0" time="250" reversible="false">Hidden</animation>
+        <control type="group">
+          <posx>880</posx>
+          <visible>Container.OnNext</visible>
+          <animation type="Hidden" reversible="false">
+            <effect type="zoom" center="814,177" start="100" end="109" time="250" />
+            <effect type="rotatey" center="1221" start="0" end="-45" time="250" tween="quadratic" easing="in" />
+          </animation>
+          <animation type="Conditional" condition="true">
+            <effect type="rotatey" center="1221" start="45" end="45" time="0" />
+            <effect type="zoom" center="814,100" start="110" end="110" time="0" />
+          </animation>
+          <control type="group">
+            <include>MovieMultiplexDVDBorder</include>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <include>MultiplexMovieOverlays</include>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <control type="image">
+              <description>Glass overlay reflection</description>
+              <include>MovieMultiplexThumbReflectionDVD</include>
+            </control>
+            <control type="image">
+              <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+              <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+              <include>detailcolornofocus</include>
+              <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(0).Overlay)</visible>
+              <info>ListItem(0).Overlay</info>
+            </control>
+          </control>
+        </control>
+        <control type="group">
+          <posx>729</posx>
+          <visible>Container.OnNext</visible>
+          <animation effect="zoom" center="526,137" start="120" end="120" time="0" condition="true">Conditional</animation>
+          <animation type="Hidden" reversible="false">
+            <effect type="zoom" center="526,172" start="100" end="91" time="250" />
+            <effect type="rotatey" center="789" start="0" end="-45" time="250" tween="quadratic" easing="out" />
+          </animation>
+          <control type="group">
+            <include>MovieMultiplexDVDBorder</include>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(-1).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(-1).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <include>MultiplexMovieOverlays</include>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(-1).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(-1).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <control type="image">
+              <description>Glass overlay reflection</description>
+              <include>MovieMultiplexThumbReflectionDVD</include>
+            </control>
+            <control type="image">
+              <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+              <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+              <include>detailcolornofocus</include>
+              <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-1).Overlay)</visible>
+              <info>ListItem(-1).Overlay</info>
+            </control>
+          </control>
+        </control>
+      </control>
+    </control>
+    <control type="group" id="8002">
+      <posy>570</posy>
+      <camera x="960" y="832" />
+      <visible>Control.IsVisible(52) + Container.OnPrevious + Skin.HasSetting(multiplexflow)</visible>
+      <animation effect="slide" end="108,0" time="250" reversible="false">Hidden</animation>
+      <control type="group">
+        <posx>1528</posx>
+        <visible>Container.OnPrevious</visible>
+        <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1941" start="45" end="45" time="0" />
+          <effect type="zoom" center="1294,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(8).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(8).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(8).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(8).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(8).Overlay)</visible>
+            <info>ListItem(8).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1420</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1821" start="45" end="45" time="0" />
+          <effect type="zoom" center="1214,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(7).Overlay)</visible>
+            <info>ListItem(7).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1312</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1701" start="45" end="45" time="0" />
+          <effect type="zoom" center="1134,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(6).Overlay)</visible>
+            <info>ListItem(6).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1204</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1581" start="45" end="45" time="0" />
+          <effect type="zoom" center="1054,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(5).Overlay)</visible>
+            <info>ListItem(5).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1096</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1461" start="45" end="45" time="0" />
+          <effect type="zoom" center="974,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(4).Overlay)</visible>
+            <info>ListItem(4).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>988</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1341" start="45" end="45" time="0" />
+          <effect type="zoom" center="894,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(3).Overlay)</visible>
+            <info>ListItem(3).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>880</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1221" start="45" end="45" time="0" />
+          <effect type="zoom" center="814,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(2).Overlay)</visible>
+            <info>ListItem(2).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>-122</posx>
+        <visible>!Container.OnPrevious</visible>
+        <animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="-141" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="-94,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-7).Overlay)</visible>
+            <info>ListItem(-7).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>-14</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="-21" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="-14,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-6).Overlay)</visible>
+            <info>ListItem(-6).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>94</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="99" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="66,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-5).Overlay)</visible>
+            <info>ListItem(-5).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>202</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="219" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="146,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-4).Overlay)</visible>
+            <info>ListItem(-4).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>310</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="339" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="226,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-3).Overlay)</visible>
+            <info>ListItem(-3).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>418</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="459" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="306,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-2).Overlay)</visible>
+            <info>ListItem(-2).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>526</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="579" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="386,100" start="110" end="110" time="0" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-1).Overlay)</visible>
+            <info>ListItem(-1).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <visible>Container.OnPrevious</visible>
+        <animation effect="slide" end="-12,0" time="250" reversible="false">Hidden</animation>
+        <control type="group">
+          <posx>634</posx>
+          <visible>Container.OnPrevious</visible>
+          <animation type="Hidden" reversible="false">
+            <effect type="zoom" center="466,177" start="100" end="109" time="250" />
+            <effect type="rotatey" center="699" start="0" end="45" time="250" tween="quadratic" easing="in" />
+          </animation>
+          <animation type="Conditional" condition="true">
+            <effect type="rotatey" center="699" start="-45" end="-45" time="0" />
+            <effect type="zoom" center="466,100" start="110" end="110" time="0" />
+          </animation>
+          <control type="group">
+            <include>MovieMultiplexDVDBorder</include>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <include>MultiplexMovieOverlays</include>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(0).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <control type="image">
+              <description>Glass overlay reflection</description>
+              <include>MovieMultiplexThumbReflectionDVD</include>
+            </control>
+            <control type="image">
+              <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+              <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+              <include>detailcolornofocus</include>
+              <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(0).Overlay)</visible>
+              <info>ListItem(0).Overlay</info>
+            </control>
+          </control>
+        </control>
+        <control type="group">
+          <posx>786</posx>
+          <visible>Container.OnPrevious</visible>
+          <animation effect="zoom" center="754,137" start="120" end="120" time="0" condition="true">Conditional</animation>
+          <animation type="Hidden" reversible="false">
+            <effect type="zoom" center="754,172" start="100" end="91" time="250" />
+            <effect type="rotatey" center="1131" start="0" end="45" time="250" tween="quadratic" easing="out" />
+          </animation>
+          <control type="group">
+            <include>MovieMultiplexDVDBorder</include>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(1).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumb</include>
+              <info>ListItem(1).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <include>MultiplexMovieOverlays</include>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(1).Thumb</info>
+              <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+            </control>
+            <control type="image">
+              <include>MovieMultiplexThumbReflection</include>
+              <info>ListItem(1).Thumb</info>
+              <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+            </control>
+            <control type="image">
+              <description>Glass overlay reflection</description>
+              <include>MovieMultiplexThumbReflectionDVD</include>
+            </control>
+            <control type="image">
+              <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+              <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+              <include>detailcolornofocus</include>
+              <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(1).Overlay)</visible>
+              <info>ListItem(1).Overlay</info>
+            </control>
+          </control>
+        </control>
+      </control>
+    </control>
+    <control type="button" id="1960">
+      <texture>-</texture>
+      <visible>Skin.HasSetting(multiplexflow)</visible>
+      <animation effect="fade" start="100" end="0" time="800">Hidden</animation>
+    </control>
+    <control type="group" id="8000">
+      <posy>570</posy>
+      <animation effect="fade" time="500">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>Control.IsVisible(52) + !Control.IsVisible(8001) + !Control.IsVisible(8002) + Control.IsVisible(1960)</visible>
+      <camera x="960" y="832" />
+      <control type="group">
+        <posx>-14</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="-21" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="-14,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="-14,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="-21" start="0" end="45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="-495" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-7).Overlay)</visible>
+            <info>ListItem(-7).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>94</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="99" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="66,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="66,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="99" start="0" end="45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="-495" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-6).Overlay)</visible>
+            <info>ListItem(-6).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>202</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="219" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="146,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="146,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="219" start="0" end="45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="-495" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-5).Overlay)</visible>
+            <info>ListItem(-5).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>310</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="339" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="226,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="226,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="339" start="0" end="45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="-272" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-4).Overlay)</visible>
+            <info>ListItem(-4).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>418</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="459" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="306,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="306,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="459" start="0" end="45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="-200" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-3).Overlay)</visible>
+            <info>ListItem(-3).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>526</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="579" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="386,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="386,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="579" start="0" end="45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="-128" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-2).Overlay)</visible>
+            <info>ListItem(-2).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>634</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="699" start="-45" end="-45" time="0" />
+          <effect type="zoom" center="466,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="466,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="699" start="0" end="45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="-56" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(-1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(-1).Overlay)</visible>
+            <info>ListItem(-1).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1528</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1941" start="45" end="45" time="0" />
+          <effect type="zoom" center="1294,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="1294,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="1941" start="0" end="-45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="495" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(7).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(7).Overlay)</visible>
+            <info>ListItem(7).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1420</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1821" start="45" end="45" time="0" />
+          <effect type="zoom" center="1214,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="1214,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="1821" start="0" end="-45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="495" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(6).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(6).Overlay)</visible>
+            <info>ListItem(6).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1312</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1701" start="45" end="45" time="0" />
+          <effect type="zoom" center="1134,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="1134,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="1701" start="0" end="-45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="495" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(5).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(5).Overlay)</visible>
+            <info>ListItem(5).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1204</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1581" start="45" end="45" time="0" />
+          <effect type="zoom" center="1054,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="1054,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="1581" start="0" end="-45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="273" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(4).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(4).Overlay)</visible>
+            <info>ListItem(4).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>1096</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1461" start="45" end="45" time="0" />
+          <effect type="zoom" center="974,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="974,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="1461" start="0" end="-45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="201" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(3).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(3).Overlay)</visible>
+            <info>ListItem(3).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>988</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1341" start="45" end="45" time="0" />
+          <effect type="zoom" center="894,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="894,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="1341" start="0" end="-45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="129" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(2).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(2).Overlay)</visible>
+            <info>ListItem(2).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>880</posx>
+        <animation type="Conditional" condition="true">
+          <effect type="rotatey" center="1221" start="45" end="45" time="0" />
+          <effect type="zoom" center="814,100" start="110" end="110" time="0" />
+        </animation>
+        <animation type="Conditional" condition="!Skin.HasSetting(multiplexflow)">
+          <effect type="zoom" center="814,100" start="100" end="91" time="800" tween="cubic" easing="inout" />
+          <effect type="rotatey" center="1221" start="0" end="-45" time="800" tween="cubic" easing="inout" />
+          <effect type="slide" start="0" end="57" time="800" tween="cubic" easing="inout" />
+        </animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflection</include>
+            <info>ListItem(1).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVD</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(1).Overlay)</visible>
+            <info>ListItem(1).Overlay</info>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <posx>758</posx>
+        <animation effect="zoom" center="640,137" start="120" end="120" time="0" condition="true">Conditional</animation>
+        <animation effect="zoom" center="640,137" start="100" end="83" time="800" tween="cubic" easing="inout" condition="!Skin.HasSetting(multiplexflow)">Conditional</animation>
+        <control type="group">
+          <include>MovieMultiplexDVDBorder</include>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(0).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumb</include>
+            <info>ListItem(0).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <include>MultiplexMovieOverlays</include>
+          <control type="image">
+            <include>MovieMultiplexThumbReflectionMain</include>
+            <info>ListItem(0).Thumb</info>
+            <visible>![Container.Content(seasons) | Container.Content(episodes) | Skin.HasSetting(alternativerender)]</visible>
+          </control>
+          <control type="image">
+            <include>MovieMultiplexThumbReflectionMain</include>
+            <info>ListItem(0).Thumb</info>
+            <visible>[Container.Content(seasons) | Container.Content(episodes)] | Skin.HasSetting(alternativerender)</visible>
+          </control>
+          <control type="image">
+            <description>Glass overlay reflection</description>
+            <include>MovieMultiplexThumbReflectionDVDMain</include>
+          </control>
+          <control type="image">
+            <include condition="!Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexNormalFlow</include>
+            <include condition="Skin.HasSetting(dvdcase)">WatchedOverlayMultiPlexDVDFlow</include>
+            <include>detailcolornofocus</include>
+            <visible>!Skin.HasSetting(nomovieoverlays) + !IsEmpty(ListItem(0).Overlay)</visible>
+            <info>ListItem(0).Overlay</info>
+          </control>
+        </control>
+      </control>
+    </control>
+  </include>
+</includes>

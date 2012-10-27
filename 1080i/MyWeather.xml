@@ -11,7 +11,7 @@
     <control type="multiimage">
       <include>FullscreenDimensions</include>
       <include>BackgroundTimings</include>
-      <imagepath>special://skin/extras/backdrops/winter</imagepath>
+      <imagepath>backdrops/winter</imagepath>
       <info>Skin.String(CustomWeather)</info>
       <visible>!Skin.String(CustomWeatherFolder)</visible>
       <visible>System.Date(12-21,03-21)</visible>
@@ -19,7 +19,7 @@
     <control type="multiimage">
       <include>FullscreenDimensions</include>
       <include>BackgroundTimings</include>
-      <imagepath>special://skin/extras/backdrops/spring</imagepath>
+      <imagepath>backdrops/spring</imagepath>
       <info>Skin.String(CustomWeather)</info>
       <visible>!Skin.String(CustomWeatherFolder)</visible>
       <visible>System.Date(03-21,06-21)</visible>
@@ -27,7 +27,7 @@
     <control type="multiimage">
       <include>FullscreenDimensions</include>
       <include>BackgroundTimings</include>
-      <imagepath>special://skin/extras/backdrops/summer</imagepath>
+      <imagepath>backdrops/summer</imagepath>
       <info>Skin.String(CustomWeather)</info>
       <visible>!Skin.String(CustomWeatherFolder)</visible>
       <visible>System.Date(06-21,09-23)</visible>
@@ -35,7 +35,7 @@
     <control type="multiimage">
       <include>FullscreenDimensions</include>
       <include>BackgroundTimings</include>
-      <imagepath>special://skin/extras/backdrops/autumn</imagepath>
+      <imagepath>backdrops/autumn</imagepath>
       <info>Skin.String(CustomWeather)</info>
       <visible>!Skin.String(CustomWeatherFolder)</visible>
       <visible>System.Date(09-23,12-21)</visible>
@@ -48,7 +48,7 @@
     </control>
     <control type="multiimage">
       <include>Background_ImageFolder</include>
-      <imagepath>weather/$INFO[Weather.FanartCode]</imagepath>
+      <imagepath>$INFO[Skin.String(CustomWeatherFolder)]$INFO[Weather.FanartCode]</imagepath>
       <visible>Skin.String(CustomWeatherFolder)</visible>
       <visible>Skin.HasSetting(CustomWeather)</visible>
     </control>
@@ -95,7 +95,7 @@
         <posy>0</posy>
         <width>410</width>
         <height>135</height>
-        <include>Animation_CommonFadeOpenClose</include>
+        <include>common-fade-quick</include>
         <control type="label">
           <posx>0</posx>
           <posy>0</posy>

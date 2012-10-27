@@ -1,0 +1,155 @@
+﻿<window id="139">
+  <defaultcontrol>5</defaultcontrol>
+  <coordinates>
+    <system>1</system>
+    <posx>360</posx>
+    <posy>82</posy>
+  </coordinates>
+  <include>dialogeffect</include>
+  <controls>
+    <control type="image">
+      <description>background image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1200</width>
+      <height>915</height>
+      <texture border="40">DialogBack.png</texture>
+    </control>
+    <control type="image">
+      <description>Heading Background</description>
+      <posx>45</posx>
+      <posy>52</posy>
+      <width>1110</width>
+      <height>60</height>
+      <texture border="5">ThumbFO.png</texture>
+    </control>
+    <control type="label" id="1">
+      <description>heading label</description>
+      <posx>60</posx>
+      <posy>52</posy>
+      <width>1080</width>
+      <height>60</height>
+      <align>center</align>
+      <aligny>center</aligny>
+      <font>font18</font>
+      <label>$LOCALIZE[13406]</label>
+      <textcolor>black</textcolor>
+    </control>
+    <control type="list" id="5">
+      <posx>60</posx>
+      <posy>128</posy>
+      <width>1042</width>
+      <height>660</height>
+      <onleft>5</onleft>
+      <onright>5</onright>
+      <onup>5</onup>
+      <ondown>5</ondown>
+      <pagecontrol>60</pagecontrol>
+      <scrolltime>200</scrolltime>
+      <animation effect="slide" start="0,0" end="15,0" time="0" condition="!Control.IsVisible(60)">Conditional</animation>
+      <itemlayout height="60">
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1042</width>
+          <height>52</height>
+          <texture border="5">button-nofocus.png</texture>
+        </control>
+        <control type="label">
+          <posx>15</posx>
+          <posy>0</posy>
+          <width>300</width>
+          <height>52</height>
+          <font>font12</font>
+          <aligny>center</aligny>
+          <textcolor>grey2</textcolor>
+          <selectedcolor>blue</selectedcolor>
+          <align>left</align>
+          <info>ListItem.Label</info>
+        </control>
+        <control type="label">
+          <posx>315</posx>
+          <posy>0</posy>
+          <width>712</width>
+          <height>52</height>
+          <font>font12</font>
+          <aligny>center</aligny>
+          <selectedcolor>blue</selectedcolor>
+          <align>left</align>
+          <info>ListItem.Label2</info>
+        </control>
+      </itemlayout>
+      <focusedlayout height="60">
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1042</width>
+          <height>52</height>
+          <colordiffuse>FFFFFFFF</colordiffuse>
+          <visible>!Control.HasFocus(5)</visible>
+          <texture border="5">button-nofocus.png</texture>
+        </control>
+        <control type="image">
+          <posx>0</posx>
+          <posy>0</posy>
+          <width>1042</width>
+          <height>52</height>
+          <colordiffuse>FFFFFFFF</colordiffuse>
+          <visible>Control.HasFocus(5)</visible>
+          <texture border="5">button-focus.png</texture>
+        </control>
+        <control type="label">
+          <posx>15</posx>
+          <posy>0</posy>
+          <width>375</width>
+          <height>52</height>
+          <font>font12</font>
+          <aligny>center</aligny>
+          <textcolor>grey2</textcolor>
+          <selectedcolor>blue</selectedcolor>
+          <align>left</align>
+          <info>ListItem.Label</info>
+        </control>
+        <control type="label">
+          <posx>315</posx>
+          <posy>0</posy>
+          <width>712</width>
+          <height>52</height>
+          <font>font12</font>
+          <aligny>center</aligny>
+          <selectedcolor>blue</selectedcolor>
+          <align>left</align>
+          <info>ListItem.Label2</info>
+        </control>
+      </focusedlayout>
+    </control>
+    <control type="scrollbar" id="60">
+      <posx>1110</posx>
+      <posy>128</posy>
+      <width>30</width>
+      <height>652</height>
+      <texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+      <texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+      <texturesliderbarfocus border="2,16,2,16">scrollbar_bar_focus.png</texturesliderbarfocus>
+      <textureslidernib>scrollbar_nib.png</textureslidernib>
+      <textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
+      <onleft>2</onleft>
+      <onright>10</onright>
+      <ondown>60</ondown>
+      <onup>60</onup>
+      <showonepage>false</showonepage>
+      <orientation>vertical</orientation>
+    </control>
+    <control type="label">
+      <description>number of files/pages in list text label</description>
+      <posx>1125</posx>
+      <posy>802</posy>
+      <width>1050</width>
+      <font>font12</font>
+      <align>right</align>
+      <scroll>true</scroll>
+      <textcolor>white</textcolor>
+      <label>($INFO[Container(5).NumItems]) $LOCALIZE[31025] - $LOCALIZE[31024] ($INFO[Container(5).CurrentPage]/$INFO[Container(5).NumPages])</label>
+    </control>
+  </controls>
+</window>
