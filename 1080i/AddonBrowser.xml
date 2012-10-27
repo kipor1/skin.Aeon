@@ -1,118 +1,114 @@
-﻿<window id="501">
-  <defaultcontrol always="true">61</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <views>61,550,551,53,54</views>
-  <controls>
-    <include>CommonBackground</include>
-    <control type="group">
-      <include>ViewVisibleEffect</include>
-      <include>CommonLower_Info</include>
-      <include>MusicListView</include>
-      <include>CommonRootView_Addons</include>
-      <!-- view id = 550 -->
-      <include>CommonRootView_Info_Addons</include>
-      <!-- view id = 551 -->
-      <include>ThumbnailView</include>
-      <!-- view id = 53 -->
-      <include>ThumbnailView_Info</include>
-      <!-- view id = 54 -->
-      <include>ScrollOffsetLabel</include>
-    </control>
-    <include>CommonNowPlaying_Controls</include>
-    <!-- This is ControlGroup(9001) -->
-    <include>CommonNowPlaying</include>
-    <control type="group">
-      <include>CommonOptionsMenuBack</include>
-      <control type="group" id="9000">
-        <posx>8</posx>
-        <posy>45</posy>
-        <control type="button" id="2">
-          <description>View As button</description>
-          <posx>0</posx>
-          <posy>0</posy>
-          <include>ButtonCommonValues</include>
-          <label>-</label>
-          <onleft>9001</onleft>
-          <onright>550</onright>
-          <onup>6</onup>
-          <ondown>3</ondown>
-        </control>
-        <control type="image">
-          <description>NoFocus Background for Sort button</description>
-          <posx>0</posx>
-          <posy>68</posy>
-          <width>357</width>
-          <height>68</height>
-          <texture border="5">button-nofocus.png</texture>
-          <visible>Control.HasFocus(4)</visible>
-        </control>
-        <control type="button" id="3">
-          <description>Sort by button</description>
-          <posx>0</posx>
-          <posy>68</posy>
-          <width>357</width>
-          <include>ButtonCommonValues</include>
-          <label>103</label>
-          <onleft>9001</onleft>
-          <onright>4</onright>
-          <onup>2</onup>
-          <ondown>5</ondown>
-        </control>
-        <control type="image">
-          <description>NoFocus Background for Sort Direction Toggle</description>
-          <posx>360</posx>
-          <posy>68</posy>
-          <width>60</width>
-          <height>68</height>
-          <texture border="5">button-nofocus.png</texture>
-          <visible>Control.HasFocus(3)</visible>
-        </control>
-        <control type="image">
-          <description>Focus Background for Sort Direction Toggle</description>
-          <posx>360</posx>
-          <posy>68</posy>
-          <width>60</width>
-          <height>68</height>
-          <texture border="5">button-focus2.png</texture>
-          <visible>Control.HasFocus(4)</visible>
-        </control>
-        <control type="togglebutton" id="4">
-          <description>Sort asc</description>
-          <posx>375</posx>
-          <posy>87</posy>
-          <label>-</label>
-          <texturefocus>scroll-up.png</texturefocus>
-          <texturenofocus>scroll-up.png</texturenofocus>
-          <alttexturefocus>scroll-down.png</alttexturefocus>
-          <alttexturenofocus>scroll-down.png</alttexturenofocus>
-          <onleft>3</onleft>
-          <onright>50</onright>
-          <onup>2</onup>
-          <ondown>5</ondown>
-        </control>
-        <control type="radiobutton" id="5">
-          <description>AutoUpdate Button</description>
-          <posx>0</posx>
-          <posy>135</posy>
-          <include>ButtonCommonValues</include>
-          <label>24063</label>
-          <onleft>9001</onleft>
-          <onright>550</onright>
-          <onup>3</onup>
-          <ondown>6</ondown>
-        </control>
-        <control type="radiobutton" id="6">
-          <description>No notifications</description>
-          <posx>0</posx>
-          <posy>195</posy>
-          <include>ButtonCommonValues</include>
-          <label>25000</label>
-          <onleft>9001</onleft>
-          <onright>550</onright>
-          <onup>5</onup>
-          <ondown>2</ondown>
-        </control>
-      </control>
-    </control>
-  </controls>
+<window id="501">
+	<defaultcontrol always="true">61</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<views>61,550,551,53,54</views>
+	<controls>
+		<include>CommonBackground</include>
+		<control type="group">
+			<include>ViewVisibleEffect</include>
+			<include>CommonLower_Info</include>
+			<include>MusicListView</include>
+			<include>CommonRootView_Addons</include> <!-- view id = 550 -->
+			<include>CommonRootView_Info_Addons</include> <!-- view id = 551 -->
+			<include>ThumbnailView</include> <!-- view id = 53 -->
+			<include>ThumbnailView_Info</include> <!-- view id = 54 -->
+			<include>ScrollOffsetLabel</include>
+		</control>
+		<include>CommonNowPlaying_Controls</include> <!-- This is ControlGroup(9001) -->
+		<include>CommonNowPlaying</include>
+		<control type="group">
+			<include>CommonOptionsMenuBack</include>
+			<control type="group" id="9000">
+				<posx>5</posx>
+				<posy>30</posy>
+				<control type="button" id="2">
+					<description>View As button</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<include>ButtonCommonValues</include>
+					<label>-</label>
+					<onleft>9001</onleft>
+					<onright>550</onright>
+					<onup>6</onup>
+					<ondown>3</ondown>
+				</control>
+				<control type="image">
+					<description>NoFocus Background for Sort button</description>
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>238</width>
+					<height>45</height>
+					<texture border="5">button-nofocus.png</texture>
+					<visible>Control.HasFocus(4)</visible>
+				</control>
+				<control type="button" id="3">
+					<description>Sort by button</description>
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>238</width>
+					<include>ButtonCommonValues</include>
+					<label>103</label>
+					<onleft>9001</onleft>
+					<onright>4</onright>
+					<onup>2</onup>
+					<ondown>5</ondown>
+				</control>
+				<control type="image">
+					<description>NoFocus Background for Sort Direction Toggle</description>
+					<posx>240</posx>
+					<posy>45</posy>
+					<width>40</width>
+					<height>45</height>
+					<texture border="5">button-nofocus.png</texture>
+					<visible>Control.HasFocus(3)</visible>
+				</control>
+				<control type="image">
+					<description>Focus Background for Sort Direction Toggle</description>
+					<posx>240</posx>
+					<posy>45</posy>
+					<width>40</width>
+					<height>45</height>
+					<texture border="5">button-focus2.png</texture>
+					<visible>Control.HasFocus(4)</visible>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Sort asc</description>
+					<posx>250</posx>
+					<posy>58</posy>
+					<label>-</label>
+					<texturefocus>scroll-up.png</texturefocus>
+					<texturenofocus>scroll-up.png</texturenofocus>
+					<alttexturefocus>scroll-down.png</alttexturefocus>
+					<alttexturenofocus>scroll-down.png</alttexturenofocus>
+					<onleft>3</onleft>
+					<onright>50</onright>
+					<onup>2</onup>
+					<ondown>5</ondown>
+				</control>
+				<control type="radiobutton" id="5">
+					<description>AutoUpdate Button</description>
+					<posx>0</posx>
+					<posy>90</posy>
+					<include>ButtonCommonValues</include>
+					<label>24063</label>
+					<onleft>9001</onleft>
+					<onright>550</onright>
+					<onup>3</onup>
+					<ondown>6</ondown>
+				</control>
+				<control type="radiobutton" id ="6">
+					<description>No notifications</description>
+					<posx>0</posx>
+					<posy>130</posy>
+					<include>ButtonCommonValues</include>
+					<label>25000</label>
+					<onleft>9001</onleft>
+					<onright>550</onright>
+					<onup>5</onup>
+					<ondown>2</ondown>
+				</control>
+			</control>
+		</control>
+
+	</controls>
 </window>

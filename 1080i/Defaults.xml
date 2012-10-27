@@ -1,187 +1,188 @@
-﻿<includes>
-  <default type="image">
-    <posx>0</posx>
-    <posy>0</posy>
-    <texture>-</texture>
-    <colorkey>0</colorkey>
-  </default>
-  <default type="label">
-    <posx>120</posx>
-    <posy>90</posy>
-    <label>-</label>
-    <font>Droid16</font>
-    <textcolor>white</textcolor>
-  </default>
-  <default type="fadelabel">
-    <posx>120</posx>
-    <posy>90</posy>
-    <font>Droid16</font>
-    <textcolor>white</textcolor>
-  </default>
-  <default type="togglebutton">
-    <posx>210</posx>
-    <posy>250</posy>
-    <width>30</width>
-    <height>30</height>
-    <texturefocus>common/mediabuttons/scroll-up-focus.png</texturefocus>
-    <texturenofocus>common/mediabuttons/scroll-up.png</texturenofocus>
-    <alttexturefocus>common/mediabuttons/scroll-down-focus.png</alttexturefocus>
-    <alttexturenofocus>common/mediabuttons/scroll-down.png</alttexturenofocus>
-    <textcolor>white</textcolor>
-    <label>-</label>
-    <font>Droid16</font>
-    <disabledcolor>grey3</disabledcolor>
-    <pulseonselect>no</pulseonselect>
-  </default>
-  <default type="textbox">
-    <posx>330</posx>
-    <posy>330</posy>
-    <width>615</width>
-    <height>322</height>
-    <spinwidth>27</spinwidth>
-    <spinheight>24</spinheight>
-    <spinposx>410</spinposx>
-    <spinposy>305</spinposy>
-    <spincolor>white</spincolor>
-    <spinfont>Droid16</spinfont>
-    <textcolor>white</textcolor>
-    <textureup>common/mediabuttons/scroll-up.png</textureup>
-    <texturedown>common/mediabuttons/scroll-down.png</texturedown>
-    <textureupfocus>common/mediabuttons/scroll-up-focus.png</textureupfocus>
-    <texturedownfocus>common/mediabuttons/scroll-down-focus.png</texturedownfocus>
-    <font>font13</font>
-  </default>
-  <default type="progress">
-    <posx>150</posx>
-    <posy>488</posy>
-    <texturebg border="4,0,4,0">common/Volume/ProgressBack.png</texturebg>
-    <lefttexture>-</lefttexture>
-    <midtexture border="4,0,4,0">common/Volume/ProgressFront.png</midtexture>
-    <righttexture>-</righttexture>
-    <overlaytexture>-</overlaytexture>
-  </default>
-  <default type="spincontrol">
-    <posx>495</posx>
-    <posy>189</posy>
-    <textureup>scroll-up-2.png</textureup>
-    <texturedown>scroll-down-2.png</texturedown>
-    <textureupfocus>scroll-up-focus-2.png</textureupfocus>
-    <texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
-    <align>right</align>
-    <width>50</width>
-    <height>33</height>
-    <font>Droid16</font>
-    <reverse>yes</reverse>
-    <textcolor>white</textcolor>
-    <disabledcolor>grey3</disabledcolor>
-    <subtype>text</subtype>
-    <textoffsetx>-8</textoffsetx>
-    <textoffsety>0</textoffsety>
-    <aligny>-</aligny>
-    <pulseonselect>no</pulseonselect>
-  </default>
-  <default type="spincontrolex">
-    <posx>795</posx>
-    <posy>240</posy>
-    <width>450</width>
-    <height>63</height>
-    <spinwidth>50</spinwidth>
-    <spinheight>33</spinheight>
-    <texturefocus>button-focus.png</texturefocus>
-    <texturenofocus>-</texturenofocus>
-    <textureup>common/mediabuttons/scroll-up.png</textureup>
-    <texturedown>common/mediabuttons/scroll-down.png</texturedown>
-    <textureupfocus>common/mediabuttons/scroll-up-focus.png</textureupfocus>
-    <texturedownfocus>common/mediabuttons/scroll-down-focus.png</texturedownfocus>
-    <font>Droid16</font>
-    <textcolor>white</textcolor>
-    <disabledcolor>grey3</disabledcolor>
-    <textoffsetx>10</textoffsetx>
-    <aligny>center</aligny>
-    <reverse>yes</reverse>
-    <pulseonselect>no</pulseonselect>
-  </default>
-  <default type="radiobutton">
-    <posx>450</posx>
-    <posy>300</posy>
-    <width>450</width>
-    <height>63</height>
-    <radiowidth>112</radiowidth>
-    <radioheight>75</radioheight>
-    <textureradioon>button-focus1.png</textureradioon>
-    <textureradiooff>button-nofocus1.png</textureradiooff>
-    <texturefocus>button-focus1.png</texturefocus>
-    <texturenofocus>button-nofocus1.png</texturenofocus>
-    <label>215</label>
-    <font>Droid18</font>
-    <textcolor>white</textcolor>
-    <disabledcolor>grey3</disabledcolor>
-    <textoffsetx>10</textoffsetx>
-    <aligny>center</aligny>
-    <pulseonselect>no</pulseonselect>
-  </default>
-  <default type="selectbutton">
-    <posx>735</posx>
-    <posy>502</posy>
-    <width>450</width>
-    <height>75</height>
-    <label>-</label>
-    <font>Droid18</font>
-    <texturefocus>-</texturefocus>
-    <texturenofocus>-</texturenofocus>
-    <texturebg>-</texturebg>
-    <textureleft>common/mediabuttons/scroll-left.png</textureleft>
-    <textureleftfocus>common/mediabuttons/scroll-left-focus.png</textureleftfocus>
-    <textureright>common/mediabuttons/scroll-right.png</textureright>
-    <texturerightfocus>common/mediabuttons/scroll-right-focus.png</texturerightfocus>
-    <font>font13</font>
-    <textcolor>white</textcolor>
-    <disabledcolor>grey3</disabledcolor>
-    <aligny>center</aligny>
-  </default>
-  <default type="slider">
-    <controloffsetx>75</controloffsetx>
-    <controloffsety>0</controloffsety>
-  </default>
-  <default type="sliderex">
-    <height>52</height>
-    <textoffsetx>10</textoffsetx>
-    <aligny>center</aligny>
-    <texturefocus>button-focus.png</texturefocus>
-    <texturenofocus>button-nofocus.png</texturenofocus>
-    <sliderwidth>25</sliderwidth>
-    <sliderheight>20</sliderheight>
-    <texturesliderbar>views/list/list_scrollclip.png</texturesliderbar>
-    <textureslidernib>-</textureslidernib>
-    <textureslidernibfocus>views/list/list_scrollclip_focus.png</textureslidernibfocus>
-    <font>Droid16</font>
-    <textcolor>white</textcolor>
-    <disabledcolor>grey3</disabledcolor>
-  </default>
-  <default type="mover">
-    <posx>90</posx>
-    <posy>288</posy>
-    <texturefocus>button-focus.png</texturefocus>
-    <texturenofocus>button-nofocus.png</texturenofocus>
-  </default>
-  <default type="resize">
-    <posx>90</posx>
-    <posy>288</posy>
-    <texturefocus>button-focus.png</texturefocus>
-    <texturenofocus>button-nofocus.png</texturenofocus>
-  </default>
-  <default type="edit">
-    <posx>450</posx>
-    <posy>300</posy>
-    <width>450</width>
-    <height>63</height>
-    <texturefocus border="5">button-focus.png</texturefocus>
-    <texturenofocus border="5">button-nofocus.png</texturenofocus>
-    <font>font12</font>
-    <textcolor>white</textcolor>
-    <disabledcolor>grey3</disabledcolor>
-    <textoffsetx>10</textoffsetx>
-    <aligny>center</aligny>
-    <pulseonselect>no</pulseonselect>
-  </default>
+<includes>
+	<default type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<texture>-</texture>
+		<colorkey>0</colorkey>
+	</default>
+	<default type="label">
+		<posx>80</posx>
+		<posy>60</posy>
+		<label>-</label>
+		<font>Droid16</font>
+		<textcolor>white</textcolor>
+	</default>
+	<default type="fadelabel">
+		<posx>80</posx>
+		<posy>60</posy>
+		<font>Droid16</font>
+		<textcolor>white</textcolor>
+	</default>
+
+	<default type="togglebutton">
+		<posx>140</posx>
+		<posy>167</posy>
+		<width>20</width>
+		<height>20</height>
+		<texturefocus>common/mediabuttons/scroll-up-focus.png</texturefocus>
+		<texturenofocus>common/mediabuttons/scroll-up.png</texturenofocus>
+		<alttexturefocus>common/mediabuttons/scroll-down-focus.png</alttexturefocus>
+		<alttexturenofocus>common/mediabuttons/scroll-down.png</alttexturenofocus>
+		<textcolor>white</textcolor>
+		<label>-</label>
+		<font>Droid16</font>
+		<disabledcolor>grey3</disabledcolor>
+		<pulseonselect>no</pulseonselect>
+	</default>
+	<default type="textbox">
+		<posx>220</posx>
+		<posy>220</posy>
+		<width>410</width>
+		<height>215</height>
+		<spinwidth>18</spinwidth>
+		<spinheight>16</spinheight>
+		<spinposx>410</spinposx>
+		<spinposy>305</spinposy>
+		<spincolor>white</spincolor>
+		<spinfont>Droid16</spinfont>
+		<textcolor>white</textcolor>
+		<textureup>common/mediabuttons/scroll-up.png</textureup>
+		<texturedown>common/mediabuttons/scroll-down.png</texturedown>
+		<textureupfocus>common/mediabuttons/scroll-up-focus.png</textureupfocus>
+		<texturedownfocus>common/mediabuttons/scroll-down-focus.png</texturedownfocus>
+		<font>font13</font>
+	</default>
+	<default type="progress">
+		<posx>100</posx>
+		<posy>325</posy>
+		<texturebg border="4,0,4,0">common/Volume/ProgressBack.png</texturebg>
+		<lefttexture>-</lefttexture>
+		<midtexture border="4,0,4,0">common/Volume/ProgressFront.png</midtexture>
+		<righttexture>-</righttexture>
+		<overlaytexture>-</overlaytexture>
+	</default>
+	<default type="spincontrol">
+		<posx>330</posx>
+		<posy>126</posy>
+		<textureup>scroll-up-2.png</textureup>
+		<texturedown>scroll-down-2.png</texturedown>
+		<textureupfocus>scroll-up-focus-2.png</textureupfocus>
+		<texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
+		<align>right</align>
+		<width>33</width>
+		<height>22</height>
+		<font>Droid16</font>
+		<reverse>yes</reverse>
+		<textcolor>white</textcolor>
+		<disabledcolor>grey3</disabledcolor>
+		<subtype>text</subtype>
+		<textoffsetx>-5</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<aligny>-</aligny>
+		<pulseonselect>no</pulseonselect>
+	</default>
+	<default type="spincontrolex">
+		<posx>530</posx>
+		<posy>160</posy>
+		<width>300</width>
+		<height>42</height>
+		<spinwidth>33</spinwidth>
+		<spinheight>22</spinheight>
+		<texturefocus>button-focus.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<textureup>common/mediabuttons/scroll-up.png</textureup>
+		<texturedown>common/mediabuttons/scroll-down.png</texturedown>
+		<textureupfocus>common/mediabuttons/scroll-up-focus.png</textureupfocus>
+		<texturedownfocus>common/mediabuttons/scroll-down-focus.png</texturedownfocus>
+		<font>Droid16</font>
+		<textcolor>white</textcolor>
+		<disabledcolor>grey3</disabledcolor>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+		<reverse>yes</reverse>
+		<pulseonselect>no</pulseonselect>
+	</default>
+	<default type="radiobutton">
+		<posx>300</posx>
+		<posy>200</posy>
+		<width>300</width>
+		<height>42</height>
+		<radiowidth>75</radiowidth>
+		<radioheight>50</radioheight>
+		<textureradioon>button-focus1.png</textureradioon>
+		<textureradiooff>button-nofocus1.png</textureradiooff>
+		<texturefocus>button-focus1.png</texturefocus>
+		<texturenofocus>button-nofocus1.png</texturenofocus>
+		<label>215</label>
+		<font>Droid18</font>
+		<textcolor>white</textcolor>
+		<disabledcolor>grey3</disabledcolor>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+		<pulseonselect>no</pulseonselect>
+	</default>
+	<default type="selectbutton">
+		<posx>490</posx>
+		<posy>335</posy>
+		<width>300</width>
+		<height>50</height>
+		<label>-</label>
+		<font>Droid18</font>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<texturebg>-</texturebg>
+		<textureleft>common/mediabuttons/scroll-left.png</textureleft>
+		<textureleftfocus>common/mediabuttons/scroll-left-focus.png</textureleftfocus>
+		<textureright>common/mediabuttons/scroll-right.png</textureright>
+		<texturerightfocus>common/mediabuttons/scroll-right-focus.png</texturerightfocus>
+		<font>font13</font>
+		<textcolor>white</textcolor>
+		<disabledcolor>grey3</disabledcolor>
+		<aligny>center</aligny>
+	</default>
+	<default type="slider">
+		<controloffsetx>75</controloffsetx>
+		<controloffsety>0</controloffsety>
+	</default>
+	<default type="sliderex">
+		<height>35</height>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+		<texturefocus>button-focus.png</texturefocus>
+		<texturenofocus>button-nofocus.png</texturenofocus>
+		<sliderwidth>25</sliderwidth>
+		<sliderheight>20</sliderheight>
+		<texturesliderbar>views/list/list_scrollclip.png</texturesliderbar>
+		<textureslidernib>-</textureslidernib>
+		<textureslidernibfocus>views/list/list_scrollclip_focus.png</textureslidernibfocus>
+		<font>Droid16</font>
+		<textcolor>white</textcolor>
+		<disabledcolor>grey3</disabledcolor>
+	</default>
+	<default type="mover">
+		<posx>60</posx>
+		<posy>192</posy>
+		<texturefocus>button-focus.png</texturefocus>
+		<texturenofocus>button-nofocus.png</texturenofocus>
+	</default>
+	<default type="resize">
+		<posx>60</posx>
+		<posy>192</posy>
+		<texturefocus>button-focus.png</texturefocus>
+		<texturenofocus>button-nofocus.png</texturenofocus>
+	</default>
+	<default type="edit">
+		<posx>300</posx>
+		<posy>200</posy>
+		<width>300</width>
+		<height>42</height>
+		<texturefocus border="5">button-focus.png</texturefocus>
+		<texturenofocus border="5">button-nofocus.png</texturenofocus>
+		<font>font12</font>
+		<textcolor>white</textcolor>
+		<disabledcolor>grey3</disabledcolor>
+		<textoffsetx>7</textoffsetx>
+		<aligny>center</aligny>
+		<pulseonselect>no</pulseonselect>
+	</default>
 </includes>
